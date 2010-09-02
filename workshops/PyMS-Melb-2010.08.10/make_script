@@ -1,0 +1,8 @@
+#! /bin/bash
+latex workshop.tex
+dvipdf workshop.dvi
+rm workshop.dvi
+rm workshop.aux
+rm workshop.idx
+rm workshop.log
+exit
