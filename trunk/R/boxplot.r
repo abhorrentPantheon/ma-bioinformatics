@@ -7,7 +7,7 @@
 #    Output    Boxplots of data for samples and variables
 
 #
-#    Load and prepare the data matrix
+#    Prepare the data matrix
 #
 # Read in the .csv file
 data<-read.csv("input.csv", sep=",", row.names=1, header=TRUE)

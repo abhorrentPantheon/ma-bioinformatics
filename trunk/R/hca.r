@@ -12,7 +12,7 @@
 #              to using this script
 
 #
-#    Prepare data matrix
+#    Prepare the data matrix
 #
 # Read in the .csv file
 data<-read.csv("input.csv", sep=",", row.names=1, header=TRUE)
@@ -46,7 +46,7 @@ plot(hca_sample,
     labels=smpl_labels,                        # group labels
     hang=-1,                                   # even-length ends
     main="Cluster Dendrogram\nSamples",        # title of plot
-    xlab="Distance",                           # change the x-axis title
+    xlab="",                                   # change the x-axis title
     sub="",                                    # clear the sub-heading
     cex=1                                      # font size
     )
@@ -56,7 +56,7 @@ x11()
 plot(hca_variable,
     hang=-1,                                   # even-length ends
     main="Cluster Dendrogram\nVariables",      # title of plot
-    xlab="Distance",                           # change the x-axis title
+    xlab="",                                   # change the x-axis title
     sub="",                                    # clear the sub-heading
     cex=1                                      # font size
     )
@@ -75,7 +75,7 @@ plot(hca_variable,
 #         labels=smpl_labels,                    # group labels
 #         hang=-1,                               # even-length ends
 #         main="Cluster Dendrogram\nSamples",    # title of plot
-#         xlab="Distance",                       # x-axis title
+#         xlab="",                               # x-axis title
 #         sub="",                                # clear the sub-heading
 #         cex=1)                                 # font size
 # dev.off()
@@ -88,39 +88,39 @@ plot(hca_variable,
 #     plot(hca_variable,
 #         hang=-1,                               # even-length ends
 #         main="Cluster Dendrogram\nVariables",  # title of plot
-#         xlab="Distance",                       # x-axis title
+#         xlab="",                               # x-axis title
 #         sub="",                                # clear the sub-heading
 #         cex=1)                                 # font size
 # dev.off()
 ##### end jpeg #####
 
 
-##### png #####
-# png("HCA_samples.png",
-#     bg="white",                                # background colour
-#     res=300,                                   # image resolution (dpi)
-#     units="in", width=8.3, height=5.8)         # image dimensions (inches)
-#     plot(hca_sample,
-#         labels=smpl_labels,                    # group labels
-#         hang=-1,                               # even-length ends
-#         main="Cluster Dendrogram\nSamples",    # title of plot
-#         xlab="Distance",                       # x-axis title
-#         sub="",                                # clear the sub-heading
-#         cex=1)                                 # font size
-# dev.off()
-# 
-# png("HCA_variables.png",
-#     bg="white",                                # background colour
-#     res=300,                                   # image resolution (dpi)
-#     units="in", width=8.3, height=5.8)         # image dimensions (inches)
-#     plot(hca_variable,
-#         hang=-1,                               # even-length ends
-#         main="Cluster Dendrogram\nVariables",  # title of plot
-#         xlab="Distance",                       # x-axis title
-#         sub="",                                # clear the sub-heading
-#         cex=1)                                 # font size
-# dev.off()
-##### end png #####
+#### png #####
+png("HCA_samples.png",
+    bg="white",                                # background colour
+    res=300,                                   # image resolution (dpi)
+    units="in", width=8.3, height=5.8)         # image dimensions (inches)
+    plot(hca_sample,
+        labels=smpl_labels,                    # group labels
+        hang=-1,                               # even-length ends
+        main="Cluster Dendrogram\nSamples",    # title of plot
+        xlab="",                               # x-axis title
+        sub="",                                # clear the sub-heading
+        cex=1)                                 # font size
+dev.off()
+
+png("HCA_variables.png",
+    bg="white",                                # background colour
+    res=300,                                   # image resolution (dpi)
+    units="in", width=8.3, height=5.8)         # image dimensions (inches)
+    plot(hca_variable,
+        hang=-1,                               # even-length ends
+        main="Cluster Dendrogram\nVariables",  # title of plot
+        xlab="",                               # x-axis title
+        sub="",                                # clear the sub-heading
+        cex=1)                                 # font size
+dev.off()
+#### end png #####
 
 
 ##### tiff #####
@@ -132,7 +132,7 @@ plot(hca_variable,
 #         labels=smpl_labels,                    # group labels
 #         hang=-1,                               # even-length ends
 #         main="Cluster Dendrogram\nSamples",    # title of plot
-#         xlab="Distance",                       # x-axis title
+#         xlab="",                               # x-axis title
 #         sub="",                                # clear the sub-heading
 #         cex=1)                                 # font size
 # dev.off()
@@ -144,7 +144,7 @@ plot(hca_variable,
 #     plot(hca_variable,
 #         hang=-1,                               # even-length ends
 #         main="Cluster Dendrogram\nVariables",  # title of plot
-#         xlab="Distance",                       # x-axis title
+#         xlab="",                               # x-axis title
 #         sub="",                                # clear the sub-heading
 #         cex=1)                                 # font size
 # dev.off()

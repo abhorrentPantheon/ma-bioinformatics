@@ -16,10 +16,11 @@
 #
 ### Why are we using vegan? Is there something in base that could do same?
 tryCatch(library(vegan), error=function(err)
+    # if this produces an error:
     install.packages("vegan",repos="http://cran.ms.unimelb.edu.au/"))
 
 #
-#    Prepare data matrix
+#    Prepare the data matrix
 #
 # Read in the .csv file
 data<-read.csv("input.csv", sep=",", row.names=1, header=TRUE)

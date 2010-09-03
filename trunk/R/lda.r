@@ -14,6 +14,7 @@
 #    Load necessary libraries, and install them if they are missing
 #
 tryCatch(library(MASS), error=function(err)
+    # if this produces an error:
     install.packages("MASS",repos="http://cran.ms.unimelb.edu.au/"))
 
 #
