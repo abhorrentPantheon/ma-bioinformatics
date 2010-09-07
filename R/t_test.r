@@ -22,7 +22,7 @@ groups<-data[,1]
 ttest_data<-data[,-1]
 
 # Check data; if appropriate, run script
-if (length(levels(group)) > 2) print ("Number of groups is greater than 2") else {
+if (length(levels(groups)) > 2) print ("Number of groups is greater than 2") else {
     ttest_data_t<-t(ttest_data)
 
     # Prepare labels
