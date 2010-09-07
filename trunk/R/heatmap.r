@@ -13,9 +13,6 @@
 tryCatch(library(gplots), error=function(err)
     # if this produces an error:
     install.packages("gplots",repos="http://cran.ms.unimelb.edu.au/"))
-# tryCatch(library("RColorBrewer"), error=function(err)
-#     # if this produces an error:
-#     install.packages("RColorBrewer",repos="http://cran.ms.unimelb.edu.au/"))
 
 #
 #    Prepare the data matrix
