@@ -4,7 +4,7 @@
 #    Purpose:    Converts .yep files to mzXML files
 #
 #    Input:    .yep files
-#    Output:    .mzxml format files
+#    Output:    .mzxml (open format) files
 #
 #    Notes:    This script can only run on a Windows platform. This is because
 #              compassxport is required to run this script, which is available
