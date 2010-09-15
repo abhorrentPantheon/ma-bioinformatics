@@ -18,13 +18,18 @@ mms_data<-data[,-1]
 #    Preparation of plotting data 
 #
 # Take the mean of all the variables for each sample
-Mean<-apply(mms_data,2,mean,na.rm=TRUE)
+Mean<-apply(mms_data,1,mean,na.rm=TRUE)
 # Take the median of all the variables for each sample
-Median<-apply(mms_data,2,median,na.rm=TRUE)
+Median<-apply(mms_data,1,median,na.rm=TRUE)
 # Take the standard deviation of all the variables for each sample
-StdDev<-apply(mms_data,2,sd,na.rm=TRUE)
+StdDev<-apply(mms_data,1,sd,na.rm=TRUE)
 # Join the data into a matrix for plotting
 mms<-data.frame(cbind(Mean,Median,StdDev))
+
+rownames(mms) <- if 
+    (length(grep("^X[\\d]",rownames(mms),perl=TRUE)) != 0) # then
+    {gsub("^X([\\d].*)","\\1",rownames(mms),perl=TRUE)} else
+    {rownames(mms)}
 
 #
 #    Generate figure and output to the screen

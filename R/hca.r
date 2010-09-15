@@ -37,7 +37,7 @@ hca_variable<-hclust(dist_variable,method="complete")
 smpl_labels<-NA
 for(ii in 1:length(rownames(hca_data))) {
     smpl_labels[ii]<-paste(
-    groups[ii], ": ", rownames(hca_data)[ii], "\n", sep="")
+    groups[ii], ": ", rownames(hca_data)[ii], sep="")
     }
 
 # Dendrogram of samples
@@ -96,30 +96,30 @@ plot(hca_variable,
 
 
 #### png #####
-png("HCA_samples.png",
-    bg="white",                                # background colour
-    res=300,                                   # image resolution (dpi)
-    units="in", width=8.3, height=5.8)         # image dimensions (inches)
-    plot(hca_sample,
-        labels=smpl_labels,                    # group labels
-        hang=-1,                               # even-length ends
-        main="Cluster Dendrogram\nSamples",    # title of plot
-        xlab="",                               # x-axis title
-        sub="",                                # clear the sub-heading
-        cex=1)                                 # font size
-dev.off()
-
-png("HCA_variables.png",
-    bg="white",                                # background colour
-    res=300,                                   # image resolution (dpi)
-    units="in", width=8.3, height=5.8)         # image dimensions (inches)
-    plot(hca_variable,
-        hang=-1,                               # even-length ends
-        main="Cluster Dendrogram\nVariables",  # title of plot
-        xlab="",                               # x-axis title
-        sub="",                                # clear the sub-heading
-        cex=1)                                 # font size
-dev.off()
+# png("HCA_samples.png",
+#     bg="white",                                # background colour
+#     res=300,                                   # image resolution (dpi)
+#     units="in", width=8.3, height=5.8)         # image dimensions (inches)
+#     plot(hca_sample,
+#         labels=smpl_labels,                    # group labels
+#         hang=-1,                               # even-length ends
+#         main="Cluster Dendrogram\nSamples",    # title of plot
+#         xlab="",                               # x-axis title
+#         sub="",                                # clear the sub-heading
+#         cex=1)                                 # font size
+# dev.off()
+# 
+# png("HCA_variables.png",
+#     bg="white",                                # background colour
+#     res=300,                                   # image resolution (dpi)
+#     units="in", width=8.3, height=5.8)         # image dimensions (inches)
+#     plot(hca_variable,
+#         hang=-1,                               # even-length ends
+#         main="Cluster Dendrogram\nVariables",  # title of plot
+#         xlab="",                               # x-axis title
+#         sub="",                                # clear the sub-heading
+#         cex=1)                                 # font size
+# dev.off()
 #### end png #####
 
 
