@@ -99,33 +99,33 @@ boxplot(boxplot_data,
 
 
 ##### png #####
-pic_png<-function(filename,                    # name of output file
-    matrix,                                    # data matrix to use
-    title="",                                  # title of plot 
-    x_label="",                                # x-axis label
-    y_label="",                                # y-axis label
-    cex_val=1,                                 # font size
-    names=names(matrix)                        # default
-    )
-    {# Start png device with basic settings
-    png(filename,
-        bg="white",                            # background colour
-        res=300,                               # image resolution (dpi)
-        units="in", width=8.3, height=5.8)     # image dimensions (inches)
-    par(mgp=c(5,2,0),                          # axis margins 
-                                               # (title, labels, line)
-        mar=c(7,5,4,2),                        # plot margins (b,l,t,r)
-        las=1                                  # horizontal labels
-        )
-    # Draw the plot
-    boxplot(matrix, xlab=x_label, ylab=y_label, main=title, cex=cex_val)
-    # Turn off the device
-    dev.off()
-    }
-pic_png("boxplot_smpl1.png", t(boxplot_data), x_label="Sample\nGroup",
-    names=labels, title="Boxplot - Samples")
-pic_png("boxplot_var1.png", boxplot_data, x_label="Variable",
-    title="Boxplot - Variables")
+# pic_png<-function(filename,                    # name of output file
+#     matrix,                                    # data matrix to use
+#     title="",                                  # title of plot 
+#     x_label="",                                # x-axis label
+#     y_label="",                                # y-axis label
+#     cex_val=1,                                 # font size
+#     names=names(matrix)                        # default
+#     )
+#     {# Start png device with basic settings
+#     png(filename,
+#         bg="white",                            # background colour
+#         res=300,                               # image resolution (dpi)
+#         units="in", width=8.3, height=5.8)     # image dimensions (inches)
+#     par(mgp=c(5,2,0),                          # axis margins 
+#                                                # (title, labels, line)
+#         mar=c(7,5,4,2),                        # plot margins (b,l,t,r)
+#         las=1                                  # horizontal labels
+#         )
+#     # Draw the plot
+#     boxplot(matrix, xlab=x_label, ylab=y_label, main=title, cex=cex_val)
+#     # Turn off the device
+#     dev.off()
+#     }
+# pic_png("boxplot_smpl1.png", t(boxplot_data), x_label="Sample\nGroup",
+#     names=labels, title="Boxplot - Samples")
+# pic_png("boxplot_var1.png", boxplot_data, x_label="Variable",
+#     title="Boxplot - Variables")
 ##### end png #####
 
 

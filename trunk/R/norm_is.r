@@ -46,5 +46,3 @@ colnames(output) <- if
 # Generate the output matrix in .csv format
 #
 write.csv(output,"norm_data_IS.csv")
-
-
