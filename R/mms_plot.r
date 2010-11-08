@@ -37,7 +37,7 @@ rownames(mms) <- if
 # Prepare plot characteristics
 ### These have been selected to be useful for both normal vision and
 ### colourblind vision. The multiple redundancy (colour, line style, shape)
-### is of particular importance; communicating information without
+### is of particular importance, communicating information without
 ### using the names of colours.
 yrange<-range(mms)
 xrange<-c(1,length(mms$Mean))
@@ -51,14 +51,14 @@ linetype<-c(1:3)                    # solid, dashed, dotted
 #    Generate figure and output to the screen
 #
 x11()
+par(las=1)                          # y-axis labels horizontal
 plot(xrange, yrange,                # set min/max for x and y axes
     main="Mean, Median and Standard Deviation",
     type="n",                       # don't actually plot anything (yet)
     xlab="",                        # x-axis title
     ylab="",                        # y-axis title
     xaxt="n",                       # suppress the x-axis
-    lab=c(10,10,7),                 # number of tick marks on axes (see ?par)
-    las=1                           # y-axis labels horizontal
+    lab=c(10,10,7)                  # number of tick marks on axes (see ?par)
     )
     axis(side=1,                    # on the bottom
         labels=rownames(mms),       # use rownames as labels
@@ -93,7 +93,7 @@ plot(xrange, yrange,                # set min/max for x and y axes
 #     matrix,                                    # data matrix to use
 #     x_label="",                                # x-axis label
 #     y_label="",                                # y-axis label
-#     cex_val=1                                  # test size 
+#     cex_val=1                                  # font size 
 #     )
 #     {# Start jpg device with basic settings
 #     jpeg(filename,
@@ -103,7 +103,8 @@ plot(xrange, yrange,                # set min/max for x and y axes
 #         units="in", width=8.3, height=5.8)     # image dimensions (inches)
 #     par(mgp=c(5,2,0),                          # axis margins 
 #                                                # (title, labels, line)
-#         mar=c(5,4,4,2))                        # plot margins (b,l,t,r)
+#         mar=c(5,4,4,2),                        # plot margins (b,l,t,r)
+#         las=1)                                 # y-axis labels horizontal
 #     # Draw the plot
 #     plot(xrange, yrange,           # set min/max for x and y axes
 #         main="Mean, Median and Standard Deviation",
@@ -112,7 +113,6 @@ plot(xrange, yrange,                # set min/max for x and y axes
 #         ylab="",                   # y-axis title
 #         xaxt="n",                  # suppress the x-axis
 #         lab=c(10,10,7),            # number of tick marks on axes (see ?par)
-#         las=1                      # y-axis labels horizontal
 #         )
 #     axis(side=1,                   # on the bottom
 #         labels=rownames(matrix),   # use rownames as labels
@@ -149,7 +149,7 @@ plot(xrange, yrange,                # set min/max for x and y axes
 #     matrix,                                    # data matrix to use
 #     x_label="",                                # x-axis label
 #     y_label="",                                # y-axis label
-#     cex_val=1                                  # test size 
+#     cex_val=1                                  # font size 
 #     )
 #     {# Start png device with basic settings
 #     png(filename,
@@ -158,7 +158,8 @@ plot(xrange, yrange,                # set min/max for x and y axes
 #         units="in", width=8.3, height=5.8)     # image dimensions (inches)
 #     par(mgp=c(5,2,0),                          # axis margins 
 #                                                # (title, labels, line)
-#         mar=c(5,4,4,2))                        # plot margins (b,l,t,r)
+#         mar=c(5,4,4,2),                        # plot margins (b,l,t,r)
+#         las=1)                                 # y-axis labels horizontal
 #     # Draw the plot
 #     plot(xrange, yrange,           # set min/max for x and y axes
 #         main="Mean, Median and Standard Deviation",
@@ -167,7 +168,6 @@ plot(xrange, yrange,                # set min/max for x and y axes
 #         ylab="",                   # y-axis title
 #         xaxt="n",                  # suppress the x-axis
 #         lab=c(10,10,7),            # number of tick marks on axes (see ?par)
-#         las=1                      # y-axis labels horizontal
 #         )
 #     axis(side=1,                   # on the bottom
 #         labels=rownames(matrix),   # use rownames as labels
@@ -204,7 +204,7 @@ plot(xrange, yrange,                # set min/max for x and y axes
 #     matrix,                                    # data matrix to use
 #     x_label="",                                # x-axis label
 #     y_label="",                                # y-axis label
-#     cex_val=1                                  # test size 
+#     cex_val=1                                  # font size 
 #     )
 #     {# Start tiff device with basic settings
 #     tiff(filename,
@@ -215,7 +215,8 @@ plot(xrange, yrange,                # set min/max for x and y axes
 #                                                #  (one of none, lzw, zip)
 #     par(mgp=c(5,2,0),                          # axis margins 
 #                                                # (title, labels, line)
-#         mar=c(5,4,4,2))                        # plot margins (b,l,t,r)
+#         mar=c(5,4,4,2),                        # plot margins (b,l,t,r)
+#         las=1)                                 # y-axis labels horizontal
 #     # Draw the plot
 #     plot(xrange, yrange,           # set min/max for x and y axes
 #         main="Mean, Median and Standard Deviation",
@@ -224,7 +225,6 @@ plot(xrange, yrange,                # set min/max for x and y axes
 #         ylab="",                   # y-axis title
 #         xaxt="n",                  # suppress the x-axis
 #         lab=c(10,10,7),            # number of tick marks on axes (see ?par)
-#         las=1                      # y-axis labels horizontal
 #         )
 #     axis(side=1,                   # on the bottom
 #         labels=rownames(mms),      # use rownames as labels

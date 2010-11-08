@@ -13,7 +13,7 @@
 #    Load the data matrix
 #
 # Read in the .csv file
-data<-read.csv("input.csv", sep=",", row.names=1, header=TRUE)
+data<-read.csv("input1.csv", sep=",", row.names=1, header=TRUE)
 # Get groups information
 groups<-data[,1]
 # Get levels for groups
