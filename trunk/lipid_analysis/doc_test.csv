@@ -1,0 +1,965 @@
+"Sample",,,,,,,"CE(24:6) Results",,"PG(15:0) Results",,"PG(16:0) Results",,"CE(25:4) Results",,"PG(17:0) Results",,"CE(21:0) Results",,"CE(17:0)/IS Results",,"PG(34:1)/IS Results",
+,,"Name","Data File","Type","Level","Acq. Date-Time","RT","Area","RT","Area","RT","Area","RT","Area","RT","Area","RT","Area","RT","Area","RT","Area"
+"CE(19:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(21:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(24:6): Calibration response not found for compound CE(24:6)
+CE(25:4): Integrator did not find any peaks
+PG(25:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:1): Integrator did not find any peaks
+PG(30:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Calibration response not found for compound PG(30:3)
+PG(31:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:1): Integrator did not find any peaks
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator did not find any peaks
+PG(35:2): Calibration response not found for compound PG(35:2)
+PG(36:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(17:0): Integrator found the following problem(s) with the peak at RT = 7.664: Spiky
+CE(17:0): Retention time = 7.664 is outside the allowed range [8.419, 9.305]
+CE(17:1): Retention time = 5.583 is outside the allowed range [8.314, 9.189]
+CE(19:1): Retention time = 4.738 is outside the allowed range [8.429, 9.316]
+CE(19:2): Retention time = 7.300 is outside the allowed range [8.394, 9.278]
+CE(21:0): Integrator found the following problem(s) with the peak at RT = 7.681: MergeProblem
+CE(21:0): Retention time = 7.681 is outside the allowed range [8.377, 9.259]
+CE(23:6): Retention time = 6.021 is outside the allowed range [8.800, 9.726]
+Cholesterol: Retention time = 6.615 is outside the allowed range [4.750, 5.250]
+PG(15:0): Retention time = 7.129 is outside the allowed range [7.238, 8.000]
+PG(16:0): Retention time = 7.247 is outside the allowed range [7.462, 8.247]
+PG(17:0): Integrator found the following problem(s) with the peak at RT = 7.239: MergeProblem
+PG(17:0): Retention time = 7.239 is outside the allowed range [7.576, 8.374]
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 7.400: MergeProblem
+PG(18:0): Retention time = 7.400 is outside the allowed range [7.733, 8.547]
+PG(19:0): Integrator found the following problem(s) with the peak at RT = 7.424: InterferenceProblem
+PG(19:0): Retention time = 7.424 is outside the allowed range [7.846, 8.672]
+PG(20:0): Integrator found the following problem(s) with the peak at RT = 7.479: InterferenceProblem
+PG(20:0): Retention time = 7.479 is outside the allowed range [7.955, 8.793]
+PG(21:6): Retention time = 7.237 is outside the allowed range [7.971, 8.810]
+PG(23:0): Retention time = 7.675 is outside the allowed range [8.253, 9.121]
+PG(23:6): Retention time = 8.040 is outside the allowed range [8.149, 9.007]
+PG(24:0): Integrator found the following problem(s) with the peak at RT = 7.771: MergeProblem
+PG(24:0): Retention time = 7.771 is outside the allowed range [8.353, 9.232]
+PG(26:1): Retention time = 7.693 is outside the allowed range [8.356, 9.235]
+PG(27:1): Retention time = 5.445 is outside the allowed range [8.466, 9.357]
+PG(28:0): Retention time = 6.709 is outside the allowed range [8.638, 9.547]
+PG(28:1): Retention time = 8.281 is outside the allowed range [8.519, 9.416]
+PG(28:2): Retention time = 7.770 is outside the allowed range [8.395, 9.279]
+PG(29:6): Retention time = 7.009 is outside the allowed range [8.651, 9.561]
+PG(30:1): Retention time = 6.537 is outside the allowed range [8.656, 9.567]
+PG(30:2): Retention time = 5.436 is outside the allowed range [8.578, 9.480]
+PG(30:3): Retention time = 6.279 is outside the allowed range [8.450, 9.340]
+PG(31:0): Retention time = 7.954 is outside the allowed range [8.832, 9.761]
+PG(32:0): Retention time = 6.350 is outside the allowed range [8.885, 9.820]
+PG(33:0): Retention time = 6.665 is outside the allowed range [8.928, 9.868]
+PG(33:1): Integrator found the following problem(s) with the peak at RT = 7.792: Spiky
+PG(33:1): Retention time = 7.792 is outside the allowed range [8.833, 9.763]
+PG(34:1)/IS: Integrator found the following problem(s) with the peak at RT = 8.585: WidthProblem
+PG(34:1)/IS: Retention time = 8.585 is outside the allowed range [8.886, 9.821]
+PG(34:2): Retention time = 6.277 is outside the allowed range [8.871, 9.805]
+PG(35:0): Retention time = 2.248 is outside the allowed range [4.750, 5.250]
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 9.690: Spiky
+PG(36:0): Retention time = 9.690 is outside the allowed range [7.637, 8.440]
+PG(36:3): Retention time = 7.749 is outside the allowed range [8.770, 9.693]
+PG(36:4): Integrator found the following problem(s) with the peak at RT = 8.585: WidthProblem
+PG(36:4): Retention time = 8.585 is outside the allowed range [8.748, 9.669]","RPMI_1","RPMI_1_PG_CE.d","Sample",,10/12/10 04:24 PM,6.33,696.81,7.13,247.29,7.25,544.42,,,7.24,123.02,7.68,31.67,7.66,36.97,8.59,3.74
+"CE(19:2): Integrator did not find any peaks
+CE(19:3): Integrator did not find any peaks
+Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(27:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(28:2): Integrator did not find any peaks
+PG(29:0): Integrator did not find any peaks
+PG(29:1): Integrator did not find any peaks
+PG(29:6): Integrator did not find any peaks
+PG(30:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:0): Integrator did not find any peaks
+PG(31:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:3): Integrator did not find any peaks
+PG(33:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:2): Integrator did not find any peaks
+PG(33:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(34:1)/IS: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(34:2): Integrator did not find any peaks
+PG(36:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(17:0): Retention time = 7.717 is outside the allowed range [8.419, 9.305]
+CE(17:1): Retention time = 7.424 is outside the allowed range [8.314, 9.189]
+CE(19:1): Integrator found the following problem(s) with the peak at RT = 6.418: Spiky
+CE(19:1): Retention time = 6.418 is outside the allowed range [8.429, 9.316]
+CE(21:0): Retention time = 7.657 is outside the allowed range [8.377, 9.259]
+CE(21:4): Retention time = 6.005 is outside the allowed range [8.890, 9.825]
+CE(23:6): Retention time = 6.076 is outside the allowed range [8.800, 9.726]
+CE(25:4): Retention time = 7.200 is outside the allowed range [7.471, 8.258]
+PG(15:0): Retention time = 7.094 is outside the allowed range [7.238, 8.000]
+PG(16:0): Integrator found the following problem(s) with the peak at RT = 7.251: MergeProblem
+PG(16:0): Retention time = 7.251 is outside the allowed range [7.462, 8.247]
+PG(17:0): Retention time = 7.192 is outside the allowed range [7.576, 8.374]
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 7.409: MergeProblem
+PG(18:0): Retention time = 7.409 is outside the allowed range [7.733, 8.547]
+PG(19:0): Integrator found the following problem(s) with the peak at RT = 7.481: WidthProblem, MergeProblem
+PG(19:0): Retention time = 7.481 is outside the allowed range [7.846, 8.672]
+PG(20:0): Retention time = 7.468 is outside the allowed range [7.955, 8.793]
+PG(21:6): Retention time = 7.569 is outside the allowed range [7.971, 8.810]
+PG(23:0): Retention time = 7.660 is outside the allowed range [8.253, 9.121]
+PG(24:0): Integrator found the following problem(s) with the peak at RT = 7.675: MergeProblem
+PG(24:0): Retention time = 7.675 is outside the allowed range [8.353, 9.232]
+PG(26:0): Retention time = 7.761 is outside the allowed range [8.498, 9.393]
+PG(26:1): Retention time = 7.917 is outside the allowed range [8.356, 9.235]
+PG(27:0): Retention time = 7.860 is outside the allowed range [8.588, 9.491]
+PG(30:1): Retention time = 7.137 is outside the allowed range [8.656, 9.567]
+PG(30:2): Integrator found the following problem(s) with the peak at RT = 6.789: Spiky
+PG(30:2): Retention time = 6.789 is outside the allowed range [8.578, 9.480]
+PG(32:0): Retention time = 6.877 is outside the allowed range [8.885, 9.820]
+PG(33:0): Integrator found the following problem(s) with the peak at RT = 6.431: WidthProblem
+PG(33:0): Retention time = 6.431 is outside the allowed range [8.928, 9.868]
+PG(35:0): Retention time = 7.150 is outside the allowed range [4.750, 5.250]
+PG(35:2): Retention time = 8.576 is outside the allowed range [8.828, 9.757]
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 9.593: MergeProblem, Spiky
+PG(36:0): Retention time = 9.593 is outside the allowed range [7.637, 8.440]
+PG(36:2): Integrator found the following problem(s) with the peak at RT = 5.781: Spiky
+PG(36:2): Retention time = 5.781 is outside the allowed range [8.870, 9.804]
+PG(36:4): Retention time = 8.616 is outside the allowed range [8.748, 9.669]","RPMI_1","RPMI_1_PG_CE_R.d","Sample",,10/12/10 04:38 PM,6.33,821.09,7.09,212.56,7.25,605.93,7.2,6.96,7.19,105.68,7.66,29.4,7.72,33.71,,
+"CE(19:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(19:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(27:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:0): Integrator did not find any peaks
+PG(30:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator did not find any peaks
+PG(31:1): Integrator did not find any peaks
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:0): Integrator did not find any peaks
+PG(33:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator did not find any peaks
+PG(34:1)/IS: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(17:0): Integrator found the following problem(s) with the peak at RT = 7.722: MergeProblem
+CE(17:0): Retention time = 7.722 is outside the allowed range [8.419, 9.305]
+CE(17:1): Retention time = 7.433 is outside the allowed range [8.314, 9.189]
+CE(19:1): Retention time = 5.991 is outside the allowed range [8.429, 9.316]
+CE(21:0): Retention time = 7.745 is outside the allowed range [8.377, 9.259]
+CE(21:4): Retention time = 5.890 is outside the allowed range [8.890, 9.825]
+CE(23:6): Retention time = 6.034 is outside the allowed range [8.800, 9.726]
+CE(25:4): Retention time = 6.624 is outside the allowed range [7.471, 8.258]
+Cholesterol: Retention time = 5.675 is outside the allowed range [4.750, 5.250]
+PG(15:0): Retention time = 7.151 is outside the allowed range [7.238, 8.000]
+PG(16:0): Integrator found the following problem(s) with the peak at RT = 7.240: MergeProblem
+PG(16:0): Retention time = 7.240 is outside the allowed range [7.462, 8.247]
+PG(17:0): Integrator found the following problem(s) with the peak at RT = 7.213: MergeProblem
+PG(17:0): Retention time = 7.213 is outside the allowed range [7.576, 8.374]
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 7.408: MergeProblem
+PG(18:0): Retention time = 7.408 is outside the allowed range [7.733, 8.547]
+PG(19:0): Retention time = 7.412 is outside the allowed range [7.846, 8.672]
+PG(20:0): Retention time = 7.481 is outside the allowed range [7.955, 8.793]
+PG(21:6): Retention time = 7.475 is outside the allowed range [7.971, 8.810]
+PG(23:0): Integrator found the following problem(s) with the peak at RT = 7.629: MergeProblem
+PG(23:0): Retention time = 7.629 is outside the allowed range [8.253, 9.121]
+PG(23:6): Integrator found the following problem(s) with the peak at RT = 8.401: MergeProblem
+PG(24:0): Retention time = 7.659 is outside the allowed range [8.353, 9.232]
+PG(25:0): Retention time = 7.528 is outside the allowed range [8.409, 9.295]
+PG(26:0): Retention time = 7.758 is outside the allowed range [8.498, 9.393]
+PG(26:1): Retention time = 7.693 is outside the allowed range [8.356, 9.235]
+PG(27:0): Retention time = 8.402 is outside the allowed range [8.588, 9.491]
+PG(28:0): Integrator found the following problem(s) with the peak at RT = 7.837: Spiky
+PG(28:0): Retention time = 7.837 is outside the allowed range [8.638, 9.547]
+PG(28:1): Retention time = 6.530 is outside the allowed range [8.519, 9.416]
+PG(29:6): Retention time = 9.844 is outside the allowed range [8.651, 9.561]
+PG(30:1): Retention time = 7.469 is outside the allowed range [8.656, 9.567]
+PG(31:0): Retention time = 7.500 is outside the allowed range [8.832, 9.761]
+PG(32:0): Retention time = 7.572 is outside the allowed range [8.885, 9.820]
+PG(33:2): Retention time = 7.102 is outside the allowed range [8.790, 9.715]
+PG(34:2): Retention time = 6.332 is outside the allowed range [8.871, 9.805]
+PG(35:0): Retention time = 7.652 is outside the allowed range [4.750, 5.250]
+PG(35:2): Integrator found the following problem(s) with the peak at RT = 9.176: WidthProblem
+PG(36:0): Retention time = 7.403 is outside the allowed range [7.637, 8.440]
+PG(36:2): Retention time = 7.636 is outside the allowed range [8.870, 9.804]
+PG(36:3): Retention time = 6.939 is outside the allowed range [8.770, 9.693]
+PG(36:4): Retention time = 8.625 is outside the allowed range [8.748, 9.669]","RPMI_2","RPMI_2_PG_CE.d","Sample",,10/12/10 04:53 PM,6.34,107.34,7.15,263.23,7.24,864.84,6.62,6.3,7.21,130.69,7.75,40.33,7.72,38.29,,
+"CE(19:3): Integrator did not find any peaks
+CE(21:4): Integrator did not find any peaks
+CE(25:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(25:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(28:2): Integrator did not find any peaks
+PG(29:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:0): Integrator did not find any peaks
+PG(31:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(34:1)/IS: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(36:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(17:0): Integrator found the following problem(s) with the peak at RT = 7.731: InterferenceProblem
+CE(17:0): Retention time = 7.731 is outside the allowed range [8.419, 9.305]
+CE(17:1): Retention time = 5.763 is outside the allowed range [8.314, 9.189]
+CE(19:1): Retention time = 7.714 is outside the allowed range [8.429, 9.316]
+CE(19:2): Integrator found the following problem(s) with the peak at RT = 8.046: WidthProblem
+CE(19:2): Retention time = 8.046 is outside the allowed range [8.394, 9.278]
+CE(21:0): Retention time = 7.698 is outside the allowed range [8.377, 9.259]
+CE(23:6): Retention time = 5.314 is outside the allowed range [8.800, 9.726]
+CE(24:6): Retention time = 6.368 is outside the allowed range [5.735, 6.339]
+PG(15:0): Integrator found the following problem(s) with the peak at RT = 7.086: MergeProblem
+PG(15:0): Retention time = 7.086 is outside the allowed range [7.238, 8.000]
+PG(16:0): Retention time = 7.247 is outside the allowed range [7.462, 8.247]
+PG(17:0): Retention time = 7.208 is outside the allowed range [7.576, 8.374]
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 9.171: Spiky
+PG(18:0): Retention time = 9.171 is outside the allowed range [7.733, 8.547]
+PG(19:0): Retention time = 7.434 is outside the allowed range [7.846, 8.672]
+PG(20:0): Retention time = 7.515 is outside the allowed range [7.955, 8.793]
+PG(21:6): Integrator found the following problem(s) with the peak at RT = 7.700: Spiky
+PG(21:6): Retention time = 7.700 is outside the allowed range [7.971, 8.810]
+PG(23:6): Integrator found the following problem(s) with the peak at RT = 9.005: Spiky
+PG(24:0): Integrator found the following problem(s) with the peak at RT = 7.293: Spiky
+PG(24:0): Retention time = 7.293 is outside the allowed range [8.353, 9.232]
+PG(26:0): Integrator found the following problem(s) with the peak at RT = 7.723: MergeProblem
+PG(26:0): Retention time = 7.723 is outside the allowed range [8.498, 9.393]
+PG(26:1): Retention time = 7.643 is outside the allowed range [8.356, 9.235]
+PG(27:0): Retention time = 7.793 is outside the allowed range [8.588, 9.491]
+PG(28:0): Integrator found the following problem(s) with the peak at RT = 7.916: MergeProblem
+PG(28:0): Retention time = 7.916 is outside the allowed range [8.638, 9.547]
+PG(28:1): Integrator found the following problem(s) with the peak at RT = 7.988: WidthProblem, SymmetryProblem, Spiky, SeriousProblem
+PG(28:1): Retention time = 7.988 is outside the allowed range [8.519, 9.416]
+PG(29:0): Integrator found the following problem(s) with the peak at RT = 8.506: Spiky
+PG(29:0): Retention time = 8.506 is outside the allowed range [8.744, 9.665]
+PG(30:1): Retention time = 8.498 is outside the allowed range [8.656, 9.567]
+PG(30:2): Integrator found the following problem(s) with the peak at RT = 7.947: WidthProblem
+PG(30:2): Retention time = 7.947 is outside the allowed range [8.578, 9.480]
+PG(30:3): Integrator found the following problem(s) with the peak at RT = 9.478: WidthProblem
+PG(30:3): Retention time = 9.478 is outside the allowed range [8.450, 9.340]
+PG(31:1): Retention time = 8.238 is outside the allowed range [8.721, 9.639]
+PG(32:0): Integrator found the following problem(s) with the peak at RT = 6.318: WidthProblem, Spiky
+PG(32:0): Retention time = 6.318 is outside the allowed range [8.885, 9.820]
+PG(32:3): Retention time = 9.096 is outside the allowed range [4.750, 5.250]
+PG(33:1): Retention time = 7.678 is outside the allowed range [8.833, 9.763]
+PG(33:6): Retention time = 8.707 is outside the allowed range [8.868, 9.801]
+PG(34:2): Retention time = 6.803 is outside the allowed range [8.871, 9.805]
+PG(35:0): Retention time = 8.948 is outside the allowed range [4.750, 5.250]
+PG(35:2): Integrator found the following problem(s) with the peak at RT = 9.443: Spiky
+PG(36:0): Retention time = 7.325 is outside the allowed range [7.637, 8.440]
+PG(36:2): Retention time = 8.553 is outside the allowed range [8.870, 9.804]
+PG(36:3): Integrator found the following problem(s) with the peak at RT = 5.425: Spiky
+PG(36:3): Retention time = 5.425 is outside the allowed range [8.770, 9.693]","RPMI_2","RPMI_2_PG_CE_R.d","Sample",,10/12/10 05:08 PM,6.37,100.84,7.09,244.59,7.25,960.84,,,7.21,102.11,7.7,42.61,7.73,19.54,,
+"CE(17:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(19:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(19:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(25:0): Integrator did not find any peaks
+PG(27:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:0): Integrator did not find any peaks
+PG(30:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:1): Integrator did not find any peaks
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:1): Integrator did not find any peaks
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:0): Integrator did not find any peaks
+PG(33:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator did not find any peaks
+PG(34:2): Integrator did not find any peaks
+PG(36:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(17:0): Retention time = 7.662 is outside the allowed range [8.419, 9.305]
+CE(19:1): Retention time = 5.989 is outside the allowed range [8.429, 9.316]
+CE(21:0): Integrator found the following problem(s) with the peak at RT = 7.675: InterferenceProblem
+CE(21:0): Retention time = 7.675 is outside the allowed range [8.377, 9.259]
+CE(21:4): Integrator found the following problem(s) with the peak at RT = 6.076: Spiky
+CE(21:4): Retention time = 6.076 is outside the allowed range [8.890, 9.825]
+CE(23:6): Retention time = 7.266 is outside the allowed range [8.800, 9.726]
+CE(24:6): Retention time = 6.353 is outside the allowed range [5.735, 6.339]
+CE(25:4): Integrator found the following problem(s) with the peak at RT = 7.233: WidthProblem
+CE(25:4): Retention time = 7.233 is outside the allowed range [7.471, 8.258]
+Cholesterol: Retention time = 2.840 is outside the allowed range [4.750, 5.250]
+PG(15:0): Integrator found the following problem(s) with the peak at RT = 7.108: MergeProblem
+PG(15:0): Retention time = 7.108 is outside the allowed range [7.238, 8.000]
+PG(16:0): Integrator found the following problem(s) with the peak at RT = 8.879: MergeProblem, Spiky
+PG(16:0): Retention time = 8.879 is outside the allowed range [7.462, 8.247]
+PG(17:0): Retention time = 7.249 is outside the allowed range [7.576, 8.374]
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 9.540: Spiky
+PG(18:0): Retention time = 9.540 is outside the allowed range [7.733, 8.547]
+PG(19:0): Integrator found the following problem(s) with the peak at RT = 7.462: Spiky
+PG(19:0): Retention time = 7.462 is outside the allowed range [7.846, 8.672]
+PG(20:0): Integrator found the following problem(s) with the peak at RT = 7.530: InterferenceProblem
+PG(20:0): Retention time = 7.530 is outside the allowed range [7.955, 8.793]
+PG(21:6): Retention time = 8.877 is outside the allowed range [7.971, 8.810]
+PG(23:0): Retention time = 6.387 is outside the allowed range [8.253, 9.121]
+PG(23:6): Retention time = 9.635 is outside the allowed range [8.149, 9.007]
+PG(24:0): Integrator found the following problem(s) with the peak at RT = 7.625: Spiky
+PG(24:0): Retention time = 7.625 is outside the allowed range [8.353, 9.232]
+PG(26:0): Retention time = 7.733 is outside the allowed range [8.498, 9.393]
+PG(26:1): Integrator found the following problem(s) with the peak at RT = 7.649: WidthProblem
+PG(26:1): Retention time = 7.649 is outside the allowed range [8.356, 9.235]
+PG(27:0): Retention time = 5.778 is outside the allowed range [8.588, 9.491]
+PG(28:0): Retention time = 7.454 is outside the allowed range [8.638, 9.547]
+PG(28:1): Integrator found the following problem(s) with the peak at RT = 7.948: WidthProblem
+PG(28:1): Retention time = 7.948 is outside the allowed range [8.519, 9.416]
+PG(28:2): Integrator found the following problem(s) with the peak at RT = 9.512: Spiky
+PG(28:2): Retention time = 9.512 is outside the allowed range [8.395, 9.279]
+PG(29:0): Integrator found the following problem(s) with the peak at RT = 7.778: WidthProblem
+PG(29:0): Retention time = 7.778 is outside the allowed range [8.744, 9.665]
+PG(30:1): Integrator found the following problem(s) with the peak at RT = 6.886: Spiky
+PG(30:1): Retention time = 6.886 is outside the allowed range [8.656, 9.567]
+PG(30:3): Retention time = 7.170 is outside the allowed range [8.450, 9.340]
+PG(31:0): Retention time = 5.824 is outside the allowed range [8.832, 9.761]
+PG(34:1)/IS: Integrator found the following problem(s) with the peak at RT = 9.832: WidthProblem
+PG(34:1)/IS: Retention time = 9.832 is outside the allowed range [8.886, 9.821]
+PG(35:0): Integrator found the following problem(s) with the peak at RT = 8.252: Spiky
+PG(35:0): Retention time = 8.252 is outside the allowed range [4.750, 5.250]
+PG(35:2): Retention time = 7.393 is outside the allowed range [8.828, 9.757]
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 7.300: MergeProblem
+PG(36:0): Retention time = 7.300 is outside the allowed range [7.637, 8.440]
+PG(36:4): Integrator found the following problem(s) with the peak at RT = 7.960: WidthProblem
+PG(36:4): Retention time = 7.960 is outside the allowed range [8.748, 9.669]","DMEM_1","DMEM_1_PG_CE.d","Sample",,10/12/10 05:22 PM,6.35,1215.44,7.11,116.72,8.88,674.32,7.23,4.05,7.25,101,7.68,23.6,7.66,14.62,9.83,4.01
+"CE(17:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(19:2): Integrator did not find any peaks
+CE(19:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(24:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(25:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(27:0): Integrator did not find any peaks
+PG(27:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(28:1): Integrator did not find any peaks
+PG(28:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:0): Integrator did not find any peaks
+PG(29:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:1): Integrator did not find any peaks
+PG(33:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(34:1)/IS: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(36:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(36:4): Integrator did not find any peaks
+","CE(17:0): Integrator found the following problem(s) with the peak at RT = 6.678: Spiky
+CE(17:0): Retention time = 6.678 is outside the allowed range [8.419, 9.305]
+CE(19:1): Retention time = 5.974 is outside the allowed range [8.429, 9.316]
+CE(21:0): Retention time = 7.666 is outside the allowed range [8.377, 9.259]
+CE(21:4): Retention time = 8.077 is outside the allowed range [8.890, 9.825]
+CE(23:6): Integrator found the following problem(s) with the peak at RT = 6.060: MergeProblem
+CE(23:6): Retention time = 6.060 is outside the allowed range [8.800, 9.726]
+CE(24:6): Retention time = 6.356 is outside the allowed range [5.735, 6.339]
+CE(25:4): Integrator found the following problem(s) with the peak at RT = 7.532: Spiky
+PG(15:0): Integrator found the following problem(s) with the peak at RT = 7.135: InterferenceProblem
+PG(15:0): Retention time = 7.135 is outside the allowed range [7.238, 8.000]
+PG(16:0): Retention time = 7.239 is outside the allowed range [7.462, 8.247]
+PG(17:0): Integrator found the following problem(s) with the peak at RT = 7.236: Spiky
+PG(17:0): Retention time = 7.236 is outside the allowed range [7.576, 8.374]
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 9.029: MergeProblem, Spiky
+PG(18:0): Retention time = 9.029 is outside the allowed range [7.733, 8.547]
+PG(19:0): Retention time = 6.986 is outside the allowed range [7.846, 8.672]
+PG(20:0): Integrator found the following problem(s) with the peak at RT = 7.481: InterferenceProblem
+PG(20:0): Retention time = 7.481 is outside the allowed range [7.955, 8.793]
+PG(21:6): Retention time = 7.318 is outside the allowed range [7.971, 8.810]
+PG(23:0): Retention time = 6.722 is outside the allowed range [8.253, 9.121]
+PG(26:1): Integrator found the following problem(s) with the peak at RT = 6.394: Spiky
+PG(26:1): Retention time = 6.394 is outside the allowed range [8.356, 9.235]
+PG(28:0): Retention time = 6.968 is outside the allowed range [8.638, 9.547]
+PG(30:3): Retention time = 7.258 is outside the allowed range [8.450, 9.340]
+PG(31:0): Integrator found the following problem(s) with the peak at RT = 7.525: Spiky
+PG(31:0): Retention time = 7.525 is outside the allowed range [8.832, 9.761]
+PG(32:1): Integrator found the following problem(s) with the peak at RT = 7.459: Spiky
+PG(32:1): Retention time = 7.459 is outside the allowed range [8.782, 9.707]
+PG(32:3): Retention time = 6.958 is outside the allowed range [4.750, 5.250]
+PG(35:0): Retention time = 1.673 is outside the allowed range [4.750, 5.250]
+PG(35:2): Retention time = 8.308 is outside the allowed range [8.828, 9.757]
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 7.354: MergeProblem
+PG(36:0): Retention time = 7.354 is outside the allowed range [7.637, 8.440]
+PG(36:2): Retention time = 6.088 is outside the allowed range [8.870, 9.804]","DMEM_1","DMEM_1_PG_CE_R.d","Sample",,10/12/10 05:37 PM,6.36,1060.77,7.14,139.31,7.24,447.21,7.53,8.3,7.24,81.94,7.67,57.46,6.68,12.34,,
+"CE(17:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(19:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(19:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(21:4): Integrator did not find any peaks
+CE(25:4): Integrator did not find any peaks
+Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(25:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(27:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(27:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(28:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:1): Integrator did not find any peaks
+PG(29:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:0): Integrator did not find any peaks
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(34:1)/IS: Integrator did not find any peaks
+PG(36:2): Integrator did not find any peaks
+PG(36:3): Integrator did not find any peaks
+PG(36:4): Integrator did not find any peaks
+","CE(17:0): Retention time = 7.765 is outside the allowed range [8.419, 9.305]
+CE(19:1): Retention time = 6.210 is outside the allowed range [8.429, 9.316]
+CE(21:0): Integrator found the following problem(s) with the peak at RT = 7.696: MergeProblem
+CE(21:0): Retention time = 7.696 is outside the allowed range [8.377, 9.259]
+CE(23:6): Retention time = 6.367 is outside the allowed range [8.800, 9.726]
+PG(15:0): Retention time = 7.200 is outside the allowed range [7.238, 8.000]
+PG(16:0): Retention time = 7.239 is outside the allowed range [7.462, 8.247]
+PG(17:0): Integrator found the following problem(s) with the peak at RT = 7.219: MergeProblem
+PG(17:0): Retention time = 7.219 is outside the allowed range [7.576, 8.374]
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 9.848: SymmetryProblem, Spiky
+PG(18:0): Retention time = 9.848 is outside the allowed range [7.733, 8.547]
+PG(19:0): Integrator found the following problem(s) with the peak at RT = 7.416: Spiky
+PG(19:0): Retention time = 7.416 is outside the allowed range [7.846, 8.672]
+PG(20:0): Retention time = 7.500 is outside the allowed range [7.955, 8.793]
+PG(21:6): Retention time = 9.490 is outside the allowed range [7.971, 8.810]
+PG(23:0): Retention time = 9.448 is outside the allowed range [8.253, 9.121]
+PG(23:6): Retention time = 9.286 is outside the allowed range [8.149, 9.007]
+PG(24:0): Integrator found the following problem(s) with the peak at RT = 7.683: MergeProblem
+PG(24:0): Retention time = 7.683 is outside the allowed range [8.353, 9.232]
+PG(26:0): Retention time = 8.450 is outside the allowed range [8.498, 9.393]
+PG(26:1): Integrator found the following problem(s) with the peak at RT = 7.741: Spiky
+PG(26:1): Retention time = 7.741 is outside the allowed range [8.356, 9.235]
+PG(28:1): Retention time = 7.754 is outside the allowed range [8.519, 9.416]
+PG(28:2): Integrator found the following problem(s) with the peak at RT = 5.129: Spiky
+PG(28:2): Retention time = 5.129 is outside the allowed range [8.395, 9.279]
+PG(29:0): Retention time = 6.806 is outside the allowed range [8.744, 9.665]
+PG(30:0): Retention time = 6.189 is outside the allowed range [8.765, 9.688]
+PG(31:1): Retention time = 8.497 is outside the allowed range [8.721, 9.639]
+PG(32:0): Retention time = 7.671 is outside the allowed range [8.885, 9.820]
+PG(32:3): Retention time = 6.982 is outside the allowed range [4.750, 5.250]
+PG(33:0): Integrator found the following problem(s) with the peak at RT = 6.438: WidthProblem, Spiky
+PG(33:0): Retention time = 6.438 is outside the allowed range [8.928, 9.868]
+PG(34:2): Retention time = 8.755 is outside the allowed range [8.871, 9.805]
+PG(35:0): Integrator found the following problem(s) with the peak at RT = 6.656: Spiky
+PG(35:0): Retention time = 6.656 is outside the allowed range [4.750, 5.250]
+PG(35:2): Retention time = 5.466 is outside the allowed range [8.828, 9.757]
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 7.313: MergeProblem
+PG(36:0): Retention time = 7.313 is outside the allowed range [7.637, 8.440]","DMEM_2","DMEM_2_PG_CE.d","Sample",,10/12/10 05:52 PM,6.32,823.71,7.2,168.99,7.24,435.14,,,7.22,118.04,7.7,34.35,7.77,16.62,,
+"CE(17:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(19:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(25:4): Integrator did not find any peaks
+Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(25:0): Integrator did not find any peaks
+PG(27:1): Integrator did not find any peaks
+PG(29:1): Integrator did not find any peaks
+PG(30:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator did not find any peaks
+PG(31:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:6): Integrator did not find any peaks
+PG(32:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:0): Integrator did not find any peaks
+PG(33:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(34:1)/IS: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(36:3): Integrator did not find any peaks
+","CE(19:1): Integrator found the following problem(s) with the peak at RT = 6.025: MergeProblem
+CE(19:1): Retention time = 6.025 is outside the allowed range [8.429, 9.316]
+CE(19:2): Integrator found the following problem(s) with the peak at RT = 5.932: Spiky
+CE(19:2): Retention time = 5.932 is outside the allowed range [8.394, 9.278]
+CE(21:0): Retention time = 7.682 is outside the allowed range [8.377, 9.259]
+CE(21:4): Retention time = 6.660 is outside the allowed range [8.890, 9.825]
+CE(23:6): Retention time = 6.018 is outside the allowed range [8.800, 9.726]
+CE(24:6): Retention time = 6.345 is outside the allowed range [5.735, 6.339]
+PG(15:0): Integrator found the following problem(s) with the peak at RT = 7.102: MergeProblem
+PG(15:0): Retention time = 7.102 is outside the allowed range [7.238, 8.000]
+PG(16:0): Integrator found the following problem(s) with the peak at RT = 9.715: Spiky
+PG(16:0): Retention time = 9.715 is outside the allowed range [7.462, 8.247]
+PG(17:0): Integrator found the following problem(s) with the peak at RT = 7.224: MergeProblem
+PG(17:0): Retention time = 7.224 is outside the allowed range [7.576, 8.374]
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 7.381: MergeProblem
+PG(18:0): Retention time = 7.381 is outside the allowed range [7.733, 8.547]
+PG(19:0): Integrator found the following problem(s) with the peak at RT = 7.403: Spiky
+PG(19:0): Retention time = 7.403 is outside the allowed range [7.846, 8.672]
+PG(20:0): Retention time = 7.546 is outside the allowed range [7.955, 8.793]
+PG(21:6): Integrator found the following problem(s) with the peak at RT = 6.953: WidthProblem
+PG(21:6): Retention time = 6.953 is outside the allowed range [7.971, 8.810]
+PG(23:0): Integrator found the following problem(s) with the peak at RT = 8.614: Spiky
+PG(23:6): Retention time = 5.480 is outside the allowed range [8.149, 9.007]
+PG(24:0): Retention time = 9.444 is outside the allowed range [8.353, 9.232]
+PG(26:0): Retention time = 7.762 is outside the allowed range [8.498, 9.393]
+PG(26:1): Retention time = 6.404 is outside the allowed range [8.356, 9.235]
+PG(27:0): Integrator found the following problem(s) with the peak at RT = 8.953: Spiky
+PG(28:0): Retention time = 7.163 is outside the allowed range [8.638, 9.547]
+PG(28:1): Retention time = 9.536 is outside the allowed range [8.519, 9.416]
+PG(28:2): Integrator found the following problem(s) with the peak at RT = 6.020: WidthProblem, Spiky
+PG(28:2): Retention time = 6.020 is outside the allowed range [8.395, 9.279]
+PG(29:0): Retention time = 8.596 is outside the allowed range [8.744, 9.665]
+PG(29:6): Retention time = 6.887 is outside the allowed range [8.651, 9.561]
+PG(30:1): Retention time = 5.468 is outside the allowed range [8.656, 9.567]
+PG(31:1): Retention time = 6.342 is outside the allowed range [8.721, 9.639]
+PG(32:0): Integrator found the following problem(s) with the peak at RT = 7.281: Spiky
+PG(32:0): Retention time = 7.281 is outside the allowed range [8.885, 9.820]
+PG(33:2): Retention time = 7.808 is outside the allowed range [8.790, 9.715]
+PG(34:2): Retention time = 8.543 is outside the allowed range [8.871, 9.805]
+PG(36:0): Retention time = 7.373 is outside the allowed range [7.637, 8.440]
+PG(36:4): Retention time = 6.859 is outside the allowed range [8.748, 9.669]","DMEM_2","DMEM_2_PG_CE_R.d","Sample",,10/12/10 06:06 PM,6.35,639.46,7.1,133.1,9.72,694.24,,,7.22,47.01,7.68,72.54,8.79,13.6,,
+,"CE(23:6): Integrator found the following problem(s) with the peak at RT = 8.118: WidthProblem, SeriousProblem
+CE(23:6): Retention time = 8.118 is outside the allowed range [8.800, 9.726]
+PG(15:0): Integrator found the following problem(s) with the peak at RT = 7.559: MergeProblem
+PG(16:0): Integrator found the following problem(s) with the peak at RT = 7.864: MergeProblem
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 10.809: SymmetryProblem, InterferenceProblem, Spiky
+PG(18:0): Retention time = 10.809 is outside the allowed range [7.733, 8.547]
+PG(20:0): Integrator found the following problem(s) with the peak at RT = 8.371: MergeProblem
+PG(24:0): Integrator found the following problem(s) with the peak at RT = 8.779: WidthProblem
+PG(27:1): Integrator found the following problem(s) with the peak at RT = 10.128: WidthProblem, SeriousProblem
+PG(27:1): Retention time = 10.128 is outside the allowed range [8.466, 9.357]
+PG(28:0): Integrator found the following problem(s) with the peak at RT = 9.169: WidthProblem
+PG(32:1): Integrator found the following problem(s) with the peak at RT = 9.198: WidthProblem, SeriousProblem
+PG(34:2): Integrator found the following problem(s) with the peak at RT = 9.672: WidthProblem, SeriousProblem
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 10.114: Spiky
+PG(36:0): Retention time = 10.114 is outside the allowed range [7.637, 8.440]","Blank1","CE_PG_Blank1.d","Blank",,"17/12/2010 4:30",,,7.56,42.75,7.86,372.52,,,7.88,41.76,8.83,21.92,8.78,35.69,,
+,"CE(19:1): Integrator found the following problem(s) with the peak at RT = 7.459: WidthProblem, SeriousProblem
+CE(19:1): Retention time = 7.459 is outside the allowed range [8.429, 9.316]
+PG(15:0): Integrator found the following problem(s) with the peak at RT = 7.608: Spiky
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 8.136: MergeProblem
+PG(20:0): Integrator found the following problem(s) with the peak at RT = 8.376: MergeProblem
+PG(21:6): Integrator found the following problem(s) with the peak at RT = 8.400: WidthProblem
+PG(23:6): Integrator found the following problem(s) with the peak at RT = 9.389: WidthProblem, SeriousProblem
+PG(23:6): Retention time = 9.389 is outside the allowed range [8.149, 9.007]
+PG(25:0): Integrator found the following problem(s) with the peak at RT = 9.868: WidthProblem, SeriousProblem
+PG(25:0): Retention time = 9.868 is outside the allowed range [8.409, 9.295]
+PG(28:0): Integrator found the following problem(s) with the peak at RT = 9.154: WidthProblem, Spiky, SeriousProblem
+PG(32:0): Integrator found the following problem(s) with the peak at RT = 9.675: WidthProblem, SeriousProblem
+PG(32:3): Integrator found the following problem(s) with the peak at RT = 8.040: WidthProblem, SeriousProblem
+PG(32:3): Retention time = 8.040 is outside the allowed range [4.750, 5.250]
+PG(34:2): Integrator found the following problem(s) with the peak at RT = 10.860: WidthProblem, SeriousProblem
+PG(34:2): Retention time = 10.860 is outside the allowed range [8.871, 9.805]
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 8.170: Spiky","Blank2","CE_PG_Blank2.d","Blank",,"17/12/2010 4:45",,,7.61,67.73,7.87,310.79,,,8.17,55.57,8.78,26.87,8.76,28.14,,
+,"CE(19:1): Integrator found the following problem(s) with the peak at RT = 10.821: WidthProblem, SeriousProblem
+CE(19:1): Retention time = 10.821 is outside the allowed range [8.429, 9.316]
+CE(24:6): Integrator found the following problem(s) with the peak at RT = 9.027: WidthProblem, SeriousProblem
+CE(24:6): Retention time = 9.027 is outside the allowed range [5.735, 6.339]
+Cholesterol: Integrator found the following problem(s) with the peak at RT = 3.715: WidthProblem, SeriousProblem
+Cholesterol: Retention time = 3.715 is outside the allowed range [4.750, 5.250]
+PG(16:0): Integrator found the following problem(s) with the peak at RT = 7.917: MergeProblem
+PG(17:0): Retention time = 8.527 is outside the allowed range [7.576, 8.374]
+PG(23:6): Retention time = 10.315 is outside the allowed range [8.149, 9.007]
+PG(24:0): Integrator found the following problem(s) with the peak at RT = 8.796: WidthProblem
+PG(28:0): Integrator found the following problem(s) with the peak at RT = 9.741: WidthProblem, SeriousProblem
+PG(28:0): Retention time = 9.741 is outside the allowed range [8.638, 9.547]
+PG(28:1): Integrator found the following problem(s) with the peak at RT = 10.542: WidthProblem, SeriousProblem
+PG(28:1): Retention time = 10.542 is outside the allowed range [8.519, 9.416]
+PG(32:0): Integrator found the following problem(s) with the peak at RT = 9.458: WidthProblem, SeriousProblem","Blank3","CE_PG_Blank3.d","Blank",,"17/12/2010 5:00",9.03,7.33,7.5,25.47,7.92,330.71,,,8.53,28.89,8.82,16.22,8.9,12.67,,
+"CE(19:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(21:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(36:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(19:2): Integrator found the following problem(s) with the peak at RT = 9.360: WidthProblem, SeriousProblem
+CE(19:2): Retention time = 9.360 is outside the allowed range [8.394, 9.278]
+CE(23:6): Integrator found the following problem(s) with the peak at RT = 9.261: WidthProblem
+CE(25:4): Integrator found the following problem(s) with the peak at RT = 7.848: WidthProblem, SeriousProblem
+PG(19:0): Integrator found the following problem(s) with the peak at RT = 8.235: Spiky
+PG(30:2): Integrator found the following problem(s) with the peak at RT = 8.971: WidthProblem, SeriousProblem
+PG(33:0): Integrator found the following problem(s) with the peak at RT = 9.438: WidthProblem, SeriousProblem
+PG(36:4): Integrator found the following problem(s) with the peak at RT = 8.578: WidthProblem, SeriousProblem
+PG(36:4): Retention time = 8.578 is outside the allowed range [8.748, 9.669]","MCF_1a","MCF_CE_PG_MCF_1a.d","Sample",,"17/12/2010 5:14",6.04,345.86,7.66,215.78,7.84,5491.72,7.85,13.98,7.88,155.57,8.79,135.6,8.84,206.59,9.36,28.25
+"Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(17:1): Integrator found the following problem(s) with the peak at RT = 8.680: WidthProblem
+CE(19:2): Integrator found the following problem(s) with the peak at RT = 9.394: WidthProblem
+CE(19:2): Retention time = 9.394 is outside the allowed range [8.394, 9.278]
+CE(19:3): Integrator found the following problem(s) with the peak at RT = 8.596: WidthProblem, SeriousProblem
+CE(19:3): Retention time = 8.596 is outside the allowed range [8.787, 9.712]
+CE(21:4): Integrator found the following problem(s) with the peak at RT = 9.299: WidthProblem
+CE(23:6): Integrator found the following problem(s) with the peak at RT = 8.146: WidthProblem
+CE(23:6): Retention time = 8.146 is outside the allowed range [8.800, 9.726]
+PG(17:0): Integrator found the following problem(s) with the peak at RT = 7.930: Spiky
+PG(19:0): Integrator found the following problem(s) with the peak at RT = 8.259: MergeProblem
+PG(25:0): Integrator found the following problem(s) with the peak at RT = 8.923: InterferenceProblem
+PG(27:1): Integrator found the following problem(s) with the peak at RT = 8.866: WidthProblem
+PG(31:0): Integrator found the following problem(s) with the peak at RT = 9.266: Spiky
+PG(31:6): Integrator found the following problem(s) with the peak at RT = 8.613: WidthProblem
+PG(31:6): Retention time = 8.613 is outside the allowed range [8.782, 9.707]
+PG(34:1)/IS: Integrator found the following problem(s) with the peak at RT = 9.326: WidthProblem
+PG(36:3): Integrator found the following problem(s) with the peak at RT = 8.681: WidthProblem
+PG(36:3): Retention time = 8.681 is outside the allowed range [8.770, 9.693]","MCF_1b","MCF_CE_PG_MCF_1b.d","Sample",,"17/12/2010 5:29",6.03,418.66,7.54,199.89,7.84,5417.79,7.88,28.89,7.93,146.84,8.81,160.58,8.86,240.08,9.33,37.7
+"CE(19:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(21:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(27:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(19:2): Integrator found the following problem(s) with the peak at RT = 9.371: WidthProblem, SeriousProblem
+CE(19:2): Retention time = 9.371 is outside the allowed range [8.394, 9.278]
+CE(23:6): Integrator found the following problem(s) with the peak at RT = 9.272: SymmetryProblem
+Cholesterol: Integrator found the following problem(s) with the peak at RT = 8.450: WidthProblem, SeriousProblem
+Cholesterol: Retention time = 8.450 is outside the allowed range [4.750, 5.250]
+PG(23:6): Integrator found the following problem(s) with the peak at RT = 8.621: Spiky
+PG(31:6): Integrator found the following problem(s) with the peak at RT = 9.198: WidthProblem, SeriousProblem
+PG(32:3): Integrator found the following problem(s) with the peak at RT = 9.089: WidthProblem, SeriousProblem
+PG(32:3): Retention time = 9.089 is outside the allowed range [4.750, 5.250]
+PG(33:0): Integrator found the following problem(s) with the peak at RT = 8.855: WidthProblem, SeriousProblem
+PG(33:0): Retention time = 8.855 is outside the allowed range [8.928, 9.868]
+PG(33:6): Integrator found the following problem(s) with the peak at RT = 8.116: WidthProblem, SeriousProblem
+PG(33:6): Retention time = 8.116 is outside the allowed range [8.868, 9.801]
+PG(35:0): Integrator found the following problem(s) with the peak at RT = 9.502: WidthProblem
+PG(35:0): Retention time = 9.502 is outside the allowed range [4.750, 5.250]
+PG(36:3): Integrator found the following problem(s) with the peak at RT = 8.719: WidthProblem
+PG(36:3): Retention time = 8.719 is outside the allowed range [8.770, 9.693]
+PG(36:4): Integrator found the following problem(s) with the peak at RT = 8.961: WidthProblem, SeriousProblem","MCF_2a","MCF_CE_PG_MCF_2a.d","Sample",,"17/12/2010 5:43",6.03,258.36,7.65,163.61,7.84,4544.75,7.9,31.22,7.85,136.6,8.79,211.5,8.82,215.78,9.35,76.18
+"PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(36:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(19:2): Retention time = 9.364 is outside the allowed range [8.394, 9.278]
+CE(21:4): Integrator found the following problem(s) with the peak at RT = 9.304: WidthProblem
+CE(23:6): Integrator found the following problem(s) with the peak at RT = 9.413: WidthProblem
+Cholesterol: Integrator found the following problem(s) with the peak at RT = 7.015: WidthProblem, SeriousProblem
+Cholesterol: Retention time = 7.015 is outside the allowed range [4.750, 5.250]
+PG(19:0): Integrator found the following problem(s) with the peak at RT = 8.234: Spiky
+PG(27:0): Integrator found the following problem(s) with the peak at RT = 8.994: Spiky
+PG(28:1): Integrator found the following problem(s) with the peak at RT = 8.954: MergeProblem
+PG(29:6): Integrator found the following problem(s) with the peak at RT = 9.082: WidthProblem
+PG(32:3): Retention time = 1.188 is outside the allowed range [4.750, 5.250]
+PG(33:1): Integrator found the following problem(s) with the peak at RT = 9.287: WidthProblem
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 8.046: MergeProblem
+PG(36:2): Retention time = 8.841 is outside the allowed range [8.870, 9.804]
+PG(36:4): Integrator found the following problem(s) with the peak at RT = 5.908: WidthProblem
+PG(36:4): Retention time = 5.908 is outside the allowed range [8.748, 9.669]","MCF_2b","MCF_CE_PG_MCF_2b.d","Sample",,"17/12/2010 5:58",6.04,268.78,7.65,221.82,7.85,4396.13,7.89,19,7.9,124.79,8.81,308.82,8.84,197.92,9.37,35.01
+"Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","PG(31:6): Integrator found the following problem(s) with the peak at RT = 9.244: WidthProblem",,,,,,,,,,,,,,,,,,,,,
+"PG(33:6): Integrator found the following problem(s) with the peak at RT = 9.334: WidthProblem",,,,,,,,,,,,,,,,,,,,,,
+"PG(36:3): Integrator found the following problem(s) with the peak at RT = 9.231: Spiky",,"MDA_1a","MDA_CE_PG_MDA_1a.d","Sample",,"17/12/2010 6:12",6.04,16.47,7.62,206.37,7.86,8475.19,7.87,11.46,7.98,174.97,8.82,207.89,8.86,270.94,9.35,72.12
+"CE(21:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(17:1): Integrator found the following problem(s) with the peak at RT = 8.729: Spiky
+CE(19:3): Retention time = 8.542 is outside the allowed range [8.787, 9.712]
+CE(24:6): Integrator found the following problem(s) with the peak at RT = 2.857: WidthProblem, SeriousProblem
+CE(24:6): Retention time = 2.857 is outside the allowed range [5.735, 6.339]
+CE(25:4): Integrator found the following problem(s) with the peak at RT = 7.914: WidthProblem
+PG(27:1): Integrator found the following problem(s) with the peak at RT = 8.883: MergeProblem
+PG(28:2): Integrator found the following problem(s) with the peak at RT = 8.824: MergeProblem
+PG(29:6): Integrator found the following problem(s) with the peak at RT = 9.106: WidthProblem, SeriousProblem
+PG(31:6): Retention time = 8.769 is outside the allowed range [8.782, 9.707]
+PG(33:0): Integrator found the following problem(s) with the peak at RT = 9.394: Spiky
+PG(33:2): Integrator found the following problem(s) with the peak at RT = 9.182: WidthProblem
+PG(35:0): Integrator found the following problem(s) with the peak at RT = 6.709: WidthProblem, SeriousProblem
+PG(35:0): Retention time = 6.709 is outside the allowed range [4.750, 5.250]
+PG(35:2): Integrator found the following problem(s) with the peak at RT = 6.326: WidthProblem, SeriousProblem
+PG(35:2): Retention time = 6.326 is outside the allowed range [8.828, 9.757]","MDA_1b","MDA_CE_PG_MDA_1b.d","Sample",,"17/12/2010 6:27",2.86,8.46,7.65,236.01,7.85,8116.63,7.91,8.78,7.91,178.64,8.8,205.6,8.85,283.79,9.37,79.79
+"CE(21:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(19:2): Retention time = 9.400 is outside the allowed range [8.394, 9.278]
+CE(19:3): Integrator found the following problem(s) with the peak at RT = 9.280: WidthProblem, SeriousProblem
+CE(23:6): Integrator found the following problem(s) with the peak at RT = 5.712: WidthProblem, SeriousProblem
+CE(23:6): Retention time = 5.712 is outside the allowed range [8.800, 9.726]
+CE(25:4): Integrator found the following problem(s) with the peak at RT = 10.059: WidthProblem, SeriousProblem
+CE(25:4): Retention time = 10.059 is outside the allowed range [7.471, 8.258]
+Cholesterol: Retention time = 6.491 is outside the allowed range [4.750, 5.250]
+PG(17:0): Integrator found the following problem(s) with the peak at RT = 7.940: MergeProblem
+PG(19:0): Integrator found the following problem(s) with the peak at RT = 8.225: MergeProblem
+PG(29:1): Integrator found the following problem(s) with the peak at RT = 9.011: WidthProblem
+PG(30:3): Integrator found the following problem(s) with the peak at RT = 8.830: WidthProblem
+PG(33:0): Integrator found the following problem(s) with the peak at RT = 9.401: WidthProblem
+PG(35:2): Integrator found the following problem(s) with the peak at RT = 9.270: WidthProblem
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 8.029: MergeProblem
+PG(36:4): Integrator found the following problem(s) with the peak at RT = 9.163: WidthProblem","MDA_2a","MDA_CE_PG_MDA_2a.d","Sample",,"17/12/2010 6:42",6.06,18.49,7.62,294.32,7.85,9820.81,10.06,6.27,7.94,155.14,8.81,135.24,8.84,229.9,9.35,39.47
+"CE(21:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(23:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(19:2): Integrator found the following problem(s) with the peak at RT = 9.399: WidthProblem
+CE(19:2): Retention time = 9.399 is outside the allowed range [8.394, 9.278]
+CE(25:4): Integrator found the following problem(s) with the peak at RT = 7.873: WidthProblem, SeriousProblem
+PG(15:0): Integrator found the following problem(s) with the peak at RT = 7.603: MergeProblem
+PG(19:0): Integrator found the following problem(s) with the peak at RT = 8.265: MergeProblem
+PG(28:0): Integrator found the following problem(s) with the peak at RT = 9.079: MergeProblem
+PG(30:2): Integrator found the following problem(s) with the peak at RT = 8.980: WidthProblem, MergeProblem
+PG(31:6): Integrator found the following problem(s) with the peak at RT = 9.187: WidthProblem","MDA_2b","MDA_CE_PG_MDA_2b.d","Sample",,"17/12/2010 6:56",6.03,11.69,7.6,222.88,7.84,10114.8,7.87,14.39,7.89,182.27,8.82,98.71,8.86,283.79,9.34,73.36
+"CE(17:0): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(17:1): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(19:1): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(19:2): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(19:3): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(21:0): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(21:4): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(23:6): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(24:6): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(25:4): Integrator status = 4, message = The chromatogram did not contain any data points
+Cholesterol: Integrator status = 4, message = The chromatogram did not contain any data points
+PG(15:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(16:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(17:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(18:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(19:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(20:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(21:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(23:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(23:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(24:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(25:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(26:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(26:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(27:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(27:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(28:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(28:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(28:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(29:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(29:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(29:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:3): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(31:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(31:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(31:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(32:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(32:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(32:3): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(34:1)/IS: Integrator status = 4, message = The chromatogram did not contain any data points
+PG(34:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(35:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(35:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:3): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:4): Integrator status = 4, message = The chromatogram did not contain any data points
+",,"QC41","QC_CE_PG_QC41.d","QC",,"17/12/2010 7:11",,,,,,,,,,,,,,,,
+"CE(21:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(24:6): Integrator did not find any peaks
+CE(25:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(17:1): Integrator found the following problem(s) with the peak at RT = 8.646: InterferenceProblem
+CE(23:6): Integrator found the following problem(s) with the peak at RT = 9.246: WidthProblem
+Cholesterol: Retention time = 6.460 is outside the allowed range [4.750, 5.250]
+PG(15:0): Integrator found the following problem(s) with the peak at RT = 7.647: MergeProblem
+PG(31:6): Retention time = 8.750 is outside the allowed range [8.782, 9.707]
+PG(32:3): Integrator found the following problem(s) with the peak at RT = 0.990: WidthProblem
+PG(32:3): Retention time = 0.990 is outside the allowed range [4.750, 5.250]
+PG(33:6): Integrator found the following problem(s) with the peak at RT = 9.353: Spiky
+PG(35:0): Integrator found the following problem(s) with the peak at RT = 9.012: WidthProblem, SeriousProblem
+PG(35:0): Retention time = 9.012 is outside the allowed range [4.750, 5.250]
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 8.070: MergeProblem","QC42","QC_CE_PG_QC42.d","QC",,"17/12/2010 7:26",,,7.65,139.27,7.86,6073.05,,,7.9,152.39,8.81,243.73,8.85,427.63,9.36,135.57
+"CE(17:0): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(17:1): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(19:1): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(19:2): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(19:3): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(21:0): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(21:4): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(23:6): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(24:6): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(25:4): Integrator status = 4, message = The chromatogram did not contain any data points
+Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(15:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(16:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(17:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(18:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(19:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(20:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(21:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(23:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(23:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(24:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(25:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(26:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(26:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(27:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(27:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(28:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(28:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(28:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(29:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(29:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(29:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:3): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(31:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(31:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(31:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(32:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(32:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(32:3): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(34:1)/IS: Integrator status = 4, message = The chromatogram did not contain any data points
+PG(34:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(35:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(35:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:3): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:4): Integrator status = 4, message = The chromatogram did not contain any data points
+",,"QC43","QC_CE_PG_QC43.d","QC",,"17/12/2010 7:40",,,,,,,,,,,,,,,,
+"CE(17:0): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(17:1): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(19:1): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(19:2): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(19:3): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(21:0): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(21:4): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(23:6): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(24:6): Integrator status = 4, message = The chromatogram did not contain any data points
+CE(25:4): Integrator status = 4, message = The chromatogram did not contain any data points
+Cholesterol: Integrator status = 4, message = The chromatogram did not contain any data points
+PG(15:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(16:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(17:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(18:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(19:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(20:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(21:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(23:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(23:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(24:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(25:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(26:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(26:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(27:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(27:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(28:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(28:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(28:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(29:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(29:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(29:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(30:3): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(31:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(31:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(31:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(32:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(32:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(32:3): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:1): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(33:6): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(34:1)/IS: Integrator status = 4, message = The chromatogram did not contain any data points
+PG(34:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(35:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(35:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:0): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:2): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:3): Integrator status = 4, message = The chromatogram did not contain any data points
+PG(36:4): Integrator status = 4, message = The chromatogram did not contain any data points
+",,"QC44","QC_CE_PG_QC44.d","QC",,"17/12/2010 7:55",,,,,,,,,,,,,,,,
+,"CE(19:3): Integrator found the following problem(s) with the peak at RT = 9.002: WidthProblem, Spiky, SeriousProblem
+Cholesterol: Integrator found the following problem(s) with the peak at RT = 1.525: WidthProblem, SeriousProblem
+Cholesterol: Retention time = 1.525 is outside the allowed range [4.750, 5.250]
+PG(16:0): Integrator found the following problem(s) with the peak at RT = 10.759: SymmetryProblem, Spiky
+PG(16:0): Retention time = 10.759 is outside the allowed range [7.462, 8.247]
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 8.138: MergeProblem
+PG(21:6): Integrator found the following problem(s) with the peak at RT = 8.394: WidthProblem, SeriousProblem
+PG(23:0): Integrator found the following problem(s) with the peak at RT = 10.578: WidthProblem
+PG(23:0): Retention time = 10.578 is outside the allowed range [8.253, 9.121]
+PG(23:6): Retention time = 10.629 is outside the allowed range [8.149, 9.007]
+PG(27:0): Integrator found the following problem(s) with the peak at RT = 9.016: WidthProblem, SeriousProblem
+PG(28:0): Integrator found the following problem(s) with the peak at RT = 9.526: WidthProblem, SeriousProblem
+PG(28:1): Integrator found the following problem(s) with the peak at RT = 10.111: WidthProblem, SeriousProblem
+PG(28:1): Retention time = 10.111 is outside the allowed range [8.519, 9.416]
+PG(30:0): Integrator found the following problem(s) with the peak at RT = 9.679: WidthProblem
+PG(30:3): Integrator found the following problem(s) with the peak at RT = 10.140: WidthProblem, SeriousProblem
+PG(30:3): Retention time = 10.140 is outside the allowed range [8.450, 9.340]
+PG(31:0): Integrator found the following problem(s) with the peak at RT = 9.278: WidthProblem, SeriousProblem
+PG(32:0): Integrator found the following problem(s) with the peak at RT = 9.366: WidthProblem
+PG(33:2): Integrator found the following problem(s) with the peak at RT = 8.994: WidthProblem
+PG(34:1)/IS: Integrator found the following problem(s) with the peak at RT = 6.448: WidthProblem, SeriousProblem
+PG(34:1)/IS: Retention time = 6.448 is outside the allowed range [8.886, 9.821]
+PG(34:2): Integrator found the following problem(s) with the peak at RT = 10.753: WidthProblem
+PG(34:2): Retention time = 10.753 is outside the allowed range [8.871, 9.805]
+PG(35:0): Integrator found the following problem(s) with the peak at RT = 8.931: WidthProblem, SeriousProblem
+PG(35:0): Retention time = 8.931 is outside the allowed range [4.750, 5.250]
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 8.029: MergeProblem","Blank4","CE_PG_Blank4.d","Blank",,"17/12/2010 8:10",,,7.55,120.04,10.76,959.49,,,7.92,114.34,8.84,24.09,8.85,23.74,6.45,4.66
+"CE(17:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(19:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(19:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(21:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(23:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(24:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+CE(25:4): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+Cholesterol: Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(25:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(27:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(27:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(28:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(28:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(29:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(30:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(31:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(32:3): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:1): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:2): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(33:6): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+PG(35:0): Integrator status = 6, message = No peaks found because the chromatogram did not have any significant variation in amplitude.
+","CE(17:0): Integrator found the following problem(s) with the peak at RT = 8.871: WidthProblem, MergeProblem, SeriousProblem
+CE(19:1): Integrator found the following problem(s) with the peak at RT = 8.901: WidthProblem, SeriousProblem
+CE(21:0): Integrator found the following problem(s) with the peak at RT = 8.787: WidthProblem
+PG(17:0): Integrator found the following problem(s) with the peak at RT = 7.944: WidthProblem, MergeProblem
+PG(18:0): Integrator found the following problem(s) with the peak at RT = 8.137: MergeProblem
+PG(21:6): Integrator found the following problem(s) with the peak at RT = 8.357: WidthProblem
+PG(23:0): Integrator found the following problem(s) with the peak at RT = 8.667: WidthProblem
+PG(23:6): Integrator found the following problem(s) with the peak at RT = 10.024: Spiky
+PG(23:6): Retention time = 10.024 is outside the allowed range [8.149, 9.007]
+PG(28:0): Integrator found the following problem(s) with the peak at RT = 9.587: WidthProblem, SeriousProblem
+PG(28:0): Retention time = 9.587 is outside the allowed range [8.638, 9.547]
+PG(30:0): Integrator found the following problem(s) with the peak at RT = 8.212: WidthProblem, SeriousProblem
+PG(30:0): Retention time = 8.212 is outside the allowed range [8.765, 9.688]
+PG(32:0): Retention time = 6.190 is outside the allowed range [8.885, 9.820]
+PG(34:1)/IS: Retention time = 6.275 is outside the allowed range [8.886, 9.821]
+PG(34:2): Retention time = 6.071 is outside the allowed range [8.871, 9.805]
+PG(35:2): Retention time = 6.294 is outside the allowed range [8.828, 9.757]
+PG(36:0): Integrator found the following problem(s) with the peak at RT = 8.054: MergeProblem
+PG(36:2): Retention time = 6.423 is outside the allowed range [8.870, 9.804]
+PG(36:3): Retention time = 6.149 is outside the allowed range [8.770, 9.693]
+PG(36:4): Retention time = 6.108 is outside the allowed range [8.748, 9.669]","Std 5000nM","Std_5000nM.d","Sample",,"17/12/2010 8:24",,,7.46,137.6,7.83,368.12,,,7.94,20.17,8.79,12.83,8.87,12.38,6.28,1108.44
