@@ -29,19 +29,19 @@ rownames(pre_norm) <- if
     {rownames(pre_norm)}
 
 
-#normalization by quantiles
+# Normalise by quantiles
 
 norm_data<-normalize.quantiles(pre_norm)
 
-#reattaching row and column names to normalized data
+# Reattach row and column names to normalised data
 
 rownames(norm_data)<-rownames(pre_norm)
 colnames(norm_data)<-colnames(pre_norm)
 
-# Reattach groups information
+# Reattach group information
 output<-cbind(data.frame(Group),t(norm_data))
 
-
+#
 #    Generate the output matrix in .csv format
 #
 write.csv(output,"norm_data_quantile.csv")
