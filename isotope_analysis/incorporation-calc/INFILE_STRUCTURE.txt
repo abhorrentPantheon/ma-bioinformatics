@@ -1,0 +1,97 @@
+********************************************************************************
+
+This document outlines the expected structure of the input file for
+the isotope calculation script
+
+Sean O'Callaghan
+spoc@unimelb.edu.au
+21-2-11
+
+********************************************************************************
+
+The input file format has been designed so that it is simple to export
+a standard file from excel as .csv and arrive at the correct
+format. In most cases there should be no need to modify the file once
+exported as .csv from excel. To check if your input file is valid, use
+the validate_input.py file, which should pick up simple errors.
+
+The file is a comma separated value
+file, with the following structure:
+
+    For each metabolite:
+    Line 1: The name of the metabolite - this can be buried in the text eg:
+
+        "Isocitrate m/z +0","Isocitrate m/z +1","Isocitrate m/z+2","Isocitrate m/z +3","Isocitrate m/z +4","Isocitrate m/z +5",
+
+    will be identified as Isocitrate quite successfully
+
+
+    Line 2 and onward:
+    comma separated values of the counts of each m/z value eg:
+
+        18747,7806,10132,5790,2564,1348,
+
+    If these values are of the unlabelled samples, used for calculating
+    the expected natural isotope level, the text 'bg' should be appended
+    to the values as follows:
+
+    1023383,302010,151309,30879,7855,1110,bg
+
+    It does not matter where the background samples are listed, at the
+    beginning of the list, the end, the middle, separated or together
+    they will be identified correctly. Blank lines are ignored so use
+    whitespace all you like.
+
+    The above is repeated for each metabolite.
+
+    The final line should contain no numbers, and have the word "end" on it.
+
+Quirks:
+The non-background numbers need to finish in a trailing comma. The background ones should not. This reflects the default way excel exports these files if you put the 'bg' in the cell next to the last number.
+
+If this becomes a problem let me know.
+
+In summary the following is an acceptable input file format:
+
+"Glucose pk2 m/z +0","Glucose pk2 m/z +1","Glucose pk2 m/z +2","Glucose pk2 m/z +3","Glucose pk2 m/z +4","Glucose pk2 m/z +5",
+280950,82369,42051,29754,543876,135144,
+147883,44039,23185,15707,294624,74998,
+138086,40632,21208,11945,274054,68674,
+411730,122290,62314,43956,795631,202945,
+226111,68310,34264,25580,448945,114729,
+215069,65403,33527,23057,421887,105217,
+307315,91012,45640,33143,578623,146727,
+209863,62518,32008,2882,407728,102629,
+85048,25277,12922,9325,167408,42190,
+89191,27097,13959,4151,180130,46461,
+9903,2856,847,0,0,0,"bg"
+1023383,302010,151309,30879,7855,1110,"bg"
+"myo-Inositol m/z +0","myo-Inositol m/z +1","myo-Inositol m/z +2","myo-Inositol m/z +3","myo-Inositol m/z +4","myo-Inositol m/z +5",
+978334,418371,175504,46747,10808,2030,"bg"
+108448,47661,21884,5980,1300,0,"bg"
+89726,37456,16681,4678,1496,0,
+99599,43016,18629,5070,0,0,
+95153,40907,18617,5050,2399,0,
+91189,39050,17205,5152,1779,0,
+63862,27706,11966,3387,0,0,
+62582,25827,11797,3042,1058,0,
+69287,28770,14248,4179,0,0,
+62983,27212,11915,3154,1509,0,
+98316,41781,18540,5408,3431,1234,
+49026,20250,8726,2560,1538,0,
+"Glutathione reduced m/z +0","Glutathione reduced m/z +1","Glutathione reduced m/z +2","Glutathione reduced m/z +3","Glutathione reduced m/z +4","Glutathione reduced m/z +5",
+446,73,25,2,5,4,
+1101,185,68,8,28,6,
+792,131,55,8,38,5,
+1070,175,78,14,10,5,
+978334,418371,175504,46747,10808,2030,"bg"
+679,114,68,16,20,3,
+512,85,56,11,10,9,
+458,88,80,21,32,15,
+108448,47661,21884,5980,1300,0,"bg"
+501,95,83,22,15,5,
+1123,239,309,98,94,43,
+487,104,132,46,42,17,
+1181,190,74,6,5,0,"bg"
+1600,264,83,15,0,0,"bg"
+end
