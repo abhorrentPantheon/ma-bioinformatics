@@ -11,7 +11,7 @@
 #    Load the data matrix
 #
 # Read in the .csv file
-data<-read.csv("input.csv", sep=",", row.names=1, header=TRUE)
+data<-read.csv("input_orig.csv", sep=",", row.names=1, header=TRUE)
 # Remove groups for data processing
 msd_data<-data[,-1]
 
