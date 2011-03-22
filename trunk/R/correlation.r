@@ -16,22 +16,27 @@
 #    Load the data matrix
 #
 # Read in the .csv file
-data<-read.csv("input.csv", sep=",", row.names=1, header=TRUE)
+in_file<-file.choose()
+input_data<-read.csv(in_file, sep=",", row.names=1, header=TRUE)
 
 # Get groups information
-Group<-data[,1]
-
+Group<-input_data[,1]
 # Remove groups for data processing
-pre_cor_data<-data[,-1]
+pre_cor_data<-input_data[,-1]
 
 # Replacing the missing values
 pre_cor_data[is.na(pre_cor_data)]<-0.5*(min(pre_cor_data,na.rm=TRUE))
 
 # Edit the column names if necessary
-colnames(pre_cor_data) <- if 
-    (length(grep("^X[\\d]",colnames(pre_cor_data),perl=TRUE)) != 0) # then
-    {gsub("^X([\\d].*)","\\1",colnames(pre_cor_data),perl=TRUE)} else
-    {colnames(pre_cor_data)}
+colnames(pre_cor_data) <- if (
+    length(
+        grep("^X[\\d]",colnames(pre_cor_data),perl=TRUE)
+    ) != 0
+) {# then
+    gsub("^X([\\d].*)","\\1",colnames(pre_cor_data),perl=TRUE)
+} else {
+    colnames(pre_cor_data)
+}
 
 # Calculate the correlation matrix
 cor_data<-cor(pre_cor_data)
@@ -47,13 +52,13 @@ output_1<-data.frame(
     Variable_1=rownames(cor_data)[lower_tri[,1]],
     Variable_2=colnames(cor_data)[lower_tri[,2]],
     cor_coefficient=cor_data[lower_tri]
-    )
+)
 
 # Reorder the data according to the corelation coefficient
 output<-data.frame(
     output_1[order(output_1$cor_coefficient,decreasing=TRUE),],
     row.names=NULL
-    )
+)
 
 # Generate the output data in .csv format
 write.csv(output,"cor_variables.csv")

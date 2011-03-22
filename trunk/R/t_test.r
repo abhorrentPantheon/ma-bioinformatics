@@ -15,32 +15,39 @@
 #    Prepare the data matrix
 #
 # Read in the .csv file
-data<-read.csv("input.csv", sep=",", row.names=1, header=TRUE)
+in_file<-file.choose()
+input_data<-read.csv(in_file, sep=",", row.names=1, header=TRUE)
+
 # Get groups information
-groups<-data[,1]
+groups<-input_data[,1]
 # Remove groups for data processing
-ttest_data<-data[,-1]
+ttest_data<-input_data[,-1]
 
 # Check data; if appropriate, run script
-if (length(levels(groups)) > 2) print ("Number of groups is greater than 2") else {
+if (length(levels(groups)) > 2) {
+    print ("Number of groups is greater than 2. Exiting.")
+} else {
     ttest_data_t<-t(ttest_data)
 
-    # Prepare labels
-    ## The following lines edits the 'X' from the start of column names, making
-    ## sure that compounds like xylose don't become "ylose", but will change 
-    ## "X5.oxoproline" to "5.oxoproline" and "X1" to "1".
-    colnames(ttest_data) <- if 
-        (length(grep("^X[\\d]",colnames(ttest_data),perl=TRUE)) != 0) # then
-        {gsub("^X([\\d].*)","\\1",colnames(ttest_data),perl=TRUE)} else
-        {colnames(ttest_data)}
+    # Edit the column names if necessary
+    colnames(ttest_data) <- if (
+        length(
+            grep("^X[\\d]",colnames(ttest_data),perl=TRUE)
+        ) != 0
+    ) {# then
+        gsub("^X([\\d].*)","\\1",colnames(ttest_data),perl=TRUE)
+    } else {
+        colnames(ttest_data)
+    }
     row.names(ttest_data_t)<-colnames(ttest_data)
 
     #
     #    Prepare the supporting data for the test
     #
     # Determine the number of samples in each group
-    nA<-length(which(groups==levels(groups)[1])) #number of samples in group A
-    nB<-length(which(groups==levels(groups)[2])) #number of samples in group B
+    # (A is levels(groups)[1])
+    nA<-length(which(groups==levels(groups)[1]))
+    nB<-length(which(groups==levels(groups)[2]))
 
     # Separate the groups
     group_A<-t(ttest_data_t[,1:nA])
@@ -53,7 +60,7 @@ if (length(levels(groups)) > 2) print ("Number of groups is greater than 2") els
     #
     for(ii in 1:nrow(ttest_data_t)) {
         pvals[ii,1]<-t.test(group_A[,ii],group_B[,ii])$p.value
-        }
+    }
 
     # Prepare row and column labels for output
     row.names(pvals)<-row.names(ttest_data_t)
@@ -63,4 +70,4 @@ if (length(levels(groups)) > 2) print ("Number of groups is greater than 2") els
     # Generate the output matrix in .csv format
     #
     write.csv(pvals,"p_t_test.csv")
-    }
+}
