@@ -12,22 +12,31 @@
 #    Prepare the data matrix
 #
 # Read in the .csv file
-data<-read.csv("input.csv", sep=",", row.names=1, header=TRUE)
+in_file<-file.choose()
+input_data<-read.csv(in_file, sep=",", row.names=1, header=TRUE)
+
 # Get groups information
-groups<-data[,1]
+groups<-input_data[,1]
 # Remove groups for data processing
-wilcoxon_data<-data[,-1]
+wilcoxon_data<-input_data[,-1]
 
 
 # Check data; if appropriate, run script
-if (length(levels(groups))>2) print("Number of groups is greater than 2") else {
+if (length(levels(groups))>2) {
+    print("Number of groups is greater than 2. Exiting.")
+} else {
     wilcoxon_data_t<-t(wilcoxon_data)# Tidy up the column names
 
     # Edit the column names if necessary
-    colnames(wilcoxon_data) <- if 
-        (length(grep("^X[\\d]",colnames(wilcoxon_data),perl=TRUE)) != 0) # then
-        {gsub("^X([\\d].*)","\\1",colnames(wilcoxon_data),perl=TRUE)} else
-        {colnames(wilcoxon_data)}
+    colnames(wilcoxon_data) <- if (
+        length(
+            grep("^X[\\d]",colnames(wilcoxon_data),perl=TRUE)
+        ) != 0
+    ) {# then
+        gsub("^X([\\d].*)","\\1",colnames(wilcoxon_data),perl=TRUE)
+    } else {
+        colnames(wilcoxon_data)
+    }
     row.names(wilcoxon_data_t)<-colnames(wilcoxon_data)
 
     #
@@ -48,7 +57,7 @@ if (length(levels(groups))>2) print("Number of groups is greater than 2") else {
     #
     for(ii in 1:nrow(wilcoxon_data_t)) {
         pvals[ii,1]<-wilcox.test(group_A[,ii],group_B[,ii])$p.value
-        }
+    }
 
     # Prepare row and column labels for output
     row.names(pvals)<-row.names(wilcoxon_data_t)
@@ -58,4 +67,5 @@ if (length(levels(groups))>2) print("Number of groups is greater than 2") else {
     # Generate the output matrix in .csv format
     #
     write.csv(pvals,"p_wilcoxon_test.csv")
-    }
+# Close if function
+}

@@ -14,13 +14,19 @@
 #    Load the data matrix
 #
 # Read in the .csv file
-data<-read.csv("input.csv", sep=",", row.names=1, header=TRUE)
+in_file<-file.choose()
+input_data<-read.csv(in_file, sep=",", row.names=1, header=TRUE)
+
 # Get groups information
-Group<-data[,1]
+Group<-input_data[,1]
 # Remove groups for data processing
-prelog_data<-data[,-1]
+prelog_data<-input_data[,-1]
+
 # Replace any zero values (see Notes)
-prelog_data[prelog_data==0]<-0.5*(min(prelog_data[prelog_data>0],na.rm=TRUE))
+prelog_data[prelog_data==0]<-0.5*(
+    # Find the minimum of the data that's greater than zero (not NA)
+    min(prelog_data[prelog_data>0],na.rm=TRUE)
+)
 
 #
 #    Log transform the data
@@ -30,10 +36,15 @@ log_data<-log10(prelog_data)
 output<-cbind(Group,log_data)
 
 # Edit the column names if necessary
-colnames(output) <- if 
-    (length(grep("^X[\\d]",colnames(output),perl=TRUE)) != 0) # then
-    {gsub("^X([\\d].*)","\\1",colnames(output),perl=TRUE)} else
-    {colnames(output)}
+colnames(output) <- if (
+    length(
+        grep("^X[\\d]",colnames(output),perl=TRUE)
+    ) != 0
+) {# then
+    gsub("^X([\\d].*)","\\1",colnames(output),perl=TRUE)
+} else {
+    colnames(output)
+}
 
 #
 # Generate the output matrix in .csv format

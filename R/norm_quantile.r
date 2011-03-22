@@ -1,32 +1,45 @@
 #    norm_quantile.r
 #
-#    Author:    Amsha Nahid, Jairus Bowne,Alysha De Livera
-#    Purpose:    Data normalization using the quantiles
+#    Author:    Amsha Nahid, Jairus Bowne, Alysha De Livera
+#    Purpose:    Data normalization using the quantiles (per row)
 #
 #    Input:    Data matrix as specified in Data-matrix-format.pdf
 #    Output:    Normalised data matrix (.csv format)
 
 
 #    Load necessary libraries, and install them if they are missing
-tryCatch(library(preprocessCore), error=function(err)
-    # if this produces an error:
-    install.packages("preprocessCore",repos="http://cran.ms.unimelb.edu.au/"))
+tryCatch(
+    library(preprocessCore),
+    error=function(err) {
+        # if this produces an error:
+        source("http://bioconductor.org/biocLite.R")
+        biocLite("preprocessCore")
+        library(preprocessCore)
+    }
+)
 
 #    Load and prepare the data matrix
 
 # Read in the .csv file
-data<-read.csv("input.csv", sep=",", row.names=1, header=TRUE)
+in_file<-file.choose()
+input_data<-read.csv(in_file, sep=",", row.names=1, header=TRUE)
+
 # Get groups information
-Group<-data[,1]
+Group<-input_data[,1]
 # Remove groups for data processing
-pre_norm_data<-(data[,-1])
+pre_norm_data<-(input_data[,-1])
 pre_norm<-as.matrix(t(pre_norm_data))
 
 # Edit the column names if necessary
-rownames(pre_norm) <- if 
-    (length(grep("^X[\\d]",rownames(pre_norm),perl=TRUE)) != 0) # then
-    {gsub("^X([\\d].*)","\\1",rownames(pre_norm),perl=TRUE)} else
-    {rownames(pre_norm)}
+rownames(pre_norm) <- if (
+    length(
+        grep("^X[\\d]",rownames(pre_norm),perl=TRUE)
+    ) != 0
+) {# then
+    gsub("^X([\\d].*)","\\1",rownames(pre_norm),perl=TRUE)
+} else {
+    rownames(pre_norm)
+}
 
 
 # Normalise by quantiles
@@ -45,4 +58,3 @@ output<-cbind(data.frame(Group),t(norm_data))
 #    Generate the output matrix in .csv format
 #
 write.csv(output,"norm_data_quantile.csv")
-
