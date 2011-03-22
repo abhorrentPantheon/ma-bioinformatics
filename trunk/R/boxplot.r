@@ -79,134 +79,134 @@ boxplot(boxplot_data,
 #    (Uncomment blocks as necessary)
 
 ##### jpg #####
-pic_jpg<-function(filename,                # name of output file
-    input_matrix,                          # data matrix to use
-    plot_title="",                              # title of plot
-    x_label="",                            # x-axis label
-    y_label="",                            # y-axis label
-    cex_val=1,                             # font size
-    plot_names=names(input_matrix)              # default
-) { # Start jpg device with basic settings
-    jpeg(filename,
-        quality=100,                           # image quality (percent)
-        bg="white",                            # background colour
-        res=300,                               # image resolution (dpi)
-        units="in", width=8.3, height=5.8     # image dimensions (inches)
-    )
-    par(mgp=c(5,2,0),                          # axis margins 
-                                               # (title, labels, line)
-        mar=c(7,5,4,2),                        # plot margins (b,l,t,r)
-        las=1                                  # horizontal labels
-    )
-    # Draw the plot
-    boxplot(input_matrix, 
-        xlab=x_label,
-        ylab=y_label,
-        main=plot_title,
-        cex=cex_val,
-        names=plot_names
-    )
-    # Turn off the device
-    dev.off()
-}
-pic_jpg("boxplot_smpl.jpg",
-    t(boxplot_data),
-    x_label="Sample\nGroup",
-    plot_names=plot_labels,
-    plot_title="Boxplot - Samples"
-)
-pic_jpg("boxplot_var.jpg",
-    boxplot_data,
-    x_label="Variable",
-    plot_title="Boxplot - Variables"
-)
+# pic_jpg<-function(filename,                # name of output file
+#     input_matrix,                          # data matrix to use
+#     plot_title="",                              # title of plot
+#     x_label="",                            # x-axis label
+#     y_label="",                            # y-axis label
+#     cex_val=1,                             # font size
+#     plot_names=names(input_matrix)              # default
+# ) { # Start jpg device with basic settings
+#     jpeg(filename,
+#         quality=100,                           # image quality (percent)
+#         bg="white",                            # background colour
+#         res=300,                               # image resolution (dpi)
+#         units="in", width=8.3, height=5.8     # image dimensions (inches)
+#     )
+#     par(mgp=c(5,2,0),                          # axis margins 
+#                                                # (title, labels, line)
+#         mar=c(7,5,4,2),                        # plot margins (b,l,t,r)
+#         las=1                                  # horizontal labels
+#     )
+#     # Draw the plot
+#     boxplot(input_matrix, 
+#         xlab=x_label,
+#         ylab=y_label,
+#         main=plot_title,
+#         cex=cex_val,
+#         names=plot_names
+#     )
+#     # Turn off the device
+#     dev.off()
+# }
+# pic_jpg("boxplot_smpl.jpg",
+#     t(boxplot_data),
+#     x_label="Sample\nGroup",
+#     plot_names=plot_labels,
+#     plot_title="Boxplot - Samples"
+# )
+# pic_jpg("boxplot_var.jpg",
+#     boxplot_data,
+#     x_label="Variable",
+#     plot_title="Boxplot - Variables"
+# )
 ##### end jpg #####
 
 
 ##### png #####
-pic_png<-function(filename,                    # name of output file
-    input_matrix,                          # data matrix to use
-    plot_title="",                              # title of plot
-    x_label="",                            # x-axis label
-    y_label="",                            # y-axis label
-    cex_val=1,                             # font size
-    plot_names=names(input_matrix)              # default
-) { # Start jpg device with basic settings
-    png(filename,
-        bg="white",                            # background colour
-        res=300,                               # image resolution (dpi)
-        units="in", width=8.3, height=5.8     # image dimensions (inches)
-    )
-    par(mgp=c(5,2,0),                          # axis margins 
-                                               # (title, labels, line)
-        mar=c(7,5,4,2),                        # plot margins (b,l,t,r)
-        las=1                                  # horizontal labels
-    )
-    # Draw the plot
-    boxplot(input_matrix,
-        xlab=x_label,
-        ylab=y_label,
-        main=plot_title,
-        cex=cex_val,
-        names=plot_names
-    )
-    # Turn off the device
-    dev.off()
-}
-pic_png("boxplot_smpl1.png",
-    t(boxplot_data),
-    x_label="Sample\nGroup",
-    plot_names=plot_labels,
-    plot_title="Boxplot - Samples"
-)
-pic_png("boxplot_var1.png",
-    boxplot_data,
-    x_label="Variable",
-    plot_title="Boxplot - Variables"
-)
+# pic_png<-function(filename,                    # name of output file
+#     input_matrix,                          # data matrix to use
+#     plot_title="",                              # title of plot
+#     x_label="",                            # x-axis label
+#     y_label="",                            # y-axis label
+#     cex_val=1,                             # font size
+#     plot_names=names(input_matrix)              # default
+# ) { # Start jpg device with basic settings
+#     png(filename,
+#         bg="white",                            # background colour
+#         res=300,                               # image resolution (dpi)
+#         units="in", width=8.3, height=5.8     # image dimensions (inches)
+#     )
+#     par(mgp=c(5,2,0),                          # axis margins 
+#                                                # (title, labels, line)
+#         mar=c(7,5,4,2),                        # plot margins (b,l,t,r)
+#         las=1                                  # horizontal labels
+#     )
+#     # Draw the plot
+#     boxplot(input_matrix,
+#         xlab=x_label,
+#         ylab=y_label,
+#         main=plot_title,
+#         cex=cex_val,
+#         names=plot_names
+#     )
+#     # Turn off the device
+#     dev.off()
+# }
+# pic_png("boxplot_smpl1.png",
+#     t(boxplot_data),
+#     x_label="Sample\nGroup",
+#     plot_names=plot_labels,
+#     plot_title="Boxplot - Samples"
+# )
+# pic_png("boxplot_var1.png",
+#     boxplot_data,
+#     x_label="Variable",
+#     plot_title="Boxplot - Variables"
+# )
 ##### end png #####
 
 
 ##### tiff #####
-pic_tiff<-function(filename,                   # name of output file
-    input_matrix,                          # data matrix to use
-    plot_title="",                              # title of plot
-    x_label="",                            # x-axis label
-    y_label="",                            # y-axis label
-    cex_val=1,                             # font size
-    plot_names=names(input_matrix)              # default
-) { # Start jpg device with basic settings
-    tiff(filename,
-        bg="white",                            # background colour
-        res=300,                               # image resolution (dpi)
-        units="in", width=8.3, height=5.8,     # image dimensions (inches)
-        compression="none"                     # image compression 
-    )                                          #  (one of none, lzw, zip)
-    par(mgp=c(5,2,0),                          # axis margins 
-                                               # (title, labels, line)
-        mar=c(7,5,4,2),                        # plot margins (b,l,t,r)
-        las=1                                  # horizontal labels
-    )
-    # Draw the plot
-    boxplot(input_matrix,
-        xlab=x_label,
-        ylab=y_label,
-        main=plot_title,
-        cex=cex_val,
-        names=plot_names
-    )
-    # Turn off the device
-    dev.off()
-}
-pic_tiff("boxplot_smpl.tif",
-    t(boxplot_data),
-    x_label="Sample\nGroup",
-    plot_names=plot_labels,
-    plot_title="Boxplot - Samples"
-)
-pic_tiff("boxplot_var.tif",
-    boxplot_data,
-    x_label="Variable",
-    plot_title="Boxplot - Variables"
-)
+# pic_tiff<-function(filename,                   # name of output file
+#     input_matrix,                          # data matrix to use
+#     plot_title="",                              # title of plot
+#     x_label="",                            # x-axis label
+#     y_label="",                            # y-axis label
+#     cex_val=1,                             # font size
+#     plot_names=names(input_matrix)              # default
+# ) { # Start jpg device with basic settings
+#     tiff(filename,
+#         bg="white",                            # background colour
+#         res=300,                               # image resolution (dpi)
+#         units="in", width=8.3, height=5.8,     # image dimensions (inches)
+#         compression="none"                     # image compression 
+#     )                                          #  (one of none, lzw, zip)
+#     par(mgp=c(5,2,0),                          # axis margins 
+#                                                # (title, labels, line)
+#         mar=c(7,5,4,2),                        # plot margins (b,l,t,r)
+#         las=1                                  # horizontal labels
+#     )
+#     # Draw the plot
+#     boxplot(input_matrix,
+#         xlab=x_label,
+#         ylab=y_label,
+#         main=plot_title,
+#         cex=cex_val,
+#         names=plot_names
+#     )
+#     # Turn off the device
+#     dev.off()
+# }
+# pic_tiff("boxplot_smpl.tif",
+#     t(boxplot_data),
+#     x_label="Sample\nGroup",
+#     plot_names=plot_labels,
+#     plot_title="Boxplot - Samples"
+# )
+# pic_tiff("boxplot_var.tif",
+#     boxplot_data,
+#     x_label="Variable",
+#     plot_title="Boxplot - Variables"
+# )
 ##### end tiff #####
