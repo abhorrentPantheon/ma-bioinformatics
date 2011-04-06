@@ -15,6 +15,7 @@ tryCatch(
     error=function(err) {
         # if this produces an error:
         install.packages("gplots",repos="http://cran.ms.unimelb.edu.au/")
+        library(gplots)
     }
 )
 
@@ -48,6 +49,11 @@ pbg<-colorRampPalette(c("purple","black","green"))(256)
 
 pic_onscr<-function(input_matrix, plot_title="", cex_val=1, pal=rch) {
     x11()
+    # If number of points is greater than 33, scale character size
+    if (max(dim(input_matrix))>33) {
+        scale_val<-max(dim(input_matrix))*.03
+        cex_val<-cex_val/scale_val
+    }
     heatmap.2(input_matrix,                # matrix to use
         #Colv=FALSE,                       # reorder dendrogram
         dendrogram="both",                 # dendrograms to draw

@@ -76,8 +76,9 @@ axis(side=1,                               # on the bottom
 for (ii in 1:3) {
     lines(c(1:xrange[2]),                  # x-values
         mms[,ii],                          # y-values
+        type="o",                          # plot points _o_ver lines
         pch=pchlist[ii],                   # points (see above)
-        col=colour_list[ii],                   # colour (see above)
+        col=colour_list[ii],               # colour (see above)
         lty=linetype[ii],                  # line type (see above)
         lwd=2                              # line thickness
     )
