@@ -41,11 +41,8 @@ write(
     ""
 )
 
-# Read in .csv file
-basefile<-read.csv(in_matrix,header=FALSE,sep=",",quote="\"")
-
 # Save base file name for reuse
-base_fn<-gsub("(.*[^\\.])\\.csv",    ################################## hold
+base_fn<-gsub("(.*[^\\.])\\.csv",
     "\\1",
     filename,
     perl=TRUE
@@ -113,13 +110,13 @@ write(
 #
 # Generate sample and group names
 # Samples
-Sample<-gsub("(.*)\\.d",    ################################## hold
+Sample<-gsub("(.*)\\.d",
     "\\1",
     filt[-1,1],
     perl=TRUE
 )
 # Groups
-Group<-gsub("()_.*",    ################################## hold
+Group<-gsub("()_.*",
     "\\1",
     Sample,
     perl=TRUE
@@ -138,13 +135,14 @@ colnames(rt_mat)<-cpd_lbl
 colnames(area_mat)<-cpd_lbl
 
 # Find Standard row
-std_rownum<-grep("std",    ################################## hold
+std_rownum<-grep("std",
     area_mat[,1],
     ignore.case=TRUE,
     perl=TRUE
 )
 std_cols<-grep("IS",colnames(area_mat))
 std_row<-area_mat[std_rownum,std_cols]
+std_names_long<-colnames(std_row)
 
 # Get compound class names from standards
 std_cls<-gsub("(.*)(\\(.*)",
@@ -167,6 +165,7 @@ if (keep_IS==TRUE) {
 } else {
     # Remove standards from Area matrix
     area_mat<-area_mat[-std_rownum,-std_cols]
+    cpd_lbl<-cpd_lbl[-std_cols]
 }
 
 # Sort columns
@@ -176,7 +175,7 @@ area_mat<-area_mat[,c(names(area_mat[1:2]),
     sort(names(area_mat[3:ncol(area_mat)])))]
     
 # Store names for later use
-area_heads<-names(area_mat)
+#area_heads<-names(area_mat)
 
 #
 #    Output RT and Area matrices as .csv

@@ -25,7 +25,7 @@ file.remove("std_row.csv")
 #    Prepare and output Standards .csv file
 #
 # Create response factors
-Rf<-std_row/std_conc    ################################## hold
+Rf<-std_row/std_conc
 rownames(Rf)<-"Rf"
 out_std<-rbind(std_row,Rf)
 
