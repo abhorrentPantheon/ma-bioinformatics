@@ -20,16 +20,15 @@
 #    Normalisation
 #
 # Ask user for name of norm_cpd
-is_cpds<-cpd_lbl[grep("IS",cpd_lbl,perl=TRUE)]
 write("\n ** Internal standard compounds: ","")
 write(
     paste("    ",
         paste(
             # Get the index of the compound
-            grep("IS",is_cpds,perl=TRUE),
+            grep("IS",std_names_long,perl=TRUE),
             ") ",
             # List the (full) compound name
-            is_cpds,
+            std_names_long,
             sep=""
             #collapse=" "
         ),
@@ -53,7 +52,7 @@ if (is.na(as.numeric(input))) {
     nc_index<-as.numeric(input)
 }
 options(show.error.messages=TRUE,warn=0)
-norm_cpd_fullname<-is_cpds[nc_index]
+norm_cpd_fullname<-std_names_long[nc_index]
 
 write(
     paste(" ** Using ",
@@ -83,4 +82,3 @@ write(paste("        ",base_fn,"_5a_Norm.csv",sep=""),"")
 
 # Summarise normalised concentration data by function
 summary_fn(norm_mat,"norm")
-

@@ -1,4 +1,4 @@
-# mhproc_comp.r
+# mhproc.r
 #
 #    Author:    Jairus Bowne
 #    Purpose:    MassHunter processing script
@@ -19,6 +19,9 @@
 
 #    Notes:    This is a wrapper function for the modularised scripts
 
+# Determine which variables/objects are present before running script
+rm_list<-list()
+rm_list$pre=ls()
 #
 # User input section
 #
@@ -51,7 +54,7 @@ if (length(grep(input,"y",ignore.case=TRUE))!=0) {
     stop()
 }
 # Normalisation
-input=readline(" ?? Perform normalisation of concetration data? (y/n/c): ")
+input=readline(" ?? Perform normalisation of concentration data? (y/n/c): ")
 if (length(grep(input,"y",ignore.case=TRUE))!=0) {
     norm=TRUE
 } else if (length(grep(input,"n",ignore.case=TRUE))!=0) {
@@ -77,8 +80,19 @@ if (norm==TRUE) {
     write(" ** No normalisation will be performed.","")
     }
 
-source("mhproc_1.r")
-source("mhproc_2.r")
-source("mhproc_3.r")
-if (norm==TRUE) source("mhproc_4.r")
+source("mhproc_functions.r")
+source("mhproc_rt_area.r")
+source("mhproc_stds.r")
+source("mhproc_conc.r")
+if (norm==TRUE) {source("mhproc_norm.r")}
+source("mhproc_imgs.r")
 write(" ** All done! Exiting.","")
+
+#
+#    Tidy up
+#
+# List all objects
+rm_list$post=ls()
+# Remove objects in rm_list$post that aren't in rm_list$pre
+# rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+# rm(rm_list)

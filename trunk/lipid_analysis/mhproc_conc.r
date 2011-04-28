@@ -63,7 +63,7 @@ for (jj in 3:ncol(area_mat)) {
     }
 
 # Replace NA with NoIS for prettiness in output file
-out_conc_mat<-conc_mat    ################################## hold conc_mat
+out_conc_mat<-conc_mat
 out_conc_mat[is.na(out_conc_mat)]<-"NoIS"
 # Write output file
 write.csv(out_conc_mat,paste(base_fn,"_4a_Conc.csv",sep=""),row.names=FALSE)
@@ -71,5 +71,4 @@ write.csv(out_conc_mat,paste(base_fn,"_4a_Conc.csv",sep=""),row.names=FALSE)
 write(paste("        ",base_fn,"_4a_Conc.csv",sep=""),"")
 
 # Summarise concentration data by function
-source("mhproc_summary.r")
 summary_fn(conc_mat,"conc")
