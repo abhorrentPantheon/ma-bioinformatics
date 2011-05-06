@@ -1,0 +1,99 @@
+************************************
+* MA_macros Changelog: 06 May 2011 *
+************************************
+
+New:
+====
+
+iqr_flag
+--------
+Highlights outliers within a group for all metabolites on the Responses 
+sheet. Currently flags those with a value outside of 1.5 times the 
+inter-quartile range.
+
+************************************
+* MA_macros Changelog: 08 Mar 2011 *
+************************************
+
+New:
+====
+
+import_multi_csv
+----------------
+Running this creates a new workbook, then asks you to select .csv files.
+These are then used to populate the workbook, using the file name as the
+sheet name.
+
+calc2end
+--------
+Asks whether there are duplicate metabolites, and based on this runs
+either emboldT_pretty or emboldT_pretty2, then calc2oview, dupRem if there
+are duplicate metabolites, copies the Overview sheet, runs fold_colour_ov
+(which itself runs neg_folds_ov) then oview2folds. Basically, given a 
+checked CalcVals sheet, it will produce all the other downstream sheets.
+
+Updated:
+========
+
+Tidied up formatting.
+Removed macros that were specific for Xcalibur-processed (Thermo) files.
+
+cpd_sort
+--------
+Changed from checking the last few characters of the names to using a
+dictionary of compounds. If compounds are put into the 'Other compounds'
+category, add the compound name to the appropriate list in the code (there
+are instructions in the comments in the code as well).
+
+************************************
+* MA_macros Changelog: 02 Mar 2011 *
+************************************
+
+Updated:
+========
+
+Documentation now includes how to fix 'Compile error: User-defined type 
+not defined' error.
+
+neg_folds_ov
+------------
+(and hence fold_color_ov)
+Macro now does not change the standard deviation values to the negative
+inverse as it was previously.
+
+************************************
+* MA_macros Changelog: 22 Feb 2011 *
+************************************
+
+New:
+====
+
+resp2calcvals
+-------------
+Macro creates the CalcVals sheet from the Responses sheet.
+Requires that the Responses sheet has group information in row 4 (see
+gcms-template.xls for layout).
+
+Updated:
+========
+
+calc2ov
+-------
+Macro now does not ask how many sample groups there are, it calculates it 
+from the size of the sheet.
+
+(all macros)
+------------
+Cleaned up and standardised layout, info etc.
+
+Accompanying files:
+===================
+
+gcms-template.xls
+-----------------
+Now only 2 sheets.
+Responses tab now has Group row (row 4) for the creation of CalcVals sheet.
+
+gcms-example.xls
+----------------
+Updated for consistency.

@@ -1,4 +1,3 @@
-Attribute VB_Name = "Metabolomics_macros"
 
 Sub calc2end()
 
@@ -17,7 +16,7 @@ If ans = vbYes Then
     Application.Run "PERSONAL.XLS!emboldT_pretty"
     Application.Run "PERSONAL.XLS!calc2oview"
     ActiveSheet.Copy After:=Sheets("Overview")
-    Sheets(Sheets.count).Select
+    Sheets(Sheets.Count).Select
     Application.Run "PERSONAL.XLS!dupRem"
     Application.Run "PERSONAL.XLS!fold_colour_ov"
     Application.Run "PERSONAL.XLS!oview2folds"
@@ -25,7 +24,7 @@ ElseIf ans = vbNo Then
     Application.Run "PERSONAL.XLS!emboldT_pretty_2"
     Application.Run "PERSONAL.XLS!calc2oview"
     ActiveSheet.Copy After:=Sheets("Overview")
-    Sheets(Sheets.count).Select
+    Sheets(Sheets.Count).Select
     Application.Run "PERSONAL.XLS!fold_colour_ov"
     Application.Run "PERSONAL.XLS!oview2folds"
 ElseIf ans = vbCancel Then
@@ -45,9 +44,11 @@ Sub calc2oview()
 '    Output:    Overview sheet
 '
 
-' Define variables
+'
+'    Define variables
+'
 Dim show_box As Boolean
-Dim Response As Variant
+Dim response As Variant
 Dim counter1 As Integer
 Dim counter2 As Integer
 Dim counter3 As Integer
@@ -127,7 +128,7 @@ Range(init).Select
 Selection.ClearContents
 Columns("A:A").EntireColumn.AutoFit
 
-' Add in a column for the ± symbol
+' Add in a column for the Â± symbol
 For counter3 = 1 To (end_col + 1) / 6
 Range(init).Select
 ActiveCell.Offset(0, (counter3 * 3) - 1).Select
@@ -140,7 +141,7 @@ For counter4 = 1 To (end_col + 1) / 6
     ' Go to each location
     ActiveCell.Offset(2, (counter4 * 3) - 1).Select
     ' Add symbol
-    ActiveCell.Value = "±"
+    ActiveCell.Value = "Â±"
     ' Fill down to end of previous column (this is one of the
     ' most elegant solutions I have seen in macro code!)
     Range(ActiveCell, _
@@ -175,7 +176,7 @@ For counter5 = 1 To (end_col + 1) / 6
 Next counter5
 
 ' Make the x-folds aligned right
-For counter6 = 1 To Response
+For counter6 = 1 To response
     Range(init).Select
     ActiveCell.Offset(2, (counter6 * 3) + 1).Select
     Range(ActiveCell, ActiveCell.End(xlDown)).Select
@@ -228,7 +229,9 @@ Sub cpd_sort()
 '    Output:    Compounds are sorted alphabetically with breaks
 '               between compound classes
 
-' Declarations
+'
+'    Define variables
+'
 Dim cpd_dict As Scripting.Dictionary
 Dim counter1 As Integer
 Dim counter2 As Integer
@@ -265,7 +268,7 @@ aa = Array("Alanine", "Alanine_3TMS", "Allothreonine", "Arg_Orn", _
     "Tyrosine", "Valine")
 
 'organic acids
-oa = Array("2-Aminoadipate", "2-Aminoadipate_3TMS", "2-Butenoate", _
+OA = Array("2-Aminoadipate", "2-Aminoadipate_3TMS", "2-Butenoate", _
     "2-Butenoate_3TBS", "2-Oxobutanoate", "2-Oxobutyrate", "2-Oxogluconate", _
     "2-Oxoglutarate", "2-Oxovaleric_acid", "3-Methylbenzoate", _
     "4-Coumarate", "4-Hydroxybenzoate", "4-Hydroxybenzoate_2TBS", _
@@ -327,7 +330,7 @@ oth = Array("1-Monooctodecanoglycerol", "5-Hydroxytryptamine", "Adenine", _
     "Tyramine_3TMS", "Uracil", "Urea", "Urea_3TBS")
 
 ' Create a 2D array
-cpd_array = Array(aa, oa, sug, oth)
+cpd_array = Array(aa, OA, sug, oth)
 key_labels = Array("Amino acids", "Organic acids", "Sugars", "Other compounds")
 Range("a3").Select
 
@@ -381,7 +384,7 @@ For Each newclass In key_labels
     Range("a3").Select
     'Range(Selection, Selection.End(xlDown)).Select
     Selection.EntireColumn.Select
-    Set foundcell = Selection.Find(What:=newclass, after:=ActiveCell, _
+    Set foundcell = Selection.Find(What:=newclass, After:=ActiveCell, _
         LookIn:=xlFormulas, LookAt:=xlWhole, SearchOrder:=xlByRows, _
         SearchDirection:=xlNext, MatchCase:=False, Searchformat:=False)
     ' If the class of compound isn't present, this line prevents failure
@@ -479,12 +482,14 @@ Sub emboldT_pretty()
 '              Testing. Journal of the Royal Statistical Society.
 '              Series B (Methodological). 57(1):289-300.
 '
-'    Input:    CalcVals sheet (see template) where there are 
+'    Input:    CalcVals sheet (see template) where there are
 '              duplicate metabolites
 '                  i.e. Inositol and Inositol_2
 '
 
-' Define variables
+'
+'    Define variables
+'
 Dim rwNm As Integer
 
 ' Prevent screen flicker
@@ -500,7 +505,7 @@ ActiveCell.EntireRow.Select
 Selection.End(xlToLeft).Select
 ActiveCell.Select
 Range(Selection, Selection.End(xlDown)).Select
-rwNm = Selection.Rows.count
+rwNm = Selection.Rows.Count
 
 ' Go to the starting point
 Range(init).Select
@@ -511,7 +516,7 @@ Do Until ActiveCell.Value = ""
     Do Until ActiveCell.Value = ""
         ' #DIV/0! errors cause an issue; use an error handler:
         On Error GoTo panic
-        ' If the value is less than p-value divided by the 
+        ' If the value is less than p-value divided by the
         ' number of metabolites, then:
         If ActiveCell.Value < (0.05 / (rwNm / 2)) Then
             ' Select that cell and the two to the left of it
@@ -604,7 +609,9 @@ Sub emboldT_pretty_2()
 '    Input:    CalcVals sheet (see template) where there are
 '              no duplicate metabolites
 
-' Define variables
+'
+'    Define variables
+'
 Dim rwNm As Integer
 
 ' Prevent screen flicker
@@ -620,7 +627,7 @@ ActiveCell.EntireRow.Select
 Selection.End(xlToLeft).Select
 ActiveCell.Select
 Range(Selection, Selection.End(xlDown)).Select
-rwNm = Selection.Rows.count
+rwNm = Selection.Rows.Count
 
 ' Loop over the whole sheet as per emboldT_pretty (see that macro for
 ' information on what each part does, it is thoroughly commented)
@@ -716,11 +723,9 @@ Sub fold_colour_fl()
 '              Overview ---[oview2folds]---> Folds )
 '              (see template)
 
-' Prevent screen flickering
-Application.Cursor = xlWait
-Application.ScreenUpdating = False
-
-' Define variables
+'
+'    Define variables
+'
 Dim nmrw As Integer
 Dim nmcl As Integer
 Dim counter1 As Integer
@@ -728,13 +733,17 @@ Dim counter2 As Integer
 Dim counter3 As Integer
 Dim counter4 As Integer
 
+' Prevent screen flickering
+Application.Cursor = xlWait
+Application.ScreenUpdating = False
+
 ' Collect information about sheet size
 Range("a3").Select
 Range(Selection, Selection.End(xlDown)).Select
-nmrw = Selection.Rows.count
+nmrw = Selection.Rows.Count
 Range("a3").Select
 Range(Selection, Selection.End(xlToRight)).Select
-nmcl = Selection.Columns.count
+nmcl = Selection.Columns.Count
 
 ' Define a starting point
 Range("a1").Select
@@ -826,7 +835,9 @@ Sub fold_colour_ov()
 '              Responses ---[resp2calcvals]---> CalcVals
 '              CalcVals ---[calc2oview]---> Overview; see template)
 
-' Define variables
+'
+'    Define variables
+'
 Dim nmrw As Integer
 Dim nmcl As Integer
 Dim counter1 As Integer
@@ -842,8 +853,8 @@ Application.ScreenUpdating = False
 Range("a3").Select
 Range(Selection, Selection.End(xlDown)).Select
 Range(Selection, Selection.End(xlToRight)).Select
-nmrw = Selection.Rows.count
-nmcl = Selection.Columns.count
+nmrw = Selection.Rows.Count
+nmcl = Selection.Columns.Count
 ' Remove any colouring that is already present
 Selection.Interior.ColorIndex = xlNone
 
@@ -928,9 +939,12 @@ Sub import_multi_csv()
 '                      http://tiny.cc/2x4r7 [bytes.com]
 ' Purpose:    Import selected .csv files as new worksheets
 '
-' Input:    None, really. Open Excel and run the macro. 
+' Input:    None, really. Open Excel and run the macro.
 '           Files will then be imported into a new workbook.
 
+'
+'    Define variables
+'
 Dim Str1 As String
 Dim ii As Integer
 Dim str2 As String
@@ -950,7 +964,7 @@ With Application.FileDialog(msoFileDialogFilePicker)
     If .SelectedItems.Count > 0 Then
         For ii = 1 To .SelectedItems.Count
             If Worksheets.Count < ii Then
-                Worksheets.Add after:=Worksheets(ii - 1)
+                Worksheets.Add After:=Worksheets(ii - 1)
             End If
             Worksheets(ii).Activate
             str2 = .SelectedItems.Item(ii)
@@ -990,6 +1004,156 @@ Application.Cursor = xlDefault
 
 End Sub
 
+Sub iqr_flag()
+
+'    iqr_flag    [VBA]
+'
+'    Author:    Jairus Bowne, Alysha De Livera, Amsha Nahid
+'    Purpose:    Highlight outliers in a group for each metabolite.
+'
+'    Input:    Responses sheet
+'    Output:    Responses sheet with outliers highlighted
+'
+'    Notes:    If a message box says "Compile error: User-defined
+'              type not defined", you need to add the scripting runtime
+'              libraries. Stop the macro (Run>Reset), then click
+'              Tools>References... and check the box for Microsoft
+'              Scripting Runtime and run the macro again.
+
+'
+'    Define variables
+'
+Dim showbox As Boolean
+Dim nrow As Integer
+Dim ncol As Integer
+Dim grp_dict As New Scripting.Dictionary
+Dim tmp_rng As Range
+
+' Prevent screen flickering
+Application.Cursor = xlWait
+Application.ScreenUpdating = False
+
+Range("a1").Select
+init = ActiveCell.Address
+
+'
+'    Find groups row
+'
+showbox = True
+While showbox = True
+    group_row = InputBox("Which row are the groups in?" & vbCr & vbCr & _
+    "Please enter a number in the box below.", "Select group row")
+    If group_row = "" Then
+      MsgBox "Please enter a number, and run this macro again."
+      show_box = False
+      Exit Sub
+    Else
+        If IsNumeric(group_row) = False Then
+            MsgBox "Please enter numbers only, and run this macro again"
+            show_box = False
+            Exit Sub
+        End If
+    End If
+showbox = False
+Wend
+
+'
+'    Find first data row
+'
+showbox = True
+While showbox = True
+    met_row = InputBox("Which is the first row of metabolite data?" _
+        & vbCr & vbCr & "Please enter a number in the box below.", _
+        "Select first metabolite row")
+    If met_row = "" Then
+      MsgBox "Please enter a number, and run this macro again."
+      show_box = False
+      Exit Sub
+    Else
+        If IsNumeric(met_row) = False Then
+            MsgBox "Please enter numbers only, and run this macro again"
+            show_box = False
+            Exit Sub
+        End If
+    End If
+showbox = False
+Wend
+
+'
+'    Responses data preparation
+'
+' Find dataset, retain information
+Range("A1").Select
+ On Error Resume Next
+    end_row = Cells.Find("*", [A1], , , xlByRows, xlPrevious).Row
+    end_col = Cells.Find("*", [A1], , , xlByColumns, xlPrevious).Column
+    end_cell = Cells(end_row, end_col).Address
+dataset = "a1:" & end_cell
+Range(dataset).Select
+
+' Get data size
+nrow = Selection.Rows.Count
+ncol = Selection.Columns.Count
+
+' Get groups info
+Range("b" & group_row).Select
+Range(ActiveCell, ActiveCell.End(xlToRight)).Select
+Set groupcols = Selection
+num_groupcols = Selection.Columns.Count
+
+'
+'    Create a dictionary to store groups and numbers of replicates
+'
+Set grp_dict = CreateObject("Scripting.dictionary")
+Range("b" & group_row).Select
+'MsgBox ActiveCell.Address
+For counter1 = 1 To num_groupcols
+    ' If the group is not in the dictionary
+    If Not grp_dict.Exists(ActiveCell.Value) Then
+        ' add the group to the dictionary keys, and put the
+        ' column reference as the item associated with the key
+        grp_dict.Add ActiveCell.Value, counter1 + 1
+    End If
+    ActiveCell.Offset(0, 1).Select
+Next counter1
+' Add an empty string key as terminator
+grp_dict.Add "", end_col + 1
+
+'
+'    Flag outliers
+'
+Range("b" & group_row + 1).Select
+' For every row
+For ii = met_row To end_row
+    ' For every group (zero-indexed; do not use blank terminator group)
+    For jj = 0 To grp_dict.Count - 2
+        ' Select the cells for the group and name the range
+        Range(Cells(ii, grp_dict.Items(jj)), _
+            Cells(ii, grp_dict.Items(jj + 1) - 1)).Select
+        Selection.Name = "tmp_rng"
+        ' Calculate IQR
+        q3 = Application.Quartile(Range("tmp_rng"), 3)
+        q1 = Application.Quartile(Range("tmp_rng"), 1)
+        iqr = q3 - q1
+        ' Loop over each cell in range to determine which are outside 1.5*IQR
+        For Each m_val In Range("tmp_rng")
+            If m_val.Value < (q1 - 1.5 * iqr) Then
+                m_val.Interior.ColorIndex = 7
+            ElseIf m_val.Value > (q3 + 1.5 * iqr) Then
+                m_val.Interior.ColorIndex = 7
+            Else
+                m_val.Interior.ColorIndex = xlNone
+            End If
+        Next m_val
+    Next jj
+Next ii
+
+' Return cursor to default and allow screen updating
+Application.ScreenUpdating = True
+Application.Cursor = xlDefault
+
+End Sub
+
 Sub minmax_all()
 
 '    minmax_all    [VBA]
@@ -1001,7 +1165,9 @@ Sub minmax_all()
 '    Notes:    InSt must be the first metabolite row in the data set
 '
 
-' Define variables
+'
+'    Define variables
+'
 Dim counter1 As Integer
 Dim nmrw As Integer
 Dim nmcl As Integer
@@ -1019,8 +1185,8 @@ Application.ScreenUpdating = False
 
 'Use the find_dataset macro to define sheet size
 Application.Run "PERSONAL.XLS!find_dataset"
-nmrw = Selection.Rows.count
-nmcl = Selection.Columns.count
+nmrw = Selection.Rows.Count
+nmcl = Selection.Columns.Count
 
 ' Define a starting point
 Range("a1").Select
@@ -1096,7 +1262,9 @@ Sub neg_folds_fl()
 '
 '    Input:    Folds sheet.
 
-' Define some variables
+'
+'    Define variables
+'
 Dim counter1 As Integer
 Dim counter2 As Integer
 
@@ -1110,11 +1278,11 @@ init = ActiveCell.Address
 ActiveCell.Offset(2, 1).Select
 ' Count rows
 Range(ActiveCell, Selection.End(xlDown)).Select
-nm_rw = Selection.Rows.count
+nm_rw = Selection.Rows.Count
 ActiveCell.Select
 ' Count columns
 Range(ActiveCell, Selection.End(xlToRight)).Select
-nm_col = Selection.Columns.count
+nm_col = Selection.Columns.Count
 
 For counter1 = 1 To (nm_col + 1)
     For counter2 = 1 To nm_rw
@@ -1149,7 +1317,9 @@ Sub neg_folds_ov()
 '
 '    Input:    Overview sheet.
 
-' Define variables
+'
+'    Define variables
+'
 Dim counter1 As Integer
 Dim counter2 As Integer
 
@@ -1163,11 +1333,11 @@ init = ActiveCell.Address
 ActiveCell.Offset(2, 1).Select
 ' Count rows
 Range(ActiveCell, Selection.End(xlDown)).Select
-nm_rw = Selection.Rows.count
+nm_rw = Selection.Rows.Count
 ActiveCell.Select
 ' Count columns
 Range(ActiveCell, Selection.End(xlToRight)).Select
-nm_col = Selection.Columns.count
+nm_col = Selection.Columns.Count
 
 For counter1 = 1 To (nm_col + 1)
     For counter2 = 1 To nm_rw
@@ -1258,7 +1428,7 @@ Sub resp2calcvals()
 '    Author:    Jairus Bowne
 '    Purpose:    Generate a basic CalcVals sheet based on Group information
 '
-'    Input:    Responses tab (named as such). Header layout (names of rows
+'    Input:    Responses tab (as active sheet). Header layout (names of rows
 '              here does not matter):
 '                  Row 1:    File Name
 '                  Row 2:    Fresh Weight
@@ -1268,16 +1438,91 @@ Sub resp2calcvals()
 '                            samples in columns)
 '    Output:    CalcVals sheet where the first group on the responses
 '               tab is the reference group
+'    Notes:    If a message box says "Compile error: User-defined
+'              type not defined", you need to add the scripting runtime
+'              libraries. Stop the macro (Run>Reset), then click
+'              Tools>References... and check the box for Microsoft
+'              Scripting Runtime and run the macro again.
 
+'
 ' Define variables
+'
+Dim showbox As Boolean
+Dim sheet_test As Worksheet
 Dim nrow As Integer
 Dim ncol As Integer
+Dim grp_dict As New Scripting.Dictionary
 Dim counter1 As Integer
 Dim counter2 As Integer
 Dim counter3 As Integer
 Dim counter4 As Integer
-Dim grp_dict As New Scripting.Dictionary
 
+resp_sheet = ActiveSheet.Name
+
+'
+'    Find groups row
+'
+showbox = True
+While showbox = True
+    group_row = InputBox("Which row are the groups in?" & vbCr & vbCr & _
+    "Please enter a number in the box below.", "Groups information")
+    If group_row = "" Then
+      MsgBox "Please enter a number, and run this macro again."
+      show_box = False
+      Exit Sub
+    Else
+        If IsNumeric(group_row) = False Then
+            MsgBox "Please enter numbers only, and run this macro again"
+            show_box = False
+            Exit Sub
+        End If
+    End If
+showbox = False
+Wend
+
+'
+'    Check if CalcVals sheet exists
+'
+On Error Resume Next
+Set sheet_test = Sheets("CalcVals")
+On Error GoTo 0
+
+' If the line above failed, it's value is nothing
+If sheet_test Is Nothing Then
+    ' Hence create CalcVals sheet
+    Worksheets.Add(After:=ActiveSheet).Name = "CalcVals"
+Else
+    ' Check to see what user would like done with existing CalcVals
+    auth = MsgBox("CalcVals sheet already exists!" & Chr(13) _
+    & Chr(13) & "Would you like to overwrite this sheet?", vbYesNoCancel)
+End If
+
+' If user selects cancel, exit whole macro
+If auth = vbCancel Then
+    Exit Sub
+' If user selects yes, go to CalcVals and delete all
+ElseIf auth = vbYes Then
+    Sheets("CalcVals").Activate
+    Sheets("CalcVals").Select
+    Application.Run ("PERSONAL.XLS!find_dataset")
+    Selection.EntireColumn.Delete
+' Otherwise append number of sheets to name of old CalcVals sheet
+' (this allows for multiple old CalcVals sheets)
+ElseIf auth = vbNo Then
+    Sheets("CalcVals").Activate
+    ActiveSheet.Name = "CalcVals_" & Sheets.Count
+    ' And create CalcVals sheet as above
+    Sheets(resp_sheet).Activate
+    Worksheets.Add(After:=ActiveSheet).Name = "CalcVals"
+End If
+
+' Go back to Responses sheet
+Sheets(resp_sheet).Activate
+Sheets(resp_sheet).Select
+
+'
+'    Begin the functional part
+'
 ' Prevent screen flicker
 Application.Cursor = xlWait
 Application.ScreenUpdating = False
@@ -1295,18 +1540,18 @@ dataset = "a1:" & end_cell
 Range(dataset).Select
 
 ' Get data size
-nrow = Selection.Rows.count
-ncol = Selection.Columns.count
+nrow = Selection.Rows.Count
+ncol = Selection.Columns.Count
 
 ' Get groups info
-Range("b4").Select
+Range("b" & group_row).Select
 Range(ActiveCell, ActiveCell.End(xlToRight)).Select
 Set groupcols = Selection
-num_groupcols = Selection.Columns.count
+num_groupcols = Selection.Columns.Count
 
 ' Create a dictionary to store groups and numbers of replicates
 Set grp_dict = CreateObject("Scripting.dictionary")
-Range("b4").Select
+Range("b" & group_row).Select
 
 For counter1 = 1 To num_groupcols
     ' If the group is not in the dictionary
@@ -1321,17 +1566,14 @@ For counter1 = 1 To num_groupcols
 Next counter1
 ' Add an empty string key with the endpoint
 grp_dict.Add "", end_col + 1
-' Group start points can now be referenced by their keys as:
-'     Cells(4, grp_dict("BC")).Select
-' Keys in dictionary are 0-indexed, and can be referenced as:
-'     grp_dict.Keys(0)
+''' Group start points can now be referenced by their keys as:
+'''     Cells(4, grp_dict("BC")).Select
+''' Keys in dictionary are 0-indexed, and can be referenced as:
+'''     grp_dict.Keys(0)
 
-'
-'    Create the CalcVals sheet
-'
-Worksheets.Add(After:=ActiveSheet).Name = "CalcVals"
+' Go to CalcVals sheet
 Sheets("CalcVals").Activate
-Sheets("calcVals").Select
+Sheets("CalcVals").Select
 
 '
 '    Prepare the ref column (average, std err, x-fold, sem)
@@ -1349,32 +1591,32 @@ Range("b3").Select
 ' If this ConvertFormula function is not applied, the cell references
 ' are absolute - i.e. they are of the form $A$3 and don't fill properly
 ActiveCell.Value = Application.ConvertFormula _
-    (Formula:="=average(Responses!R5C" & grp_dict.Items(0) & _
+    (Formula:="=average(" & resp_sheet & "!R5C" & grp_dict.Items(0) & _
     ":R5C" & grp_dict.Items(1) - 1 & ")", _
     FromReferenceStyle:=xlR1C1, ToReferenceStyle:=xlA1, _
     ToAbsolute:=xlRelative)
-        ' alternatives:
-        'Application.ConvertFormula _
-        '            (Formula:=RdoRange.Areas(i).Formula, _
-        '            FromReferenceStyle:=xlA1, _
-        '            ToReferenceStyle:=xlA1, ToAbsolute:=xlRelRowAbsColumn)
-        'Application.ConvertFormula _
-        '            (Formula:=RdoRange.Areas(i).Formula, _
-        '            FromReferenceStyle:=xlA1, _
-        '            ToReferenceStyle:=xlA1, ToAbsolute:=xlAbsRowRelColumn)
-        'Application.ConvertFormula _
-        '            (Formula:=RdoRange.Areas(i).Formula, _
-        '            FromReferenceStyle:=xlA1, _
-        '            ToReferenceStyle:=xlA1, ToAbsolute:=xlAbsolute)
-        'Application.ConvertFormula _
-        '            (Formula:=RdoRange.Areas(i).Formula, _
-        '            FromReferenceStyle:=xlA1, _
-        '            ToReferenceStyle:=xlA1, ToAbsolute:=xlRelative)
+''' Alternatives:
+'''Application.ConvertFormula _
+'''            (Formula:="average(a1:b3)", _
+'''            FromReferenceStyle:=xlA1, _
+'''            ToReferenceStyle:=xlA1, ToAbsolute:=xlRelRowAbsColumn)
+'''Application.ConvertFormula _
+'''            (Formula:="average(a1:b3)", _
+'''            FromReferenceStyle:=xlA1, _
+'''            ToReferenceStyle:=xlA1, ToAbsolute:=xlAbsRowRelColumn)
+'''Application.ConvertFormula _
+'''            (Formula:="average(a1:b3)", _
+'''            FromReferenceStyle:=xlA1, _
+'''            ToReferenceStyle:=xlA1, ToAbsolute:=xlAbsolute)
+'''Application.ConvertFormula _
+'''            (Formula:="average(a1:b3)", _
+'''            FromReferenceStyle:=xlA1, _
+'''            ToReferenceStyle:=xlA1, ToAbsolute:=xlRelative)
 
 ActiveCell.Offset(0, 1).Select
 ' Standard error
 ActiveCell.Value = Application.ConvertFormula _
-    (Formula:="=stdev(Responses!R5C" & grp_dict.Items(0) & _
+    (Formula:="=stdev(" & resp_sheet & "!R5C" & grp_dict.Items(0) & _
     ":R5C" & grp_dict.Items(1) - 1 & ")/sqrt(" & _
     grp_dict.Items(1) - grp_dict.Items(0) & ")", _
     FromReferenceStyle:=xlR1C1, ToReferenceStyle:=xlA1, _
@@ -1392,7 +1634,7 @@ ActiveCell.FormulaR1C1 = "=RC[-2]/RC[-3]"
 '
 '    Generate the sample column headers
 '
-For counter2 = 1 To grp_dict.count - 2
+For counter2 = 1 To grp_dict.Count - 2
     Range("g1").Select
     ActiveCell.Offset(0, 6 * (counter2 - 1)).Select
     Call calcvals_col_labels
@@ -1403,21 +1645,21 @@ Next counter2
 '
 '    Generate the sample column formulae
 '
-For counter3 = 1 To grp_dict.count - 1
+For counter3 = 1 To grp_dict.Count - 1
     ' Only for the actual groups (i.e. not using the blank key)
     If grp_dict.Keys(counter3) <> "" Then
         Range("g3").Select
         ActiveCell.Offset(0, (counter3 - 1) * 6).Select
         ' Average
         ActiveCell.Value = Application.ConvertFormula _
-            (Formula:="=average(Responses!R5C" & grp_dict.Items(counter3) & _
+            (Formula:="=average(" & resp_sheet & "!R5C" & grp_dict.Items(counter3) & _
             ":R5C" & grp_dict.Items(counter3 + 1) - 1 & ")", _
             FromReferenceStyle:=xlR1C1, ToReferenceStyle:=xlA1, _
             ToAbsolute:=xlRelative)
         ActiveCell.Offset(0, 1).Select
         ' Standard error
         ActiveCell.Value = Application.ConvertFormula _
-            (Formula:="=stdev(Responses!R5C" & grp_dict.Items(counter3) & _
+            (Formula:="=stdev(" & resp_sheet & "!R5C" & grp_dict.Items(counter3) & _
             ":R5C" & grp_dict.Items(counter3 + 1) - 1 & ")/sqrt(" & _
             grp_dict.Items(counter3 + 1) - grp_dict.Items(counter3) & ")", _
             FromReferenceStyle:=xlR1C1, ToReferenceStyle:=xlA1, _
@@ -1433,8 +1675,8 @@ For counter3 = 1 To grp_dict.count - 1
         ActiveCell.Offset(0, 1).Select
         ' t-Test
         ActiveCell.Value = Application.ConvertFormula _
-            (Formula:="=ttest(Responses!R5C" & grp_dict.Items(counter3) & _
-            ":R5C" & grp_dict.Items(counter3 + 1) - 1 & ",Responses!R5C" & _
+            (Formula:="=ttest(" & resp_sheet & "!R5C" & grp_dict.Items(counter3) & _
+            ":R5C" & grp_dict.Items(counter3 + 1) - 1 & "," & resp_sheet & "!R5C" & _
             grp_dict.Items(0) & ":R5C" & grp_dict.Items(1) - 1 & ",2,2)", _
             FromReferenceStyle:=xlR1C1, ToReferenceStyle:=xlA1, _
             ToAbsolute:=xlRelRowAbsColumn)
@@ -1443,25 +1685,26 @@ Next counter3
 
 ' Add compound names
 Range("a3").Select
-ActiveCell.Formula = "=responses!a5"
+ActiveCell.Formula = "=" & resp_sheet & "!a5"
 ' Fill the rest of the sheet
-    ' (This is -5 as there are 4 rows that aren't 
-    ' metabolites above the active cell)
-Range(ActiveCell, ActiveCell.Offset(end_row - 5, 6 * grp_dict.count)).FillDown
-
+    ' (This is -5 as there are 4 rows that aren't metabolites
+    '  above the active cell (A5) on the responses sheet)
+Range(ActiveCell, ActiveCell.Offset(end_row - 5, 6 * grp_dict.Count)).FillDown
+Debug.Print "end_row: " & end_row
+Debug.Print "grp_dict.count: " & grp_dict.Count
 '
 '    Format sheet appearance
 '
 ' Change the cell format to number (with 3 dp)
-Range(ActiveCell, ActiveCell.Offset(end_row - 5, 6 * grp_dict.count)).Select
+Range(ActiveCell, ActiveCell.Offset(end_row - 5, 6 * grp_dict.Count)).Select
 Selection.NumberFormat = "0.000"
 
 ' Merge column headers
-For counter4 = 1 To grp_dict.count - 1
+For counter4 = 1 To grp_dict.Count - 1
     Range("a2").Select
     ' The first group has one less column than the rest
     If counter4 = 1 Then
-        Range(ActiveCell.Offset(0, 1), ActiveCell.Offset(0, 3)).Select
+        Range(ActiveCell.Offset(0, 1), ActiveCell.Offset(0, 4)).Select
         Selection.Merge
         Selection.HorizontalAlignment = xlCenter
     Else
@@ -1473,7 +1716,7 @@ For counter4 = 1 To grp_dict.count - 1
 Next counter4
 
 ' Add a border to the left hand side of the columns
-For counter5 = 1 To grp_dict.count - 1
+For counter5 = 1 To grp_dict.Count - 1
     Range("a1").Select
     If counter5 = 1 Then
         ActiveCell.Offset(0, 1).Select
@@ -1531,7 +1774,9 @@ Sub tms_trim()
 '
 '    Input:    Any sheet that has compound names ending in _nTMS (without duplicate entries)
 
-' Define variables
+'
+'    Define variables
+'
 Dim counter1 As Integer
 
 ' Prevent screen flicker
@@ -1548,7 +1793,7 @@ On Error Resume Next
     end_col = Cells.Find("*", [A1], , , xlByColumns, xlPrevious).Column
     end_cell = Cells(end_row, end_col).Address
 Range(init, "a" & end_row).Select
-nrw = Selection.Rows.count
+nrw = Selection.Rows.Count
 Range(init).Select
 
 For counter1 = 1 To nrw
