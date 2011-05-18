@@ -28,7 +28,7 @@ rm_list$pre=ls()
 # Standard concentration
 input=readline(
     paste(" >> Please enter the concentration ",
-    "of the internal standard (nmol): ",
+    "of the internal standard (nM): ",
     sep=""
     )
 )
@@ -68,7 +68,7 @@ if (length(grep(input,"y",ignore.case=TRUE))!=0) {
 }
 options(show.error.messages=TRUE,warn=0)
 
-write(paste(" ** Standard concentration:",std_conc,"nmol."),"")
+write(paste(" ** Standard concentration:",std_conc,"nM."),"")
 if (keep_IS==TRUE) {
     write(" ** Keeping standard compounds in final matrix.","")
     } else {
@@ -94,5 +94,5 @@ write(" ** All done! Exiting.","")
 # List all objects
 rm_list$post=ls()
 # Remove objects in rm_list$post that aren't in rm_list$pre
-# rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
-# rm(rm_list)
+rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+rm(rm_list)

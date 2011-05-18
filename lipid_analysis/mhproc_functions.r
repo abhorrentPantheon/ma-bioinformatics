@@ -750,7 +750,7 @@ multibarplot<-function(flat_data,
         )
 
         # Custom y-axis label
-        title(ylab="Concentration (nmol)",
+        title(ylab="Concentration (nM)",
             line=ceiling(mar_expand[2]+par()$cin[2])+2
         )
         # Standard error (+)
@@ -996,7 +996,7 @@ summ_plot<-function(input_matrix,
     )
     
     # Custom y-axis label
-    title(ylab="Concentration (nmol)",
+    title(ylab="Concentration (nM)",
         line=ceiling(mar_expand[2]+par()$cin[2])+2
     )
     # Standard error (+)
