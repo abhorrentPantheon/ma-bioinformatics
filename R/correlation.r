@@ -12,6 +12,10 @@
 #    Notes:    Missing values (if any) are replaced by the half of the lowest
 #              value in the entire data matrix.
 
+# Determine which variables/objects are present before running script
+rm_list<-list()
+rm_list$pre=ls()
+
 #
 #    Load the data matrix
 #
@@ -38,8 +42,36 @@ colnames(pre_cor_data) <- if (
     colnames(pre_cor_data)
 }
 
+# Determine the correlation method to use
+method_sel<-readline(
+    paste("    1) Pearson",
+        "    2) Spearman",
+        "    3) Kendall",
+        "    4) cancel and exit script",
+        " >> Please select a number:  ",
+        sep="\n"
+    )
+)
+
+# Check that the response is a number
+if (is.na(as.numeric(method_sel))) {
+    write(" ## Please enter numbers only next time. Exiting...","")
+    stop()
+}
+
+if (method_sel==1) {
+    cor_met="pearson"
+} else if (method_sel==2) {
+    cor_met="spearman"
+} else if (method_sel==3) {
+    cor_met="kendall"
+} else if (method_sel>=4) {
+    write(" ## Exiting script.","")
+    stop()
+}
+
 # Calculate the correlation matrix
-cor_data<-cor(pre_cor_data)
+cor_data<-cor(pre_cor_data,method=cor_met)
 
 # Generate the output data (correlation matrix) in .csv format
 write.csv(cor_data,"cor_matrix.csv")
@@ -62,3 +94,12 @@ output<-data.frame(
 
 # Generate the output data in .csv format
 write.csv(output,"cor_variables.csv")
+
+#
+#    Tidy up
+#
+# List all objects
+rm_list$post=ls()
+# Remove objects in rm_list$post that aren't in rm_list$pre
+rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+rm(rm_list)

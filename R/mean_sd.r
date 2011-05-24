@@ -7,6 +7,10 @@
 #    Output:    Plot showing the mean and standard deviation across
 #               samples|variables
 
+# Determine which variables/objects are present before running script
+rm_list<-list()
+rm_list$pre=ls()
+
 #
 #    Load the data matrix
 #
@@ -107,3 +111,12 @@ plot(msd, las=1, main="Scedasticity Plot",col="blue")
 # # For larger text, change the cex_val e.g.:
 # # pic_tiff("mean_sd_plot.tif", msd, cex_val=3)
 ##### end tiff #####
+
+#
+#    Tidy up
+#
+# List all objects
+rm_list$post=ls()
+# Remove objects in rm_list$post that aren't in rm_list$pre
+rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+rm(rm_list)
