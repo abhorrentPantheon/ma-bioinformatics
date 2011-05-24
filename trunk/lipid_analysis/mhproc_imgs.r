@@ -261,7 +261,7 @@ if (save_img==TRUE) {
         dev_type="png"
     } else if (input==3) {
         dev_type="tif"
-    } else if (input==4) {
+    } else if (input>=4) {
         write(" ## Exiting script.","")
         stop()
     }

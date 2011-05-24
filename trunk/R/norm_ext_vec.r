@@ -14,6 +14,11 @@
 #              matrix - that is, rows are samples, variable is one
 #              column with values for normalising against. Length must
 #              match data matrix length
+
+# Determine which variables/objects are present before running script
+rm_list<-list()
+rm_list$pre=ls()
+
 #
 #    Load and prepare the data matrix
 #
@@ -61,3 +66,12 @@ colnames(output) <- if (
 #    Generate the output matrix in .csv format
 #
 write.csv(output,"norm_data_ext_vec.csv")
+
+#
+#    Tidy up
+#
+# List all objects
+rm_list$post=ls()
+# Remove objects in rm_list$post that aren't in rm_list$pre
+rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+rm(rm_list)
