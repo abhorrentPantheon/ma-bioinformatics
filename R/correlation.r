@@ -75,6 +75,7 @@ cor_data<-cor(pre_cor_data,method=cor_met)
 
 # Generate the output data (correlation matrix) in .csv format
 write.csv(cor_data,"cor_matrix.csv")
+########################################################## inform user
 
 # Crop the lower triangle of the correlation matrix
 lower_tri<-which(lower.tri(cor_data),TRUE)
@@ -101,5 +102,6 @@ write.csv(output,"cor_variables.csv")
 # List all objects
 rm_list$post=ls()
 # Remove objects in rm_list$post that aren't in rm_list$pre
+######################################################## warnings
 rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
 rm(rm_list)

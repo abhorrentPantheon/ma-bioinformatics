@@ -220,6 +220,8 @@ boxplot(boxplot_data,
 #
 # List all objects
 rm_list$post=ls()
+########################################## Suppress warnings here (all scripts)
 # Remove objects in rm_list$post that aren't in rm_list$pre
 rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+########################################## Reinstate warnings here (all scripts)
 rm(rm_list)
