@@ -12,9 +12,9 @@
 #    Notes:    Missing values (if any) are replaced by the half of the lowest
 #              value in the entire data matrix.
 
-# Determine which variables/objects are present before running script
-rm_list<-list()
-rm_list$pre=ls()
+# # Determine which variables/objects are present before running script
+# rm_list<-list()
+# rm_list$pre=ls()
 
 #
 #    Load the data matrix
@@ -96,12 +96,11 @@ output<-data.frame(
 # Generate the output data in .csv format
 write.csv(output,"cor_variables.csv")
 
-#
-#    Tidy up
-#
-# List all objects
-rm_list$post=ls()
-# Remove objects in rm_list$post that aren't in rm_list$pre
-######################################################## warnings
-rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
-rm(rm_list)
+# #
+# #    Tidy up
+# #
+# # List all objects
+# rm_list$post=ls()
+# # Remove objects in rm_list$post that aren't in rm_list$pre
+# rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+# rm(rm_list)

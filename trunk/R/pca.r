@@ -11,9 +11,9 @@
 #              Data should be log transformed prior to using this script
 
 
-# Determine which variables/objects are present before running script
-rm_list<-list()
-rm_list$pre=ls()
+# # Determine which variables/objects are present before running script
+# rm_list<-list()
+# rm_list$pre=ls()
 
 #
 #    Load necessary libraries, and install them if they are missing
@@ -435,11 +435,11 @@ pic_onscr(eigenvecs,
 # )
 ##### end tiff #####
 
-#
-#    Tidy up
-#
-# List all objects
-rm_list$post=ls()
-# Remove objects in rm_list$post that aren't in rm_list$pre
-rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
-rm(rm_list)
+# #
+# #    Tidy up
+# #
+# # List all objects
+# rm_list$post=ls()
+# # Remove objects in rm_list$post that aren't in rm_list$pre
+# rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+# rm(rm_list)
