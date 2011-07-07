@@ -11,9 +11,9 @@
 #    Notes:    Log tranformation is necessary if the variables are not
 #              normally distributed prior to performing this test
 
-# Determine which variables/objects are present before running script
-rm_list<-list()
-rm_list$pre=ls()
+# # Determine which variables/objects are present before running script
+# rm_list<-list()
+# rm_list$pre=ls()
 
 #
 #    Prepare the data matrix
@@ -75,12 +75,12 @@ if (length(levels(groups)) > 2) {
     #
     write.csv(pvals,"p_t_test.csv")
     
-    #
-    #    Tidy up
-    #
-    # List all objects
-    rm_list$post=ls()
-    # Remove objects in rm_list$post that aren't in rm_list$pre
-    rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
-    rm(rm_list)
+    # #
+    # #    Tidy up
+    # #
+    # # List all objects
+    # rm_list$post=ls()
+    # # Remove objects in rm_list$post that aren't in rm_list$pre
+    # rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+    # rm(rm_list)
 }

@@ -13,9 +13,9 @@
 #    Notes:    Non-parametric one-way analysis of variance by ranks.
 #    Date:    31/05/2011
 
-# Determine which variables/objects are present before running script
-rm_list<-list()
-rm_list$pre=ls()
+# # Determine which variables/objects are present before running script
+# rm_list<-list()
+# rm_list$pre=ls()
 
 # Load required libraries
 tryCatch(
@@ -163,11 +163,11 @@ colnames(out_kruskal)<-"Significant difference"
 fname<-paste("kwMultComp_",metab_sel,".csv",sep="")
 write.csv(out_kruskal,fname)
 
-#
-#    Tidy up
-#
-# List all objects
-rm_list$post=ls()
-# Remove objects in rm_list$post that aren't in rm_list$pre
-rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
-rm(rm_list)
+# #
+# #    Tidy up
+# #
+# # List all objects
+# rm_list$post=ls()
+# # Remove objects in rm_list$post that aren't in rm_list$pre
+# rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+# rm(rm_list)

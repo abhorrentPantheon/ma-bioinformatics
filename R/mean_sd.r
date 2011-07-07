@@ -7,9 +7,9 @@
 #    Output:    Plot showing the mean and standard deviation across
 #               samples|variables
 
-# Determine which variables/objects are present before running script
-rm_list<-list()
-rm_list$pre=ls()
+# # Determine which variables/objects are present before running script
+# rm_list<-list()
+# rm_list$pre=ls()
 
 #
 #    Load the data matrix
@@ -26,8 +26,22 @@ msd_data<-input_data[,-1]
 #
 # Take the mean of all the variables for each sample
 Mean<-apply(msd_data,2,mean,na.rm=TRUE)
-# Take the standard deviation of all the variables for each sample
-StdDev<-apply(msd_data,2,sd,na.rm=TRUE)
+# Take the standard deviation of all the variables for each sample group
+# for group in groups sum stddevs / sqrt n groups
+if (length(levels(input_data[,1]))==1) {
+	StdDev<-apply(msd_data,2,sd,na.rm=TRUE)
+} else {
+	sub_sd<-list()
+	for (lvl in levels(input_data[,1])) {
+		sub_sd[[lvl]]<-apply(
+			msd_data[which(input_data[,1]==lvl),],2,sd,na.rm=TRUE
+		)
+	}
+	StdDev<-sub_sd[[1]]
+	for (ii in 2:length(levels(input_data[,1]))) {
+		StdDev<-StdDev+sub_sd[[ii]]
+	}
+}
 # Join the data into a matrix for plotting
 msd<-data.frame(cbind(Mean,StdDev))
 
@@ -112,11 +126,11 @@ plot(msd, las=1, main="Scedasticity Plot",col="blue")
 # # pic_tiff("mean_sd_plot.tif", msd, cex_val=3)
 ##### end tiff #####
 
-#
-#    Tidy up
-#
-# List all objects
-rm_list$post=ls()
-# Remove objects in rm_list$post that aren't in rm_list$pre
-rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
-rm(rm_list)
+# #
+# #    Tidy up
+# #
+# # List all objects
+# rm_list$post=ls()
+# # Remove objects in rm_list$post that aren't in rm_list$pre
+# rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
+# rm(rm_list)
