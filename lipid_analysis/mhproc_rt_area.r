@@ -11,29 +11,34 @@
 
 # Select file to use
 in_matrix<-choose.files(
+#    filter=c(
+#        c("Comma separated value files (*.csv)",
+#            "Text files (*.txt)"
+#        ),
+#        c("*.csv","*.txt")
+#    ),
     filter=c(
-        c("Comma separated value files (*.csv)",
-            "Text files (*.txt)"
-        ),
-        c("*.csv","*.txt")
+        "Comma separated value files (*.csv)",
+        "*.csv"
     ),
     caption="Select the data matrix file"
 )
 
-filename<-gsub(
-    paste(".+",
-        gsub(".+/(.+)$",
-            "\\1",
-            getwd(),
-            perl=TRUE
-        ),
-        ".(.+)$",
-        sep=""
-    ),
-    "\\1",
-    in_matrix,
-    perl=TRUE
-)
+#filename<-gsub(
+#    paste(".+",
+#        gsub(".+/(.+)$",
+#            "\\1",
+#            getwd(),
+#            perl=TRUE
+#        ),
+#        ".(.+)$",
+#        sep=""
+#    ),
+#    "\\1",
+#    in_matrix,
+#    perl=TRUE
+#)
+filename<-basename(in_matrix)
 
 # Show usage information
 write(
@@ -58,7 +63,7 @@ prefilt<-basefile[,-c(1:3,5:7)]
 # Define columns and generate headers
 area_cols<-which(prefilt[2,]=="Area")
 rt_cols<-which(prefilt[2,]=="RT")
-headers<-t(prefilt[1,rt_cols])
+headers<-t(prefilt[1,which(prefilt[1,]!="")])
 cpd_lbl<-rep(NA,length(headers))
 
 for (ii in 1:length(headers)) {

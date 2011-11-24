@@ -23,10 +23,10 @@ Group<-input_data[,1]
 # Remove groups for data processing
 pre_norm<-input_data[,-1]
 
-# Create a vector of means
-mean<-apply(pre_norm,1,mean,na.rm=T)
-# Create a vector of standard deviations
-sd<-apply(pre_norm,1,sd,na.rm=T)
+# Create a vector of means (row-wise)
+data_means<-apply(pre_norm,1,mean,na.rm=TRUE)
+# Create a vector of standard deviations (row-wise)
+data_sds<-apply(pre_norm,1,sd,na.rm=TRUE)
 
 # Prepare an empty matrix
 norm_data<-matrix(NA,nrow=nrow(pre_norm),ncol=length(pre_norm))
@@ -37,8 +37,8 @@ colnames(norm_data)<-colnames(pre_norm)
 #    Normalise the data
 #
 for (ii in 1:nrow(pre_norm)) {
-    for (jj in 1:length(pre_norm)) {   # this gives the row length
-        norm_data[ii,jj]<-(pre_norm[ii,jj]-mean[ii])/sd[ii]
+    for (jj in 1:dim(pre_norm)[1]) {   # this gives the row length
+        norm_data[ii,jj]<-(pre_norm[ii,jj]-data_mean[ii])/data_sds[ii]
     }
 }
 

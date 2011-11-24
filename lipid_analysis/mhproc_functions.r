@@ -190,7 +190,11 @@ summary_fn<-function(data_matrix,type) {
     for (ii in 1:length(matrix_summary_list_sem)) {
         # Test to see if the standard is missing
         testcase<-try(
-            apply(matrix_summary_list_sem[[ii]],1,function(x) sqrt(sum(x*x,na.rm=TRUE))), 
+            apply(
+                matrix_summary_list_sem[[ii]],
+                1,
+                function(x) sqrt(sum(x*x,na.rm=TRUE))
+            ), 
             # Don't output to screen if missing
             silent=TRUE)
     #  If it's missing it will be a "try-error" class:

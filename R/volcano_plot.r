@@ -9,23 +9,19 @@
 #    Notes:    Group value for control must be alphanumerically first
 #              Script will return an error if there are more than 2 groups
 
-# # Determine which variables/objects are present before running script
-# rm_list<-list()
-# rm_list$pre=ls()
-
 #
 #    Load the data matrix
 #
 # Read in the .csv file
 in_file<-file.choose()
-input_data<-read.csv(in_file, sep=",", row.names=1, header=TRUE)
+input_data<-read.csv(in_file,sep=',',header=TRUE,row.names=1)
 
 # Get groups information
 groups<-input_data[,1]
 # Get levels for groups
 grp_levs<-levels(groups)
 if (length(levels(groups)) > 2) {
-    print("Number of groups is greater than 2. Exiting.")
+    print('Number of groups is greater than 2. Exiting.')
 } else {
     #
     #    Split the matrix by group
@@ -75,7 +71,7 @@ if (length(levels(groups)) > 2) {
     pvals<-matrix(
         nrow=ncol(input_data[,-1]),
         ncol=1,
-        dimnames=list(colnames(input_data[-1]),"P-Value")
+        dimnames=list(colnames(input_data[-1]),'P-Value')
     )
     
     #
@@ -130,26 +126,26 @@ if (length(levels(groups)) > 2) {
         plot(
             x_range,                          # x-dim 
             y_range,                          # y-dim
-            type="n",                         # empty plot
-            xlab="log2 Fold Change",          # x-axis title
-            ylab="-log10 t-Test P-value",     # y-axis title
-            main="Volcano Plot",              # plot title
+            type='n',                         # empty plot
+            xlab='log2 Fold Change',          # x-axis title
+            ylab='-log10 t-Test P-value',     # y-axis title
+            main='Volcano Plot',              # plot title
         )
         abline(h=-log10(0.05),                # horizontal line at P=0.05
-            col="green",                      # line colour
-            lty="44"                          # Dot-dash lengths
+            col='green',                      # line colour
+            lty='44'                          # Dot-dash lengths
         )
-        mtext("pval = 0.05",                  # Label abline
+        mtext('pval = 0.05',                  # Label abline
             side=2,                           # on the left plot edge
             at=-log10(0.05),                  # at P=0.05
             cex=cex_val,                      # slightly smaller
             las=1                             # perpendicular to axis
         )
         abline(v=c(-1,1),                     # vertical lines at ±2-fold
-            col="violet",
-            lty="1343"
+            col='violet',
+            lty='1343'
         )
-        mtext(c("- 2-fold","+ 2-fold"),       # Label vertical ablines
+        mtext(c('- 2-fold','+ 2-fold'),       # Label vertical ablines
             side=3,                           # on top of graph
             at=c(log2(0.5),log2(2)),
             cex=cex_val,
@@ -167,7 +163,7 @@ if (length(levels(groups)) > 2) {
                         points(
                             log2(folds[2,][ii]),
                             -log10(pvals[ii]),
-                            col="orange",
+                            col='orange',
                             pch=20
                             )
                     # Otherwise, greater than 2-fold increase: red
@@ -175,7 +171,7 @@ if (length(levels(groups)) > 2) {
                         points(
                             log2(folds[2,][ii]), 
                             -log10(pvals[ii]),
-                            col="red",
+                            col='red',
                             pch=20
                         )
                         text(
@@ -203,7 +199,7 @@ if (length(levels(groups)) > 2) {
                     points(
                         log2(folds[2,][ii]), 
                         -log10(pvals[ii]),
-                        col="blue",
+                        col='blue',
                         pch=20
                     )
                     text(
@@ -231,7 +227,7 @@ if (length(levels(groups)) > 2) {
                 points(
                     log2(folds[2,][ii]),
                     -log10(pvals[ii]),
-                    col="purple",
+                    col='purple',
                     pch=20
                 )
             }
@@ -248,7 +244,7 @@ if (length(levels(groups)) > 2) {
     # volcano_plot(data_table)
 
     # Return table to analyse results
-    write.csv(data_table,"volcano_plot_data.csv")
+    write.csv(data_table,'output_data/volcano_plot_data.csv')
     
     #
     #    Generate figures as image files
@@ -260,9 +256,9 @@ if (length(levels(groups)) > 2) {
     #     # Start jpeg device with basic settings
     #     jpeg(filename,
     #         quality=100,                       # image quality (percent)
-    #         bg="white",                        # background colour
+    #         bg='white',                        # background colour
     #         res=300,                           # image resolution (dpi)
-    #         units="in", width=8.3, height=5.8  # image dimensions (inches)
+    #         units='in', width=8.3, height=5.8  # image dimensions (inches)
     #     )
     #     par(mgp=c(5,2,0),                      # axis margins 
     #                                            # (title, labels, line)
@@ -273,7 +269,7 @@ if (length(levels(groups)) > 2) {
     #     volcano_plot(folds, pvals)
     #     dev.off()
     # }
-    # pic_jpg("volcano_plot.jpg")
+    # pic_jpg('figures/volcano_plot.jpg')
     ##### end jpeg #####
     
     
@@ -281,9 +277,9 @@ if (length(levels(groups)) > 2) {
     # pic_png<-function(filename, fold, pval) {
     #     # Start png device with basic settings
     #     png(filename,
-    #         bg="white",                        # background colour
+    #         bg='white',                        # background colour
     #         res=300,                           # image resolution (dpi)
-    #         units="in", width=8.3, height=5.8  # image dimensions (inches)
+    #         units='in', width=8.3, height=5.8  # image dimensions (inches)
     #     )
     #     par(mgp=c(5,2,0),                      # axis margins 
     #                                            # (title, labels, line)
@@ -294,7 +290,7 @@ if (length(levels(groups)) > 2) {
     #     volcano_plot(folds, pvals)
     #     dev.off()
     # }
-    # pic_png("volcano_plot.png")
+    # pic_png('figures/volcano_plot.png')
     ##### end png #####
     
     
@@ -302,10 +298,10 @@ if (length(levels(groups)) > 2) {
     # pic_tiff<-function(filename, fold, pval) {
     #     # Start tiff device with basic settings
     #     tiff(filename,
-    #         bg="white",                        # background colour
+    #         bg='white',                        # background colour
     #         res=300,                           # image resolution (dpi)
-    #         units="in", width=8.3, height=5.8, # image dimensions (inches)
-    #         compression="none"                 # image compression 
+    #         units='in', width=8.3, height=5.8, # image dimensions (inches)
+    #         compression='none'                 # image compression 
     #     )                                      #  (one of none, lzw, zip)
     #     par(mgp=c(5,2,0),                      # axis margins 
     #                                            # (title, labels, line)
@@ -316,17 +312,8 @@ if (length(levels(groups)) > 2) {
     #     volcano_plot(folds, pvals)
     # #    dev.off()
     # }
-    # pic_tiff("volcano_plot.tif")
+    # pic_tiff('figures/volcano_plot.tif')
     ##### end tiff #####
-
-    # #
-    # #    Tidy up
-    # #
-    # # List all objects
-    # rm_list$post=ls()
-    # # Remove objects in rm_list$post that aren't in rm_list$pre
-    # rm(list=rm_list$post[which(rm_list$pre!=rm_list$post)])
-    # rm(rm_list)
 
 # Close if function
 }

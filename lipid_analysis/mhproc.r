@@ -32,6 +32,7 @@ input=readline(
     sep=""
     )
 )
+#input="5000"
 options(show.error.messages=FALSE,warn=-1)
 if (is.na(as.numeric(input))) {
     write(" ## Please enter numbers only next time. Exiting...","")
@@ -42,6 +43,7 @@ if (is.na(as.numeric(input))) {
 
 # Internal standards
 input=readline(" ?? Keep internal standards in output data? (y/n/c): ")
+#input="y"
 if (length(grep(input,"y",ignore.case=TRUE))!=0) {
     keep_IS=TRUE
 } else if (length(grep(input,"n",ignore.case=TRUE))!=0) {
@@ -53,8 +55,10 @@ if (length(grep(input,"y",ignore.case=TRUE))!=0) {
     write(" ## Please press y, n or c next time. Exiting...","")
     stop()
 }
+
 # Normalisation
 input=readline(" ?? Perform normalisation of concentration data? (y/n/c): ")
+#input="n"
 if (length(grep(input,"y",ignore.case=TRUE))!=0) {
     norm=TRUE
 } else if (length(grep(input,"n",ignore.case=TRUE))!=0) {
