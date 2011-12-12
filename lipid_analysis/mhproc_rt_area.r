@@ -58,7 +58,13 @@ basefile<-read.csv(in_matrix,header=FALSE,sep=",",quote="\"")
 #
 #    Filter the data set (remove unwanted columns) 
 #
-prefilt<-basefile[,-c(1:3,5:7)]
+#prefilt<-basefile[,-c(1:3,5:7)]
+# Keep only Data file name from initial headers
+file_col<-which(basefile[2,]=="Data File")
+data_start<-min(which(basefile[1,]!="" & basefile[1,]!="Sample"))
+data_end<-length(colnames(basefile))
+prefilt_cols<-c(file_col,data_start:data_end)
+prefilt<-basefile[,prefilt_cols]
 
 # Define columns and generate headers
 area_cols<-which(prefilt[2,]=="Area")
@@ -157,10 +163,42 @@ std_cls<-gsub("(.*)(\\(.*)",
 )
 
 # Tidy the vector
-if (length(std_row)==1) {
+if (dim(std_row)[2]==1) {
     std_row<-as.data.frame(std_row)
 }
-rownames(std_row)<-"Area"
+
+# Label the row as 'Area' if single
+if (dim(std_row)[1]==1) {
+    rownames(std_row)<-"Area"
+# Otherwise select the std row to use
+} else {
+    all_std_rows<-std_row
+    write("\n ** Standards: ","")
+    write(
+        paste("    ",
+            paste(
+                # Get the row number
+                tmp<-grep("std",area_mat[std_rownum,1],perl=TRUE,ignore.case=TRUE),
+                ") ",
+                # List the name of the standard
+                area_mat[std_rownum[tmp],1],
+                sep=""
+            #collapse=" "
+            ),
+            sep=""
+        ),
+        ""
+    )
+    s_row<-readline(
+        paste(
+            " >> Please type the number for",
+            " the standard you wish to use: ",
+            sep=""
+        )
+    )
+    std_row<-std_row[as.numeric(s_row),]
+    rownames(std_row)<-"Area"
+}
 
 # Use compound classes for the column names
 names(std_row)<-std_cls

@@ -75,14 +75,15 @@ options(show.error.messages=TRUE,warn=0)
 write(paste(" ** Standard concentration:",std_conc,"nM."),"")
 if (keep_IS==TRUE) {
     write(" ** Keeping standard compounds in final matrix.","")
-    } else {
+} else {
     write(" ** Deleting standard compounds from final matrix.","")
-    }
+}
+
 if (norm==TRUE) {
     write(" ** Normalisation will be performed.","")
-    } else {
+} else {
     write(" ** No normalisation will be performed.","")
-    }
+}
 
 source("mhproc_functions.r")
 source("mhproc_rt_area.r")
