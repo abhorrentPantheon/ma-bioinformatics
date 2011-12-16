@@ -56,6 +56,21 @@ if (length(grep(input,"y",ignore.case=TRUE))!=0) {
     stop()
 }
 
+# Standard curves
+input=readline(" ?? Single value standards? (y/n/c; 'n' uses a standard curve): ")
+#input="n"
+if (length(grep(input,"y",ignore.case=TRUE))!=0) {
+    std_point=TRUE
+} else if (length(grep(input,"n",ignore.case=TRUE))!=0) {
+    std_point=FALSE
+} else if (length(grep(input,"c",ignore.case=TRUE))!=0) {
+    write(" ## Exiting script.","")
+    stop()
+} else {
+    write(" ## Please press y, n or c next time. Exiting...","")
+    stop()
+}
+
 # Normalisation
 input=readline(" ?? Perform normalisation of concentration data? (y/n/c): ")
 #input="n"
@@ -77,6 +92,11 @@ if (keep_IS==TRUE) {
     write(" ** Keeping standard compounds in final matrix.","")
 } else {
     write(" ** Deleting standard compounds from final matrix.","")
+}
+if (std_point==TRUE) {
+    write(" ** Using single value standards.","")
+} else {
+    write(" ** Using a standard curve to calculate concentrations.","")
 }
 
 if (norm==TRUE) {

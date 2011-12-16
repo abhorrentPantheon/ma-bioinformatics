@@ -42,7 +42,7 @@ filename<-basename(in_matrix)
 
 # Show usage information
 write(
-    paste(" ** Using file",filename,"as input."),
+    paste(" ** Using file '",filename,"' as input.",sep=""),
     ""
 )
 
@@ -152,7 +152,7 @@ std_rownum<-grep("std",
     perl=TRUE
 )
 std_cols<-grep("IS",colnames(area_mat))
-std_row<-area_mat[std_rownum,std_cols]
+std_row<-area_mat[std_rownum,c(1,std_cols)]
 std_names_long<-colnames(std_row)
 
 # Get compound class names from standards
@@ -162,46 +162,57 @@ std_cls<-gsub("(.*)(\\(.*)",
     perl=TRUE
 )
 
-# Tidy the vector
-if (dim(std_row)[2]==1) {
-    std_row<-as.data.frame(std_row)
-}
-
-# Label the row as 'Area' if single
-if (dim(std_row)[1]==1) {
-    rownames(std_row)<-"Area"
-# Otherwise select the std row to use
-} else {
-    all_std_rows<-std_row
-    write("\n ** Standards: ","")
-    write(
-        paste("    ",
-            paste(
-                # Get the row number
-                tmp<-grep("std",area_mat[std_rownum,1],perl=TRUE,ignore.case=TRUE),
-                ") ",
-                # List the name of the standard
-                area_mat[std_rownum[tmp],1],
+if (std_point==TRUE) {
+    # Tidy the vector
+    if (dim(std_row)[2]==1) {
+        std_row<-as.data.frame(std_row)
+    }
+    
+    # Label the row as 'Area' if single
+    if (dim(std_row)[1]==1) {
+        rownames(std_row)<-"Area"
+    # Otherwise select the std row to use
+    } else {
+        all_std_rows<-std_row
+        write("\n ** Standards: ","")
+        write(
+            paste("    ",
+                paste(
+                    # Get the row number
+                    tmp<-grep("std",area_mat[std_rownum,1],perl=TRUE,ignore.case=TRUE),
+                    ") ",
+                    # List the name of the standard
+                    area_mat[std_rownum[tmp],1],
+                    sep=""
+                #collapse=" "
+                ),
                 sep=""
-            #collapse=" "
             ),
-            sep=""
-        ),
-        ""
-    )
-    s_row<-readline(
-        paste(
-            " >> Please type the number for",
-            " the standard you wish to use: ",
-            sep=""
+            ""
         )
-    )
-    std_row<-std_row[as.numeric(s_row),]
-    rownames(std_row)<-"Area"
+        s_row<-readline(
+            paste(
+                " >> Please type the number for",
+                " the standard you wish to use: ",
+                sep=""
+            )
+        )
+        std_row<-std_row[as.numeric(s_row),]
+        rownames(std_row)<-"Area"
+        write(
+            paste(
+                "\n ** Using data file '",
+                std_row[1,1],
+                "' as the standard.",
+                sep=""
+            ),
+            ""
+        )
+    }
 }
 
 # Use compound classes for the column names
-names(std_row)<-std_cls
+colnames(std_row)<-c("Standard",std_cls)
 
 if (keep_IS==TRUE) {
     area_mat<-area_mat[-std_rownum,]
@@ -231,8 +242,10 @@ write.csv(area_mat,
     paste(base_fn,"_2_Area.csv",sep=""),
     row.names=FALSE
 )
+# Inform user of created files
 write(" -> Created the following files:","")
 write(paste("        ",base_fn,"_1_RT.csv",sep=""),"")
 write(paste("        ",base_fn,"_2_Area.csv",sep=""),"")
+
 # Objects for later use
 write.csv(std_row,"std_row.csv",row.names=TRUE)
