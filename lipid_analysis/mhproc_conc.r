@@ -22,7 +22,7 @@
 # Prepare an empty matrix
 conc_mat<-as.data.frame(
     matrix(NA,nrow=nrow(area_mat),ncol=(ncol(area_mat)-2))
-    )
+)
 # Get column names
 cpd_cols<-colnames(area_mat[3:ncol(area_mat)])
 # Apply to conc_mat
@@ -52,15 +52,39 @@ colnames(area_mat)<-c(cpd_lbl[1:2],sort(cpd_lbl[3:length(cpd_lbl)]))
 for (jj in 3:ncol(area_mat)) {
     # Get current compound class
     cpd_cls<-gsub("(.*)(\\(.*)","\\1",colnames(area_mat)[jj],perl=TRUE)
+    
     for (ii in 1:nrow(area_mat)) {
-        # Use cpd_cls to divide by standard for that compound
-        if (cpd_cls %in% colnames(Rf)==TRUE) {
-            conc_mat[ii,jj]<-area_mat[ii,jj]/Rf[which(colnames(Rf)==cpd_cls)]
+        # For single value standards
+        if (std_point==TRUE) {
+            # Use cpd_cls to divide by standard for that compound
+            kk<-which(colnames(Rf)==cpd_cls)
+            
+            if (cpd_cls %in% colnames(Rf)==TRUE) {
+                if (Rf[kk]!=0) {
+                    conc_mat[ii,jj]<-area_mat[ii,jj]/Rf[kk]
+                } else {
+                    conc_mat[ii,jj]<-"NoIS"
+                }
             } else {
-            conc_mat[ii,jj]=NA
+                conc_mat[ii,jj]=NA
+            }
+        # For standard curve
+        } else {
+            kk<-which(colnames(lm_vals)==cpd_cls)
+            if (cpd_cls %in% colnames(lm_vals)==TRUE) {
+                if (lm_vals[1,kk]!=0) {
+                    conc_mat[ii,jj]<-(
+                        area_mat[ii,jj]-lm_vals[2,kk]
+                    )/lm_vals[1,kk]
+                } else {
+                    conc_mat[ii,kk]<-"NoIS"
+                }
+            } else {
+                conc_mat[ii,jj]=NA
             }
         }
     }
+}
 
 # Replace NA with NoIS for prettiness in output file
 out_conc_mat<-conc_mat
