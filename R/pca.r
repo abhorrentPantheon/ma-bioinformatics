@@ -16,21 +16,6 @@
 # rm_list$pre=ls()
 
 #
-#    Load necessary libraries, and install them if they are missing
-#
-### Why are we using vegan? Is there something in base that could do same?
-tryCatch(
-    library(vegan), 
-    error=function(err) {
-        # if this produces an error:
-        install.packages("vegan",
-            repos="http://cran.ms.unimelb.edu.au/"
-        )
-        library(vegan)
-    }
-)
-
-#
 #    Prepare the data matrix
 #
 # Read in the .csv file
@@ -77,7 +62,7 @@ barplot(summ$importance[2,],
 )
 
 ### This comes from vegan lib. Can we do this without loading that lib?
-pca_scores<-scores(pca)
+pca_scores<-pca$x
 
 rownames(pca_scores)<-rownames(pca_data)
 
