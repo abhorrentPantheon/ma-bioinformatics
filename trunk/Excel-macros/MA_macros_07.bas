@@ -1,4 +1,4 @@
-
+Attribute VB_Name = "Metabolomics"
 Sub calc2end()
 
 '    calc2end    [VBA]
@@ -15,16 +15,16 @@ ans = MsgBox("Do you have duplicate metabolites?", vbYesNoCancel, _
 If ans = vbYes Then
     Application.Run "PERSONAL.XLSB!emboldT_pretty"
     Application.Run "PERSONAL.XLSB!calc2oview"
-    ActiveSheet.Copy After:=Sheets("Overview")
-    Sheets(Sheets.Count).Select
+    ActiveSheet.Copy after:=Sheets("Overview")
+    Sheets(Sheets.count).Select
     Application.Run "PERSONAL.XLSB!dupRem"
     Application.Run "PERSONAL.XLSB!fold_colour_ov"
     Application.Run "PERSONAL.XLSB!oview2folds"
 ElseIf ans = vbNo Then
     Application.Run "PERSONAL.XLSB!emboldT_pretty_2"
     Application.Run "PERSONAL.XLSB!calc2oview"
-    ActiveSheet.Copy After:=Sheets("Overview")
-    Sheets(Sheets.Count).Select
+    ActiveSheet.Copy after:=Sheets("Overview")
+    Sheets(Sheets.count).Select
     Application.Run "PERSONAL.XLSB!fold_colour_ov"
     Application.Run "PERSONAL.XLSB!oview2folds"
 ElseIf ans = vbCancel Then
@@ -69,10 +69,10 @@ On Error Resume Next
     end_col = Cells.Find("*", [A1], , , xlByColumns, xlPrevious).Column
     end_cell = Cells(end_row, end_col).Address
 dataset = "a1:" & end_cell
-Range(dataset).Select
 
 ' Copy it all and paste links to 'Overview' sheet. If it doesn't exist,
 ' make a new one ('ErrHandler' section at end of this macro)
+Range(dataset).Select
 Selection.Copy
     On Error GoTo ErrHandler:
     Sheets("Overview").Activate
@@ -128,7 +128,7 @@ Range(init).Select
 Selection.ClearContents
 Columns("A:A").EntireColumn.AutoFit
 
-' Add in a column for the Â± symbol
+' Add in a column for the ± symbol
 For counter3 = 1 To (end_col + 1) / 6
 Range(init).Select
 ActiveCell.Offset(0, (counter3 * 3) - 1).Select
@@ -141,7 +141,7 @@ For counter4 = 1 To (end_col + 1) / 6
     ' Go to each location
     ActiveCell.Offset(2, (counter4 * 3) - 1).Select
     ' Add symbol
-    ActiveCell.Value = "Â±"
+    ActiveCell.Value = "±"
     ' Fill down to end of previous column (this is one of the
     ' most elegant solutions I have seen in macro code!)
     Range(ActiveCell, _
@@ -210,11 +210,102 @@ Application.Cursor = xlDefault
 ErrHandler:
     ' If the sheet doesn't exist, create it:
     If Err.Number = 9 Then
-        Worksheets.Add(After:=ActiveSheet).Name = "Overview"
+        Worksheets.Add(after:=ActiveSheet).Name = "Overview"
         ' go back to the line of code that caused the problem
         Resume
     End If
     
+End Sub
+
+Sub clear_nonsig_fl()
+'    clear_nonsig_fl    [VBA]
+'
+'    Author:    Jairus Bowne
+'    Purpose:    Remove colour highlighting from non-significant (by
+'                t-Test) values in the Folds sheet
+'
+'    Input:    Coloured overview sheet (i.e.
+'              Folds --[fold_colour_fl]--> Folds; see template)
+
+Dim gr_count As Integer
+Dim row_count As Integer
+
+' Prevent screen flicker
+Application.Cursor = xlWait
+Application.ScreenUpdating = False
+
+Range("b3").Select
+init = ActiveCell.Address
+
+Range(ActiveCell, Selection.End(xlToRight)).Select
+gr_count = Selection.Columns.count
+Range(Selection, Selection.End(xlDown)).Select
+row_count = Selection.Rows.count
+
+Range(init).Select
+For jj = 0 To gr_count
+    Range(init).Select
+    ActiveCell.Offset(0, jj).Select
+    For ii = 0 To row_count
+        If ActiveCell.Font.Bold = False Then
+            ActiveCell.Interior.ColorIndex = xlNone
+        End If
+        ActiveCell.Offset(1, 0).Select
+    Next
+Next
+    
+Range(init).Select
+
+' Return cursor to default and allow screen updating
+Application.ScreenUpdating = True
+Application.Cursor = xlDefault
+
+End Sub
+
+Sub clear_nonsig_ov()
+'    clear_nonsig_ov    [VBA]
+'
+'    Author:    Jairus Bowne
+'    Purpose:    Remove colour highlighting from non-significant (by
+'                t-Test) values in the Overview sheet
+'
+'    Input:    Coloured overview sheet (i.e.
+'              Overview --[fold_colour_ov]--> Overview; see template)
+
+
+Dim gr_count As Integer
+Dim row_count As Integer
+
+' Prevent screen flicker
+Application.Cursor = xlWait
+Application.ScreenUpdating = False
+
+Range("b3").Select
+init = ActiveCell.Address
+
+Range(ActiveCell, Selection.End(xlToRight)).Select
+gr_count = Selection.Columns.count / 3
+Range(Selection, Selection.End(xlDown)).Select
+row_count = Selection.Rows.count
+
+Range(init).Select
+For jj = 0 To gr_count
+    Range(init).Select
+    ActiveCell.Offset(0, jj * 3).Select
+    For ii = 0 To row_count
+        If ActiveCell.Font.Bold = False Then
+            ActiveCell.Interior.ColorIndex = xlNone
+        End If
+        ActiveCell.Offset(1, 0).Select
+    Next
+Next
+    
+Range(init).Select
+
+' Return cursor to default and allow screen updating
+Application.ScreenUpdating = True
+Application.Cursor = xlDefault
+
 End Sub
 
 Sub cpd_sort()
@@ -331,19 +422,21 @@ oth = Array("1-Monooctodecanoglycerol", "5-Hydroxytryptamine", "Adenine", _
 
 ' Create a 2D array
 cpd_array = Array(aa, OA, sug, oth)
-key_labels = Array("Amino acids", "Organic acids", "Sugars", "Other compounds")
+key_labels = Array("Amino acids", "Organic acids", _
+    "Sugars", "Other compounds")
 Range("a3").Select
 
 'Loop through arrays to create dictionary
 For counter1 = 0 To UBound(cpd_array)
     For counter2 = 0 To UBound(cpd_array(counter1))
-        cpd_dict.Add StrConv(cpd_array(counter1)(counter2), vbLowerCase), key_labels(counter1)
+        cpd_dict.Add StrConv(cpd_array(counter1)(counter2), vbLowerCase), _
+            key_labels(counter1)
     Next counter2
 Next counter1
 
 ' Add in the compound class to sort by
 Range(Selection, Selection.End(xlDown)).Select
-num_cpds = Selection.Rows.Count
+num_cpds = Selection.Rows.count
 Selection.EntireColumn.Insert
 Range("b3").Select
 For counter1 = 1 To num_cpds
@@ -384,7 +477,7 @@ For Each newclass In key_labels
     Range("a3").Select
     'Range(Selection, Selection.End(xlDown)).Select
     Selection.EntireColumn.Select
-    Set foundcell = Selection.Find(What:=newclass, After:=ActiveCell, _
+    Set foundcell = Selection.Find(What:=newclass, after:=ActiveCell, _
         LookIn:=xlFormulas, LookAt:=xlWhole, SearchOrder:=xlByRows, _
         SearchDirection:=xlNext, MatchCase:=False, Searchformat:=False)
     ' If the class of compound isn't present, this line prevents failure
@@ -444,7 +537,7 @@ Sub dupRem()
 Application.Cursor = xlWait
 Application.ScreenUpdating = False
 
-' Find the second internal standard, or anything that ends in '_2' and delete it
+' Find the second internal standard, or anything ending in '_2' and delete it
 Range("A3").Select
 init = ActiveCell.Address
 Do Until ActiveCell.Value = ""
@@ -505,7 +598,16 @@ ActiveCell.EntireRow.Select
 Selection.End(xlToLeft).Select
 ActiveCell.Select
 Range(Selection, Selection.End(xlDown)).Select
-rwNm = Selection.Rows.Count
+rwNm = Selection.Rows.count
+
+' Clear all previous highlighting etc in case it has changed
+Range("a2").Select
+Selection.EntireRow.Select
+num_groups = Application.WorksheetFunction.CountA(Selection)
+Range("i3", Cells(rwNm, (num_groups - 1) * 6)).Select
+Selection.Font.Bold = False
+Selection.Font.Italic = False
+Selection.Interior.ColorIndex = xlNone
 
 ' Go to the starting point
 Range(init).Select
@@ -627,7 +729,16 @@ ActiveCell.EntireRow.Select
 Selection.End(xlToLeft).Select
 ActiveCell.Select
 Range(Selection, Selection.End(xlDown)).Select
-rwNm = Selection.Rows.Count
+rwNm = Selection.Rows.count
+
+' Clear all previous highlighting etc in case it has changed
+Range("a2").Select
+Selection.EntireRow.Select
+num_groups = Application.WorksheetFunction.CountA(Selection)
+Range("i3", Cells(rwNm, (num_groups - 1) * 6)).Select
+Selection.Font.Bold = False
+Selection.Font.Italic = False
+Selection.Interior.ColorIndex = xlNone
 
 ' Loop over the whole sheet as per emboldT_pretty (see that macro for
 ' information on what each part does, it is thoroughly commented)
@@ -693,11 +804,14 @@ Sub find_dataset()
 '    find_dataset    [VBA]
 '
 '    Author:    Jairus Bowne
-'    Acknowledgements:    This code was basically copied wholesale from
-'                         http://www.angelfire.com/biz7/julian_s/julian/julians_macros.htm
-'                         (a very good site for basic VBA scripting examples)
-'    Purpose:    Finds the last cell that has any information in it, and makes the range
-'                from A1 to there the selected area. Invaluable for very large data sets
+'    Purpose:    Finds the last cell that has any information in it,
+'                and makes the range from A1 to there the selected area.
+'                Invaluable for very large data sets
+'
+'    Acknowledgements:
+'        This code was basically copied wholesale from
+'        http://www.angelfire.com/biz7/julian_s/julian/julians_macros.htm
+'        (a very good site for basic VBA scripting examples)
 '
 
 Range("a1").Select
@@ -715,7 +829,8 @@ Sub fold_colour_fl()
 '    fold_colour_fl    [VBA]
 '
 '    Author:    Jairus Bowne
-'    Purpose:    Change the colour of the cell fill based on the value of the cell.
+'    Purpose:    Change the colour of the cell fill based on the
+'                value of the cell.
 '
 '    Input:    Folds sheet (i.e.
 '              Responses ---[resp2calcvals]---> CalcVals
@@ -740,10 +855,10 @@ Application.ScreenUpdating = False
 ' Collect information about sheet size
 Range("a3").Select
 Range(Selection, Selection.End(xlDown)).Select
-nmrw = Selection.Rows.Count
+nmrw = Selection.Rows.count
 Range("a3").Select
 Range(Selection, Selection.End(xlToRight)).Select
-nmcl = Selection.Columns.Count
+nmcl = Selection.Columns.count
 
 ' Define a starting point
 Range("a1").Select
@@ -853,8 +968,8 @@ Application.ScreenUpdating = False
 Range("a3").Select
 Range(Selection, Selection.End(xlDown)).Select
 Range(Selection, Selection.End(xlToRight)).Select
-nmrw = Selection.Rows.Count
-nmcl = Selection.Columns.Count
+nmrw = Selection.Rows.count
+nmcl = Selection.Columns.count
 ' Remove any colouring that is already present
 Selection.Interior.ColorIndex = xlNone
 
@@ -935,7 +1050,7 @@ Sub import_multi_csv()
 ' import_multi_csv    [VBA]
 '
 ' Author:    Jairus Bowne
-' Acknowledgements:    Majority of code was adapted from the following site -
+' Acknowledgements:    Majority of code was adapted from the following site:
 '                      http://tiny.cc/2x4r7 [bytes.com]
 ' Purpose:    Import selected .csv files as new worksheets
 '
@@ -961,10 +1076,10 @@ With Application.FileDialog(msoFileDialogFilePicker)
      .Filters.Add "Text files", "*.txt"
      .Filters.Add "All files", "*.*"
      .Show
-    If .SelectedItems.Count > 0 Then
-        For ii = 1 To .SelectedItems.Count
-            If Worksheets.Count < ii Then
-                Worksheets.Add After:=Worksheets(ii - 1)
+    If .SelectedItems.count > 0 Then
+        For ii = 1 To .SelectedItems.count
+            If Worksheets.count < ii Then
+                Worksheets.Add after:=Worksheets(ii - 1)
             End If
             Worksheets(ii).Activate
             str2 = .SelectedItems.Item(ii)
@@ -991,7 +1106,7 @@ With Application.FileDialog(msoFileDialogFilePicker)
                         Sheets(ii).Name = sub_s_nm
                     End If
                 Else
-                    Sheets(ii).Name = Left(s_nm, 29) & "_" & Sheets.Count
+                    Sheets(ii).Name = Left(s_nm, 29) & "_" & Sheets.count
                 End If
             End With
         Next
@@ -1092,14 +1207,14 @@ dataset = "a1:" & end_cell
 Range(dataset).Select
 
 ' Get data size
-nrow = Selection.Rows.Count
-ncol = Selection.Columns.Count
+nrow = Selection.Rows.count
+ncol = Selection.Columns.count
 
 ' Get groups info
 Range("b" & group_row).Select
 Range(ActiveCell, ActiveCell.End(xlToRight)).Select
 Set groupcols = Selection
-num_groupcols = Selection.Columns.Count
+num_groupcols = Selection.Columns.count
 
 '
 '    Create a dictionary to store groups and numbers of replicates
@@ -1126,7 +1241,7 @@ Range("b" & group_row + 1).Select
 ' For every row
 For ii = met_row To end_row
     ' For every group (zero-indexed; do not use blank terminator group)
-    For jj = 0 To grp_dict.Count - 2
+    For jj = 0 To grp_dict.count - 2
         ' Select the cells for the group and name the range
         Range(Cells(ii, grp_dict.Items(jj)), _
             Cells(ii, grp_dict.Items(jj + 1) - 1)).Select
@@ -1185,8 +1300,8 @@ Application.ScreenUpdating = False
 
 'Use the find_dataset macro to define sheet size
 Application.Run "PERSONAL.XLSB!find_dataset"
-nmrw = Selection.Rows.Count
-nmcl = Selection.Columns.Count
+nmrw = Selection.Rows.count
+nmcl = Selection.Columns.count
 
 ' Define a starting point
 Range("a1").Select
@@ -1216,7 +1331,7 @@ For counter1 = 1 To wkrw
      Range(ActiveCell, Cells(ActiveCell.Row, 2)).Select
     ' Label this area for later
     Set c_rng = Selection
-    c_min = Application.WorksheetFunction.min(c_rng)
+    c_min = Application.WorksheetFunction.Min(c_rng)
     c_max = Application.WorksheetFunction.Max(c_rng)
     ' Test each cell sequentially
     For Each c_cell In c_rng
@@ -1240,7 +1355,8 @@ For counter1 = 1 To wkrw
             End With
         End If
     Next c_cell
-    ' Go back to the starting cell, and move down by the number of rows already done
+    ' Go back to the starting cell, and move down by the number of
+    ' rows already done
     Range(init).Select
     ActiveCell.Offset(counter1, 0).Select
 Next counter1
@@ -1278,11 +1394,11 @@ init = ActiveCell.Address
 ActiveCell.Offset(2, 1).Select
 ' Count rows
 Range(ActiveCell, Selection.End(xlDown)).Select
-nm_rw = Selection.Rows.Count
+nm_rw = Selection.Rows.count
 ActiveCell.Select
 ' Count columns
 Range(ActiveCell, Selection.End(xlToRight)).Select
-nm_col = Selection.Columns.Count
+nm_col = Selection.Columns.count
 
 For counter1 = 1 To (nm_col + 1)
     For counter2 = 1 To nm_rw
@@ -1333,11 +1449,11 @@ init = ActiveCell.Address
 ActiveCell.Offset(2, 1).Select
 ' Count rows
 Range(ActiveCell, Selection.End(xlDown)).Select
-nm_rw = Selection.Rows.Count
+nm_rw = Selection.Rows.count
 ActiveCell.Select
 ' Count columns
 Range(ActiveCell, Selection.End(xlToRight)).Select
-nm_col = Selection.Columns.Count
+nm_col = Selection.Columns.count
 
 For counter1 = 1 To (nm_col + 1)
     For counter2 = 1 To nm_rw
@@ -1416,7 +1532,7 @@ Application.Cursor = xlDefault
 ' Create a sheet if it doesn't exist (err.number 9)
 ErrHandler:
     If Err.Number = 9 Then
-    Worksheets.Add(After:=ActiveSheet).Name = "Folds"
+    Worksheets.Add(after:=ActiveSheet).Name = "Folds"
     Resume
     End If
 End Sub
@@ -1430,12 +1546,14 @@ Sub resp2calcvals()
 '
 '    Input:    Responses tab (as active sheet). Header layout (names of rows
 '              here does not matter):
-'                  Row 1:    File Name
-'                  Row 2:    Fresh Weight
-'                  Row 3:    Sample Name
-'                  Row 4:    Group Information
+'                  Row 1:    e.g. File Name
+'                  Row 2:    e.g. Fresh Weight
+'                  Row 3:    e.g. Sample Name
+'                  Row 4:    e.g. Group Information
 '                  Row >=5:  Data matrix (metabolites in rows,
 '                            samples in columns)
+'              Compound names in first column, remaining columns contain data.
+'
 '    Output:    CalcVals sheet where the first group on the responses
 '               tab is the reference group
 '    Notes:    If a message box says "Compile error: User-defined
@@ -1490,7 +1608,7 @@ On Error GoTo 0
 ' If the line above failed, it's value is nothing
 If sheet_test Is Nothing Then
     ' Hence create CalcVals sheet
-    Worksheets.Add(After:=ActiveSheet).Name = "CalcVals"
+    Worksheets.Add(after:=ActiveSheet).Name = "CalcVals"
 Else
     ' Check to see what user would like done with existing CalcVals
     auth = MsgBox("CalcVals sheet already exists!" & Chr(13) _
@@ -1510,10 +1628,10 @@ ElseIf auth = vbYes Then
 ' (this allows for multiple old CalcVals sheets)
 ElseIf auth = vbNo Then
     Sheets("CalcVals").Activate
-    ActiveSheet.Name = "CalcVals_" & Sheets.Count
+    ActiveSheet.Name = "CalcVals_" & Sheets.count
     ' And create CalcVals sheet as above
     Sheets(resp_sheet).Activate
-    Worksheets.Add(After:=ActiveSheet).Name = "CalcVals"
+    Worksheets.Add(after:=ActiveSheet).Name = "CalcVals"
 End If
 
 ' Go back to Responses sheet
@@ -1528,6 +1646,30 @@ Application.Cursor = xlWait
 Application.ScreenUpdating = False
 
 '
+'    Create a log responses sheet
+'
+' Duplicate the responses sheet
+Sheets(resp_sheet).Copy after:=Sheets(resp_sheet)
+' Rename the sheet
+ActiveSheet.Name = ("logResponses")
+' B5 should be where the data starts
+Range("b5").Select
+' Replace the values with the log transform of the same cell in responses
+ActiveCell.FormulaR1C1 = "=LOG(" & resp_sheet & "!RC)"
+ActiveCell.Value = Application.ConvertFormula _
+    (Formula:="=LOG(" & resp_sheet & "!RC)", _
+    FromReferenceStyle:=xlR1C1, ToReferenceStyle:=xlA1, _
+    ToAbsolute:=xlRelative)
+' Fill down
+Range(ActiveCell, ActiveCell.End(xlDown)).Select
+Selection.FillDown
+' Re-select, and fill across
+Range("b5").Select
+Range(ActiveCell, ActiveCell.End(xlDown)).Select
+Range(Selection, Selection.End(xlToRight)).Select
+Selection.FillRight
+
+'
 '    Responses data preparation
 '
 ' Find dataset, retain information
@@ -1540,14 +1682,14 @@ dataset = "a1:" & end_cell
 Range(dataset).Select
 
 ' Get data size
-nrow = Selection.Rows.Count
-ncol = Selection.Columns.Count
+nrow = Selection.Rows.count
+ncol = Selection.Columns.count
 
 ' Get groups info
 Range("b" & group_row).Select
 Range(ActiveCell, ActiveCell.End(xlToRight)).Select
 Set groupcols = Selection
-num_groupcols = Selection.Columns.Count
+num_groupcols = Selection.Columns.count
 
 ' Create a dictionary to store groups and numbers of replicates
 Set grp_dict = CreateObject("Scripting.dictionary")
@@ -1634,7 +1776,7 @@ ActiveCell.FormulaR1C1 = "=RC[-2]/RC[-3]"
 '
 '    Generate the sample column headers
 '
-For counter2 = 1 To grp_dict.Count - 2
+For counter2 = 1 To grp_dict.count - 2
     Range("g1").Select
     ActiveCell.Offset(0, 6 * (counter2 - 1)).Select
     Call calcvals_col_labels
@@ -1645,7 +1787,7 @@ Next counter2
 '
 '    Generate the sample column formulae
 '
-For counter3 = 1 To grp_dict.Count - 1
+For counter3 = 1 To grp_dict.count - 1
     ' Only for the actual groups (i.e. not using the blank key)
     If grp_dict.Keys(counter3) <> "" Then
         Range("g3").Select
@@ -1675,11 +1817,12 @@ For counter3 = 1 To grp_dict.Count - 1
         ActiveCell.Offset(0, 1).Select
         ' t-Test
         ActiveCell.Value = Application.ConvertFormula _
-            (Formula:="=ttest(" & resp_sheet & "!R5C" & grp_dict.Items(counter3) & _
-            ":R5C" & grp_dict.Items(counter3 + 1) - 1 & "," & resp_sheet & "!R5C" & _
+            (Formula:="=ttest(logResponses!R5C" & grp_dict.Items(counter3) & _
+            ":R5C" & grp_dict.Items(counter3 + 1) - 1 & ",logResponses!R5C" & _
             grp_dict.Items(0) & ":R5C" & grp_dict.Items(1) - 1 & ",2,2)", _
             FromReferenceStyle:=xlR1C1, ToReferenceStyle:=xlA1, _
             ToAbsolute:=xlRelRowAbsColumn)
+            
     End If
 Next counter3
 
@@ -1689,18 +1832,18 @@ ActiveCell.Formula = "=" & resp_sheet & "!a5"
 ' Fill the rest of the sheet
     ' (This is -5 as there are 4 rows that aren't metabolites
     '  above the active cell (A5) on the responses sheet)
-Range(ActiveCell, ActiveCell.Offset(end_row - 5, 6 * grp_dict.Count)).FillDown
-Debug.Print "end_row: " & end_row
-Debug.Print "grp_dict.count: " & grp_dict.Count
+Range(ActiveCell, ActiveCell.Offset(end_row - 5, 6 * grp_dict.count)).FillDown
+'Debug.Print "end_row: " & end_row
+'Debug.Print "grp_dict.Count: " & grp_dict.Count
 '
 '    Format sheet appearance
 '
 ' Change the cell format to number (with 3 dp)
-Range(ActiveCell, ActiveCell.Offset(end_row - 5, 6 * grp_dict.Count)).Select
+Range(ActiveCell, ActiveCell.Offset(end_row - 5, 6 * grp_dict.count)).Select
 Selection.NumberFormat = "0.000"
 
 ' Merge column headers
-For counter4 = 1 To grp_dict.Count - 1
+For counter4 = 1 To grp_dict.count - 1
     Range("a2").Select
     ' The first group has one less column than the rest
     If counter4 = 1 Then
@@ -1716,7 +1859,7 @@ For counter4 = 1 To grp_dict.Count - 1
 Next counter4
 
 ' Add a border to the left hand side of the columns
-For counter5 = 1 To grp_dict.Count - 1
+For counter5 = 1 To grp_dict.count - 1
     Range("a1").Select
     If counter5 = 1 Then
         ActiveCell.Offset(0, 1).Select
@@ -1772,19 +1915,41 @@ Sub tms_trim()
 '    Author:    Jairus Bowne
 '    Purpose:    Remove _nTMS from compound names
 '
-'    Input:    Any sheet that has compound names ending in _nTMS (without duplicate entries)
+'    Input:    Any sheet that has compound names ending in _nTMS
+'              (without duplicate entries). Will also do _nTBS
 
 '
 '    Define variables
 '
 Dim counter1 As Integer
+Dim showbox As Boolean
+
+' Select the compound name column
+showbox = True
+While showbox = True
+    name_col = InputBox("Which column contains the compound names?" & _
+        vbCr & vbCr & "Please enter a letter in the box below.", _
+        "Compound name column selection")
+    If name_col = "" Then
+      MsgBox "Please enter a number, and run this macro again."
+      show_box = False
+      Exit Sub
+    Else
+        If IsNumeric(group_row) = False Then
+            MsgBox "Please enter numbers only, and run this macro again"
+            show_box = False
+            Exit Sub
+        End If
+    End If
+showbox = False
+Wend
 
 ' Prevent screen flicker
 Application.Cursor = xlWait
 Application.ScreenUpdating = False
 
 ' Define a starting point
-Range("a1").Select
+Range(name_col & "1").Select
 init = ActiveCell.Address
 
 ' Find dataset, retain information
@@ -1792,8 +1957,8 @@ On Error Resume Next
     end_row = Cells.Find("*", [A1], , , xlByRows, xlPrevious).Row
     end_col = Cells.Find("*", [A1], , , xlByColumns, xlPrevious).Column
     end_cell = Cells(end_row, end_col).Address
-Range(init, "a" & end_row).Select
-nrw = Selection.Rows.Count
+Range(init, name_col & end_row).Select
+nrw = Selection.Rows.count
 Range(init).Select
 
 For counter1 = 1 To nrw
@@ -1810,6 +1975,15 @@ For counter1 = 1 To nrw
         ActiveCell.Value = Left(ActiveCell.Value, (Len(ActiveCell.Value) - 4))
     ElseIf Right(ActiveCell.Value, 4) = "_MX2" Then
         ActiveCell.Value = Left(ActiveCell.Value, (Len(ActiveCell.Value) - 4))
+    'Also do TBS
+    ElseIf Right(ActiveCell.Value, 4) = "_TBS" Then
+        ActiveCell.Value = Left(ActiveCell.Value, (Len(ActiveCell.Value) - 4))
+    ElseIf Right(ActiveCell.Value, 5) = "_2TBS" Then
+        ActiveCell.Value = Left(ActiveCell.Value, (Len(ActiveCell.Value) - 5))
+    ElseIf Right(ActiveCell.Value, 5) = "_3TBS" Then
+        ActiveCell.Value = Left(ActiveCell.Value, (Len(ActiveCell.Value) - 5))
+    ElseIf Right(ActiveCell.Value, 5) = "_4TBS" Then
+        ActiveCell.Value = Left(ActiveCell.Value, (Len(ActiveCell.Value) - 5))
     End If
     ActiveCell.Offset(1, 0).Select
 Next counter1
@@ -1820,3 +1994,9 @@ Application.ScreenUpdating = True
 Application.Cursor = xlDefault
 
 End Sub
+
+
+
+
+
+
